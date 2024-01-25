@@ -20,6 +20,7 @@ class AppRouter {
     SignupScreen.route: AppRouter(createScreen: (context) => const SignupScreen()),
     OtpScreen.route: AppRouter(createScreen: (context) => const OtpScreen()),
     OnboardingScreen.route: AppRouter(createScreen: (context) => const OnboardingScreen()),
+    MainScreen.route: AppRouter(createScreen: (_) => const MainScreen()),
   };
 }
 

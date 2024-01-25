@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 import '../../coca.dart';
-import 'components/verify_otp_body.dart';
+import 'components/otp_body.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
@@ -26,7 +26,7 @@ class OtpScreen extends StatelessWidget {
               subHeaderText: 'Please enter the code we just sent to your mobile number',
             ),
             Gap(context.styles.insets.md),
-            const VerifyOtpBody(),
+            const OtpBody(),
           ],
         ),
       ),

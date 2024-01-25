@@ -3,13 +3,11 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
-import '../../core/core.dart';
-import 'buttons/custom_secondary_button.dart';
+import '../../../coca.dart';
 
-class SuccessModal extends StatelessWidget {
-  const SuccessModal({super.key});
+class OtpSuccessModal extends StatelessWidget {
+  const OtpSuccessModal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +44,7 @@ class SuccessModal extends StatelessWidget {
         padding: EdgeInsets.all(styles.insets.md),
         child: CustomSecondaryButton(
           label: 'Get Started',
-          onTap: () => Navigator.of(context).pop(),
+          onTap: () => context.pushNamed(MainScreen.route),
         ),
       ),
     );

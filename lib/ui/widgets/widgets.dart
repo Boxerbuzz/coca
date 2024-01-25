@@ -15,7 +15,6 @@ export 'checkbox/custom_checkbox.dart';
 export 'checkbox/custom_checkbox_enum.dart';
 export 'google_button.dart';
 export 'modals/custom_modal.dart';
-export 'success_modal.dart';
 export 'text_input/custom_text_field.dart';
 export 'text_input/custom_text_field_with_icon.dart';
 export 'text_input/custom_text_field_with_title.dart';

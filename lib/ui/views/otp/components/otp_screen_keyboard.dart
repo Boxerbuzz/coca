@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 typedef KeyboardTapCallback = void Function(String text);
 
-class OnScreenKeyboard extends StatefulWidget {
+class OtpScreenKeyboard extends StatefulWidget {
   /// Color of the text [default = Colors.black]
   final TextStyle? textStyle;
 
@@ -32,7 +32,7 @@ class OnScreenKeyboard extends StatefulWidget {
   /// Main axis alignment [default = MainAxisAlignment.spaceEvenly]
   final MainAxisAlignment mainAxisAlignment;
 
-  const OnScreenKeyboard(
+  const OtpScreenKeyboard(
       {super.key,
       required this.onKeyboardTap,
       this.textStyle,
@@ -45,11 +45,11 @@ class OnScreenKeyboard extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _OnScreenKeyboardState();
+    return _OtpScreenKeyboardState();
   }
 }
 
-class _OnScreenKeyboardState extends State<OnScreenKeyboard> {
+class _OtpScreenKeyboardState extends State<OtpScreenKeyboard> {
   @override
   Widget build(BuildContext context) {
     return Container(

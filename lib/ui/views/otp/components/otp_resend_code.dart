@@ -5,8 +5,8 @@
 import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
 
-class ResendCode extends StatelessWidget {
-  const ResendCode({super.key});
+class OtpResendCode extends StatelessWidget {
+  const OtpResendCode({super.key});
 
   @override
   Widget build(BuildContext context) {
