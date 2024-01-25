@@ -1,68 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'core/core.dart';
+import 'ui/app_router.dart';
+import 'ui/views/views.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Coca());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Coca extends StatefulWidget {
+  const Coca({super.key});
+
+  @override
+  State<Coca> createState() => _CocaState();
+}
+
+class _CocaState extends State<Coca> {
+  var routes = {for (var entry in AppRouter.allRoutes.entries) entry.key: entry.value.createScreen};
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Coca',
+        theme: AppTheme.light(),
+        home: const LoginScreen(),
+        onGenerateRoute: (RouteSettings settings) {
+          Widget Function(BuildContext)? pageFunction = routes[settings.name];
+          if (pageFunction != null) {
+            return PageRouteBuilder(
+              settings: settings,
+              // Add safe area on all pages to avoid overlapping the status bar
+              pageBuilder: (context, animation, secondaryAnimation) => Container(
+                color: Theme.of(context).colorScheme.background,
+                child: SafeArea(
+                  left: false,
+                  right: false,
+                  bottom: false,
+                  top: true,
+                  child: pageFunction(context),
+                ),
+              ),
+              transitionDuration: Duration.zero,
+            );
+          }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+          return MaterialPageRoute(builder: (_) => Text("Invalid page ${settings.name ?? "(null)"}"));
+        },
       ),
     );
   }

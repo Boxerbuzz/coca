@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/coca.iml" filepath="$PROJECT_DIR$/coca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/coca.iml" filepath="$PROJECT_DIR$/.idea/coca.iml" />
       <module fileurl="file://$PROJECT_DIR$/android/coca_android.iml" filepath="$PROJECT_DIR$/android/coca_android.iml" />
     </modules>
   </component>
