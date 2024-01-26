@@ -2,9 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+
+import '../coca.dart';
 
 class GoogleButton extends BaseStatelessWidget {
   const GoogleButton({super.key, required this.label, this.onPressed});

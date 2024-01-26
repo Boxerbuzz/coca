@@ -24,6 +24,7 @@ class _CocaState extends State<Coca> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => MainProvider()),
       ],
       child: MaterialApp(
         title: 'Coca',

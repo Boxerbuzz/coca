@@ -21,7 +21,7 @@ class LoginForm extends BaseStatelessWidget {
               labelText: 'Type your password',
               hintText: 'Password',
               prefixIcon: Assets.images.icons.lock.svg(),
-              suffixIcon: Assets.images.icons.eyeOff.svg(height: 18)),
+              suffixIcon: Assets.images.icons.eyeOff.svg()),
           const Gap(16),
         ],
       ),

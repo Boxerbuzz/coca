@@ -4,23 +4,23 @@
 
 import 'package:flutter/material.dart';
 
+import '../../coca.dart';
 import 'components/main_nav_bar.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   static String route = '/main_screen';
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(),
-      bottomNavigationBar: MainNavBar(),
+    return Consumer<MainProvider>(
+      builder: (context, store, child) {
+        return Scaffold(
+          body: CustomIndexedStack(index: store.pageIndex, children: store.screens),
+          bottomNavigationBar: const MainNavBar(),
+        );
+      },
     );
   }
 }

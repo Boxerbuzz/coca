@@ -2,8 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
+
+import '../../coca.dart';
 
 class CustomAppBar extends BaseStatelessWidget implements PreferredSizeWidget {
   final String title;

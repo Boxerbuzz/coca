@@ -20,6 +20,9 @@ class $AssetsImagesGen {
 class $AssetsImagesIconsGen {
   const $AssetsImagesIconsGen();
 
+  /// File path: assets/images/icons/agenda.svg
+  SvgGenImage get agenda => const SvgGenImage('assets/images/icons/agenda.svg');
+
   /// File path: assets/images/icons/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/images/icons/arrow-left.svg');
 
@@ -32,20 +35,36 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/google-logo.svg
   SvgGenImage get googleLogo => const SvgGenImage('assets/images/icons/google-logo.svg');
 
+  /// File path: assets/images/icons/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/images/icons/home.svg');
+
   /// File path: assets/images/icons/lock.svg
   SvgGenImage get lock => const SvgGenImage('assets/images/icons/lock.svg');
 
   /// File path: assets/images/icons/mail.svg
   SvgGenImage get mail => const SvgGenImage('assets/images/icons/mail.svg');
 
+  /// File path: assets/images/icons/message.svg
+  SvgGenImage get message => const SvgGenImage('assets/images/icons/message.svg');
+
+  /// File path: assets/images/icons/person.svg
+  SvgGenImage get person => const SvgGenImage('assets/images/icons/person.svg');
+
   /// File path: assets/images/icons/phone.svg
   SvgGenImage get phone => const SvgGenImage('assets/images/icons/phone.svg');
+
+  /// File path: assets/images/icons/plus.svg
+  SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
+
+  /// File path: assets/images/icons/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/images/icons/search.svg');
 
   /// File path: assets/images/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/icons/user.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [arrowLeft, check, eyeOff, googleLogo, lock, mail, phone, user];
+  List<SvgGenImage> get values =>
+      [agenda, arrowLeft, check, eyeOff, googleLogo, home, lock, mail, message, person, phone, plus, search, user];
 }
 
 class Assets {
