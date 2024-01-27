@@ -4,10 +4,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../coca.dart';
+import '../../coca.dart';
 
-class GoogleButton extends BaseStatelessWidget {
-  const GoogleButton({super.key, required this.label, this.onPressed});
+class CustomGoogleButton extends BaseStatelessWidget {
+  const CustomGoogleButton({super.key, required this.label, this.onPressed});
   final String label;
   final VoidCallback? onPressed;
 

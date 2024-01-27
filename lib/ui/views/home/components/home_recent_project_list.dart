@@ -4,11 +4,17 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../coca.dart';
+
 class HomeRecentProjectList extends StatelessWidget {
   const HomeRecentProjectList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CustomHorizontalScroll(
+      child: Row(
+        children: [],
+      ),
+    );
   }
 }

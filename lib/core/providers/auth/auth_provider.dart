@@ -24,4 +24,11 @@ class AuthProvider extends ChangeNotifier {
     _tcAgreement = value;
     notifyListeners();
   }
+
+  UserModel _user = UserModel();
+  UserModel get user => _user;
+  set user(UserModel value) {
+    _user = value;
+    notifyListeners();
+  }
 }

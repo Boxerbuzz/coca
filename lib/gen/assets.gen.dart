@@ -14,7 +14,44 @@ import 'package:flutter_svg/flutter_svg.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  $AssetsImagesAvatarGen get avatar => const $AssetsImagesAvatarGen();
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
+  $AssetsImagesLogoGen get logo => const $AssetsImagesLogoGen();
+}
+
+class $AssetsImagesAvatarGen {
+  const $AssetsImagesAvatarGen();
+
+  /// File path: assets/images/avatar/avatar_eight.png
+  AssetGenImage get avatarEight => const AssetGenImage('assets/images/avatar/avatar_eight.png');
+
+  /// File path: assets/images/avatar/avatar_five.png
+  AssetGenImage get avatarFive => const AssetGenImage('assets/images/avatar/avatar_five.png');
+
+  /// File path: assets/images/avatar/avatar_four.png
+  AssetGenImage get avatarFour => const AssetGenImage('assets/images/avatar/avatar_four.png');
+
+  /// File path: assets/images/avatar/avatar_one.png
+  AssetGenImage get avatarOne => const AssetGenImage('assets/images/avatar/avatar_one.png');
+
+  /// File path: assets/images/avatar/avatar_seven.png
+  AssetGenImage get avatarSeven => const AssetGenImage('assets/images/avatar/avatar_seven.png');
+
+  /// File path: assets/images/avatar/avatar_six.png
+  AssetGenImage get avatarSix => const AssetGenImage('assets/images/avatar/avatar_six.png');
+
+  /// File path: assets/images/avatar/avatar_three.png
+  AssetGenImage get avatarThree => const AssetGenImage('assets/images/avatar/avatar_three.png');
+
+  /// File path: assets/images/avatar/avatar_two.png
+  AssetGenImage get avatarTwo => const AssetGenImage('assets/images/avatar/avatar_two.png');
+
+  /// File path: assets/images/avatar/user.png
+  AssetGenImage get user => const AssetGenImage('assets/images/avatar/user.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [avatarEight, avatarFive, avatarFour, avatarOne, avatarSeven, avatarSix, avatarThree, avatarTwo, user];
 }
 
 class $AssetsImagesIconsGen {
@@ -23,8 +60,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/agenda.svg
   SvgGenImage get agenda => const SvgGenImage('assets/images/icons/agenda.svg');
 
+  /// File path: assets/images/icons/arrow-down.svg
+  SvgGenImage get arrowDown => const SvgGenImage('assets/images/icons/arrow-down.svg');
+
   /// File path: assets/images/icons/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/images/icons/arrow-left.svg');
+
+  /// File path: assets/images/icons/calendar.svg
+  SvgGenImage get calendar => const SvgGenImage('assets/images/icons/calendar.svg');
 
   /// File path: assets/images/icons/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/icons/check.svg');
@@ -37,6 +80,12 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/images/icons/home.svg');
+
+  /// File path: assets/images/icons/kanban.svg
+  SvgGenImage get kanban => const SvgGenImage('assets/images/icons/kanban.svg');
+
+  /// File path: assets/images/icons/list.svg
+  SvgGenImage get list => const SvgGenImage('assets/images/icons/list.svg');
 
   /// File path: assets/images/icons/lock.svg
   SvgGenImage get lock => const SvgGenImage('assets/images/icons/lock.svg');
@@ -62,15 +111,133 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/icons/user.svg');
 
+  /// File path: assets/images/icons/users.svg
+  SvgGenImage get users => const SvgGenImage('assets/images/icons/users.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [agenda, arrowLeft, check, eyeOff, googleLogo, home, lock, mail, message, person, phone, plus, search, user];
+  List<SvgGenImage> get values => [
+        agenda,
+        arrowDown,
+        arrowLeft,
+        calendar,
+        check,
+        eyeOff,
+        googleLogo,
+        home,
+        kanban,
+        list,
+        lock,
+        mail,
+        message,
+        person,
+        phone,
+        plus,
+        search,
+        user,
+        users
+      ];
+}
+
+class $AssetsImagesLogoGen {
+  const $AssetsImagesLogoGen();
+
+  /// File path: assets/images/logo/coca.svg
+  SvgGenImage get coca => const SvgGenImage('assets/images/logo/coca.svg');
+
+  /// File path: assets/images/logo/san.png
+  AssetGenImage get sanPng => const AssetGenImage('assets/images/logo/san.png');
+
+  /// File path: assets/images/logo/san.svg
+  SvgGenImage get sanSvg => const SvgGenImage('assets/images/logo/san.svg');
+
+  /// File path: assets/images/logo/suteki.svg
+  SvgGenImage get suteki => const SvgGenImage('assets/images/logo/suteki.svg');
+
+  /// File path: assets/images/logo/zan.svg
+  SvgGenImage get zan => const SvgGenImage('assets/images/logo/zan.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [coca, sanPng, sanSvg, suteki, zan];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+}
+
+class AssetGenImage {
+  const AssetGenImage(this._assetName);
+
+  final String _assetName;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = false,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.low,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
 }
 
 class SvgGenImage {

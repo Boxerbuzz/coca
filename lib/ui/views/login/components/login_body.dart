@@ -17,7 +17,7 @@ class LoginBody extends StatelessWidget {
     return Column(
       children: [
         Gap(styles.insets.sm),
-        const AuthDivider(),
+        const CustomAuthDivider(),
         Gap(styles.insets.md),
         const LoginForm(),
         const Align(alignment: Alignment.centerRight, child: LoginForgetPasswordButton()),

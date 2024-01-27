@@ -14,7 +14,6 @@ class AppRouter {
 
   /// A list of all routes in the app.
   static final Map<String, AppRouter> allRoutes = {
-    HomeScreen.route: AppRouter(createScreen: (context) => const HomeScreen()),
     LoginScreen.route: AppRouter(createScreen: (context) => const LoginScreen()),
     ForgotPasswordScreen.route: AppRouter(createScreen: (context) => const ForgotPasswordScreen()),
     SignupScreen.route: AppRouter(createScreen: (context) => const SignupScreen()),

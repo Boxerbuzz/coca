@@ -22,4 +22,18 @@ class MainProvider with ChangeNotifier {
     const ProfileScreen(),
   ];
   List<Widget> get screens => _screens;
+
+  WorkspaceModel? _activeWorkspace;
+  WorkspaceModel? get activeWorkspace => _activeWorkspace;
+  set activeWorkspace(WorkspaceModel? value) {
+    _activeWorkspace = value;
+    notifyListeners();
+  }
+
+  List<WorkspaceModel> _workspaces = [];
+  List<WorkspaceModel> get workspaces => _workspaces;
+  set workspaces(List<WorkspaceModel> value) {
+    _workspaces = value;
+    notifyListeners();
+  }
 }

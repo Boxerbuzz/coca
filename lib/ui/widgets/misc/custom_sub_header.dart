@@ -4,10 +4,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../coca.dart';
+import '../../coca.dart';
 
-class SubHeaderTile extends StatelessWidget {
-  const SubHeaderTile({super.key, required this.title, this.onPressed});
+class CustomSubHeader extends StatelessWidget {
+  const CustomSubHeader({super.key, required this.title, this.onPressed});
   final String title;
   final VoidCallback? onPressed;
 
@@ -20,7 +20,11 @@ class SubHeaderTile extends StatelessWidget {
         if (onPressed != null)
           TextButton(
             onPressed: onPressed,
-            child: Text('See all', style: context.styles.text.b1.textColor(kBlue)),
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: context.styles.insets.xs),
+              minimumSize: Size.zero,
+            ),
+            child: Text('View All', style: context.styles.text.b1.textColor(kBlue)),
           ),
       ],
     );

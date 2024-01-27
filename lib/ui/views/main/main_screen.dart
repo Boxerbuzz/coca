@@ -17,7 +17,10 @@ class MainScreen extends StatelessWidget {
     return Consumer<MainProvider>(
       builder: (context, store, child) {
         return Scaffold(
-          body: CustomIndexedStack(index: store.pageIndex, children: store.screens),
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CustomIndexedStack(index: store.pageIndex, children: store.screens),
+          ),
           bottomNavigationBar: const MainNavBar(),
         );
       },

@@ -4,10 +4,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../coca.dart';
+import '../../coca.dart';
 
-class AuthHeader extends BaseStatelessWidget {
-  const AuthHeader({super.key, required this.headerText, required this.subHeaderText});
+class CustomAuthHeader extends BaseStatelessWidget {
+  const CustomAuthHeader({super.key, required this.headerText, required this.subHeaderText});
 
   final String headerText;
   final String subHeaderText;

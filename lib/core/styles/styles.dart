@@ -53,6 +53,8 @@ class AppStyle {
 
   /// Shared sizes
   late final Sizes sizes = Sizes();
+
+  late final Gradients gradients = Gradients();
 }
 
 @immutable
@@ -67,7 +69,7 @@ class TextStyles {
   late final TextStyle h2 = _cf(urbanist, sizePx: 32).bold;
   late final TextStyle h3 = _cf(urbanist, sizePx: 24, heightPx: 30).bold;
 
-  // body/ titles
+  // titles
   late final TextStyle t1 = _cf(urbanist, sizePx: 20).bold;
   late final TextStyle t2 = _cf(urbanist, sizePx: 16).bold;
   late final TextStyle t3 = _cf(urbanist, sizePx: 12).regular;
@@ -105,18 +107,24 @@ class Times {
 
 @immutable
 class Corners {
-  late final double sm = 4;
-  late final double md = 8;
+  late final double xs = 4;
+  late final double sm = 8;
   late final double lg = 32;
   late final double btn = 12;
 
+  late final double md = 16;
+
   late final double check = 3;
 
-  late final br4 = BorderRadius.circular(sm);
+  late final br4 = BorderRadius.circular(xs);
 
-  late final br8 = BorderRadius.circular(md);
+  late final br8 = BorderRadius.circular(sm);
 
   late final br16 = BorderRadius.circular(16);
+
+  late final br14 = BorderRadius.circular(14);
+
+  late final br12 = BorderRadius.circular(btn);
 
   late final br24 = BorderRadius.circular(24);
 
@@ -166,7 +174,7 @@ class Shadows {
     Shadow(color: Colors.black.withOpacity(.6), offset: const Offset(0, 4), blurRadius: 6),
   ];
 
-  final List<BoxShadow> md = [
+  final List<BoxShadow> sm = [
     BoxShadow(
       color: Colors.grey.withOpacity(0.1),
       spreadRadius: 3,
@@ -175,7 +183,7 @@ class Shadows {
     ),
   ];
 
-  final List<BoxShadow> sm = [
+  final List<BoxShadow> md = [
     const BoxShadow(
       color: Color(0x66000000),
       offset: Offset(4, 8),
@@ -185,4 +193,10 @@ class Shadows {
 }
 
 @immutable
-class Gradients {}
+class Gradients {
+  LinearGradient get primary => const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Color(0xff5FA6FB), Color(0xffBC45E3), Color(0xffF88049)],
+      );
+}

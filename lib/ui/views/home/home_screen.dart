@@ -4,13 +4,23 @@
 
 import 'package:flutter/material.dart';
 
+import '../../coca.dart';
+import 'components/home_task_list.dart';
+import 'components/home_workspace_switcher.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static String route = '/home';
-
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: context.styles.insets.md),
+      child: Column(
+        children: [
+          HomeWorkspaceSwitcher(),
+          HomeTaskList(),
+        ],
+      ),
+    );
   }
 }

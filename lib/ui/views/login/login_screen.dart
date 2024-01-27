@@ -22,8 +22,8 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Gap(72),
-            const AuthHeader(headerText: 'Welcome Back!', subHeaderText: 'Sign In to your account'),
-            GoogleButton(label: 'Sign in with Google', onPressed: () {}),
+            const CustomAuthHeader(headerText: 'Welcome Back!', subHeaderText: 'Sign In to your account'),
+            CustomGoogleButton(label: 'Sign in with Google', onPressed: () {}),
             const LoginBody()
           ],
         ),

@@ -21,8 +21,8 @@ class SignupScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const AuthHeader(headerText: 'Sign Up', subHeaderText: 'Create an account to continue'),
-            GoogleButton(label: 'Sign Up with Google', onPressed: () {}),
+            const CustomAuthHeader(headerText: 'Sign Up', subHeaderText: 'Create an account to continue'),
+            CustomGoogleButton(label: 'Sign Up with Google', onPressed: () {}),
             const SignupBody(),
           ],
         ),

@@ -21,7 +21,7 @@ class OtpScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const AuthHeader(
+            const CustomAuthHeader(
               headerText: 'Verify Code',
               subHeaderText: 'Please enter the code we just sent to your mobile number',
             ),

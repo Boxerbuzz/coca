@@ -50,6 +50,7 @@ const Color kYellow = Color(0xffFABE25);
 const Color kAmber = Color(0xffffa640);
 const Color kBlack = Color(0xff000000);
 const Color kWhite = Color(0xffffffff);
+const Color kSilver = Color(0xffE6E9ED);
 
 // Greyscale
 const Color kGray06 = Color(0xff2B3453);

@@ -14,7 +14,8 @@ dependencies:
   google_fonts: ^6.1.0
   gap: ^3.0.1
   pinput: ^3.0.1
-  modal_bottom_sheet: ^2.1.2
+  modal_bottom_sheet: ^3.0.0-pre
+  faker: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -32,3 +33,5 @@ flutter:
   assets:
      - assets/images/icons/
      - assets/images/
+     - assets/images/avatar/
+     - assets/images/logo/

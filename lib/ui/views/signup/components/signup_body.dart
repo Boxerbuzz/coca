@@ -17,7 +17,7 @@ class SignupBody extends StatelessWidget {
     return Column(
       children: [
         Gap(styles.insets.sm),
-        const AuthDivider(),
+        const CustomAuthDivider(),
         Gap(styles.insets.md),
         const SignupForm(),
         const Gap(16),
