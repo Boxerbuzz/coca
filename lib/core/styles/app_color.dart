@@ -40,23 +40,3 @@ final grey = MaterialColor(const Color(0xff212121).value, const {
   800: Color(0xff424242),
   900: Color(0xff212121),
 });
-
-// Color palette
-const Color kBlue = Color(0xff0062FF);
-const Color kCyan = Color(0xff59C3FF);
-const Color kRed = Color(0xffF05A5A);
-const Color kGreen = Color(0xff48BD69);
-const Color kYellow = Color(0xffFABE25);
-const Color kAmber = Color(0xffffa640);
-const Color kBlack = Color(0xff000000);
-const Color kWhite = Color(0xffffffff);
-const Color kSilver = Color(0xffE6E9ED);
-
-// Greyscale
-const Color kGray06 = Color(0xff2B3453);
-const Color kGray05 = Color(0xff1D1E25);
-const Color kGray04 = Color(0xff808D9E);
-const Color kGray07 = Color(0xff7E8CA0);
-const Color kGray03 = Color(0xffE9ECF2);
-const Color kGray02 = Color(0xffF8F8FB);
-const Color kGray01 = Color(0xffEDF2F7);

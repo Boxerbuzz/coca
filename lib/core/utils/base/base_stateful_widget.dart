@@ -11,11 +11,10 @@ abstract class BaseStatefulWidget<T extends StatefulWidget> extends State<T> wit
 
   double dynamicWidth(double value) => MediaQuery.of(context).size.width * value;
 
-  late AppStyle styles;
+  late CustomAppStyles styles;
 
   @override
   void initState() {
-    styles = context.styles;
     super.initState();
   }
 

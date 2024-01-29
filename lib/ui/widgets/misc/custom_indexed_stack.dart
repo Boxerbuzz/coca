@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class CustomIndexedStack extends StatefulWidget {
   const CustomIndexedStack({super.key, this.index = 0, this.children = const <Widget>[]});

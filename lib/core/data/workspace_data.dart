@@ -2,25 +2,26 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import '../../ui/coca.dart';
+import '../models/workspace_model.dart';
+import 'user_data.dart';
 
-final List<WorkspaceModel> workspaceData = [
+final List<WorkspaceModel> workspaces = [
   WorkspaceModel(
       id: '1',
       name: 'San Designs',
       description: '#1 multi award winning design agency.',
       image: 'assets/images/logo/zan.svg',
-      participants: userData.getRange(5, 10).toList()),
+      participants: users.getRange(5, 10).toList()),
   WorkspaceModel(
       id: '2',
       name: 'Suteki Tech',
       description: "World class software development agency taking startup's and businesses from zero to hero.",
       image: 'assets/images/logo/suteki.svg',
-      participants: userData.getRange(10, 20).toList()),
+      participants: users.getRange(10, 20).toList()),
   WorkspaceModel(
       id: '3',
-      name: 'Coca',
-      description: "#1 most innovative startup for 2021.",
-      image: 'assets/images/logo/coca.svg',
-      participants: userData.getRange(0, 10).toList()),
+      name: 'Unreal',
+      description: "#1 most innovative startup for 2024.",
+      image: 'assets/images/logo/unreal.svg',
+      participants: users.getRange(0, 10).toList()),
 ];

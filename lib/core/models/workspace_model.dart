@@ -2,9 +2,11 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
+import 'package:equatable/equatable.dart';
+
 import 'user_model.dart';
 
-class WorkspaceModel {
+class WorkspaceModel extends Equatable {
   final String id;
   final String name;
   final String description;
@@ -14,7 +16,7 @@ class WorkspaceModel {
   final String updatedAt;
   final List<UserModel> participants;
 
-  WorkspaceModel(
+  const WorkspaceModel(
       {this.id = '',
       this.name = '',
       this.description = '',
@@ -50,4 +52,7 @@ class WorkspaceModel {
       'participants': participants.map((e) => e.toJson()).toList(),
     };
   }
+
+  @override
+  List<Object?> get props => [id, name, description, image, url, createdAt, updatedAt, participants];
 }

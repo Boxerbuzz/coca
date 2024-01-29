@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
+import 'custom_app_button.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({super.key, required this.label, this.onTap});
@@ -15,13 +16,10 @@ class CustomPrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48.0,
-      child: CustomMaterialButton(
-        onTap: onTap,
+      child: CustomAppButton(
+        onPressed: onTap,
         child: Center(
-          child: Text(
-            label,
-            style: context.styles.text.b1.copyWith(color: kWhite),
-          ),
+          child: Text(label, style: styles.text.b1.textColor(styles.theme.white)),
         ),
       ),
     );

@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class CustomGoogleButton extends BaseStatelessWidget {
   const CustomGoogleButton({super.key, required this.label, this.onPressed});
@@ -17,14 +17,14 @@ class CustomGoogleButton extends BaseStatelessWidget {
       margin: EdgeInsets.symmetric(vertical: context.height * (0.01)),
       height: 48,
       padding: EdgeInsets.zero,
-      decoration: BoxDecoration(borderRadius: context.styles.corners.br8),
+      decoration: BoxDecoration(borderRadius: styles.corners.br8),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
-            borderRadius: context.styles.corners.br4,
-            side: const BorderSide(color: kGray03),
+            borderRadius: styles.corners.br4,
+            side: BorderSide(color: styles.theme.grey3),
           ),
         ),
         child: Row(
@@ -32,7 +32,7 @@ class CustomGoogleButton extends BaseStatelessWidget {
           children: [
             Padding(padding: const EdgeInsets.symmetric(vertical: 15), child: Assets.images.icons.googleLogo.svg()),
             const Gap(10),
-            Text(label, style: context.styles.text.b1.textColor(kGray06)),
+            Text(label, style: styles.text.b1.textColor(styles.theme.grey6)),
           ],
         ),
       ),

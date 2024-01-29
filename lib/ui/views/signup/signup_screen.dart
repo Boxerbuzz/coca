@@ -4,20 +4,20 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 import 'components/signup_body.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 
-  static String route = '/registration';
+  static String route = '/signup';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: ''),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: context.styles.insets.md),
+        padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

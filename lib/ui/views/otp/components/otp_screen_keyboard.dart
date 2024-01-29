@@ -2,8 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../coca.dart';
 
 typedef KeyboardTapCallback = void Function(String text);
 
@@ -112,7 +113,7 @@ class _OtpScreenKeyboardState extends State<OtpScreenKeyboard> {
         alignment: Alignment.center,
         child: Text(
           value,
-          style: widget.textStyle ?? context.styles.text.h3,
+          style: widget.textStyle ?? styles.text.h3,
         ),
       ),
     );

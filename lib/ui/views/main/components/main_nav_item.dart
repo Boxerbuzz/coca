@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../coca.dart';
+import '../../../../coca.dart';
 
 class MainNavItem extends StatelessWidget {
   final int index;
@@ -21,23 +21,23 @@ class MainNavItem extends StatelessWidget {
         return isFab
             ? FloatingActionButton(
                 onPressed: onPressed,
-                backgroundColor: kBlack,
+                backgroundColor: styles.theme.black,
                 shape: const CircleBorder(),
                 heroTag: AppConstants.createProjectFabHeroTag,
                 child: SvgPicture.asset(icon))
             : IconButton(
                 highlightColor: Colors.transparent,
                 onPressed: () {
-                  if (store.pageIndex == index) return;
+                  if (store.index == index) return;
                   AppHaptics.selectionClick();
-                  store.pageIndex = index;
+                  store.index = index;
                 },
                 icon: Stack(
                   children: [
                     SvgPicture.asset(
                       icon,
                       colorFilter: ColorFilter.mode(
-                        store.pageIndex == index ? kBlue : kGray07,
+                        store.index == index ? styles.theme.blue : styles.theme.grey7,
                         BlendMode.srcIn,
                       ),
                     ),

@@ -2,9 +2,10 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+
+import '../../../../coca.dart';
 
 class OtpInput extends StatefulWidget {
   const OtpInput({super.key});
@@ -32,9 +33,9 @@ class _OtpInputState extends State<OtpInput> {
     final defaultPinTheme = PinTheme(
       width: 56,
       height: 56,
-      textStyle: context.styles.text.t1,
+      textStyle: styles.text.t1,
       decoration: BoxDecoration(
-        borderRadius: context.styles.corners.br32,
+        borderRadius: styles.corners.br32,
         border: Border.all(color: grey.shade300),
         color: grey.shade200,
       ),
@@ -68,11 +69,14 @@ class _OtpInputState extends State<OtpInput> {
           cursor: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(margin: const EdgeInsets.only(bottom: 9), width: 22, height: 1, color: kBlue),
+              Container(margin: const EdgeInsets.only(bottom: 9), width: 22, height: 1, color: styles.theme.blue),
             ],
           ),
           focusedPinTheme: defaultPinTheme.copyWith(
-            decoration: defaultPinTheme.decoration!.copyWith(border: Border.all(color: kBlue), color: kWhite),
+            decoration: defaultPinTheme.decoration!.copyWith(
+              border: Border.all(color: styles.theme.blue),
+              color: styles.theme.white,
+            ),
           ),
           submittedPinTheme: defaultPinTheme,
           errorPinTheme: defaultPinTheme.copyBorderWith(border: Border.all(color: Colors.redAccent)),

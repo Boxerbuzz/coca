@@ -2,9 +2,10 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../../coca.dart';
 
 class CustomTextFieldWithIcon extends BaseStatelessWidget {
   final TextEditingController? controller;
@@ -52,14 +53,12 @@ class CustomTextFieldWithIcon extends BaseStatelessWidget {
         suffixIcon: suffixIcon,
         contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         labelText: labelText,
-        labelStyle: context.styles.text.p.textColor(kGray07),
+        labelStyle: styles.text.p.textColor(styles.theme.grey4),
       ),
-      style: context.styles.text.b1,
+      style: styles.text.b1,
       validator: validator ??
           (val) {
-            if (val!.isEmpty) {
-              return 'Field can\'t be empty';
-            }
+            if (val!.isEmpty) return 'Field can\'t be empty';
             return null;
           },
     );

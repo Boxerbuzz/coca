@@ -2,23 +2,29 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-class ProjectModel {
+import 'package:equatable/equatable.dart';
+
+import 'user_model.dart';
+
+class ProjectModel extends Equatable {
   final String id;
   final String name;
   final String description;
   final String image;
   final String url;
-  final String createdAt;
-  final String updatedAt;
+  final String access;
+  final List<UserModel> participants;
+  final double progress;
 
-  ProjectModel(
+  const ProjectModel(
       {this.id = '',
       this.name = '',
       this.description = '',
       this.image = '',
       this.url = '',
-      this.createdAt = '',
-      this.updatedAt = ''});
+      this.access = '',
+      this.participants = const [],
+      this.progress = 0});
 
   factory ProjectModel.fromJson(Map<String, dynamic> json) {
     return ProjectModel(
@@ -27,8 +33,9 @@ class ProjectModel {
         description: json['description'],
         image: json['image'],
         url: json['url'],
-        createdAt: json['createdAt'],
-        updatedAt: json['updatedAt']);
+        access: json['access'],
+        participants: json['participants'],
+        progress: json['progress']);
   }
 
   Map<String, dynamic> toJson() {
@@ -38,8 +45,12 @@ class ProjectModel {
       'description': description,
       'image': image,
       'url': url,
-      'createdAt': createdAt,
-      'updatedAt': updatedAt
+      'access': access,
+      'participants': participants,
+      'progress': progress
     };
   }
+
+  @override
+  List<Object?> get props => [id, name, description, image, url, access, participants, progress];
 }

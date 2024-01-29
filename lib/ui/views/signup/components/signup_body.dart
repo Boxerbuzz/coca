@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../coca.dart';
+import '../../../../coca.dart';
 import 'signup_agreement.dart';
 import 'signup_form.dart';
 
@@ -13,7 +13,6 @@ class SignupBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppStyle styles = context.styles;
     return Column(
       children: [
         Gap(styles.insets.sm),
@@ -23,9 +22,13 @@ class SignupBody extends StatelessWidget {
         const Gap(16),
         const SignupAgreement(),
         Gap(styles.insets.xl),
-        CustomPrimaryButton(label: 'Sign Up', onTap: () => context.pushNamed(OtpScreen.route)),
+        CustomPrimaryButton(label: 'Sign Up', onTap: () => context.push(OtpScreen.route)),
         Gap(styles.insets.md),
-        AccountButton(actionText: 'Sign In', mainText: "Have an account?", onTap: () => context.pop()),
+        OneLineClickableText(
+          actionText: 'Sign In',
+          mainText: "Have an account?",
+          onTap: () => context.go(LoginScreen.route),
+        ),
       ],
     );
   }

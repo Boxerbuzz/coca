@@ -3,22 +3,11 @@
  */
 
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../styles/styles.dart';
-
-const double _kDefaultDuration = .25;
-
-typedef PageBuilder = Widget Function();
-
-Route<T> _transitTo<T>(PageBuilder pageBuilder, [double duration = _kDefaultDuration]) {
-  return MaterialPageRoute(builder: (context) => pageBuilder());
-}
-
 extension ContextExtensionss on BuildContext {
-  AppStyle get styles => AppStyle();
-
   /// The same of [MediaQuery.of(context).size]
   Size get mediaQuerySize => MediaQuery.of(this).size;
 
@@ -31,6 +20,50 @@ extension ContextExtensionss on BuildContext {
   /// Note: updates when you resize your screen (like on a browser or
   /// desktop window)
   double get width => mediaQuerySize.width;
+
+  double get pixelsPerInch => Platform.isAndroid || Platform.isIOS ? 150 : 96;
+
+  /// Returns same as MediaQuery.of(context)
+  MediaQueryData get mq => MediaQuery.of(this);
+
+  /// Returns if Orientation is landscape
+  bool get isLandscape => mq.orientation == Orientation.landscape;
+
+  /// Returns same as MediaQuery.of(context).size
+  Size get sizePx => mq.size;
+
+  /// Returns same as MediaQuery.of(context).size.width
+  double get widthPx => sizePx.width;
+
+  /// Returns same as MediaQuery.of(context).height
+  double get heightPx => sizePx.height;
+
+  /// Returns diagonal screen pixels
+  double get diagonalPx {
+    final Size s = sizePx;
+    return sqrt((s.width * s.width) + (s.height * s.height));
+  }
+
+  /// Returns pixel size in Inches
+  Size get sizeInches {
+    final Size pxSize = sizePx;
+    return Size(pxSize.width / pixelsPerInch, pxSize.height / pixelsPerInch);
+  }
+
+  /// Returns screen width in Inches
+  double get widthInches => sizeInches.width;
+
+  /// Returns screen height in Inches
+  double get heightInches => sizeInches.height;
+
+  /// Returns screen diagonal in Inches
+  double get diagonalInches => diagonalPx / pixelsPerInch;
+
+  /// Returns fraction (0-1) of screen width in pixels
+  double widthPct(double fraction) => fraction * widthPx;
+
+  /// Returns fraction (0-1) of screen height in pixels
+  double heightPct(double fraction) => fraction * heightPx;
 
   /// Gives you the power to get a portion of the height.
   /// Useful for responsive applications.
@@ -79,9 +112,6 @@ extension ContextExtensionss on BuildContext {
   /// similar to [MediaQuery.of(context).padding]
   EdgeInsets get mediaQueryPadding => MediaQuery.of(this).padding;
 
-  /// similar to [MediaQuery.of(context).padding]
-  MediaQueryData get mediaQuery => MediaQuery.of(this);
-
   /// similar to [MediaQuery.of(context).viewPadding]
   EdgeInsets get mediaQueryViewPadding => MediaQuery.of(this).viewPadding;
 
@@ -90,9 +120,6 @@ extension ContextExtensionss on BuildContext {
 
   /// similar to [MediaQuery.of(context).orientation]
   Orientation get orientation => MediaQuery.of(this).orientation;
-
-  /// check if device is on landscape mode
-  bool get isLandscape => orientation == Orientation.landscape;
 
   /// check if device is on portrait mode
   bool get isPortrait => orientation == Orientation.portrait;
@@ -127,7 +154,7 @@ extension ContextExtensionss on BuildContext {
   /// and less than 1200 return [tablet] value.
   /// if the device width is less than 300  return [watch] value.
   /// in other cases return [mobile] value.
-  T responsiveValue<T>({T? mobile, T? tablet, T? desktop, T? watch}) {
+  T responsive<T>({T? mobile, T? tablet, T? desktop, T? watch}) {
     var deviceWidth = mediaQuerySize.shortestSide;
     if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
       deviceWidth = mediaQuerySize.width;
@@ -142,13 +169,4 @@ extension ContextExtensionss on BuildContext {
       return mobile!;
     }
   }
-
-  Future<T?> push<T>(Widget page) => Navigator.push<T>(this, _transitTo(() => page));
-
-  Future<T?> pushNamed<T>(String routeName, {Object? arguments}) =>
-      Navigator.pushNamed<T>(this, routeName, arguments: arguments);
-
-  Future<bool> pop<T>([T? result]) => Navigator.maybePop(this, result);
-
-  void popUntilHome() => Navigator.popUntil(this, (route) => route.isFirst);
 }

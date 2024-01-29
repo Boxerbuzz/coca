@@ -2,11 +2,12 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
 
-class AccountButton extends StatelessWidget {
-  const AccountButton({super.key, required this.actionText, required this.mainText, this.onTap});
+import '../../coca.dart';
+
+class OneLineClickableText extends StatelessWidget {
+  const OneLineClickableText({super.key, required this.actionText, required this.mainText, this.onTap});
 
   final String mainText;
   final String actionText;
@@ -17,13 +18,13 @@ class AccountButton extends StatelessWidget {
     return TextButton(
       onPressed: onTap,
       style: TextButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: context.styles.insets.xs),
+        padding: EdgeInsets.symmetric(horizontal: styles.insets.xs),
         minimumSize: Size.zero,
       ),
       child: Wrap(
         children: [
-          Text(mainText, style: context.styles.text.p.textColor(kGray04)),
-          Text(' $actionText', style: context.styles.text.b1.copyWith(color: kBlue)),
+          Text(mainText, style: styles.text.b1.textColor(styles.theme.grey4).regular),
+          Text(' $actionText', style: styles.text.b1.copyWith(color: styles.theme.blue)),
         ],
       ),
     );

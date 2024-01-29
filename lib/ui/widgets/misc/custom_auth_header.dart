@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class CustomAuthHeader extends BaseStatelessWidget {
   const CustomAuthHeader({super.key, required this.headerText, required this.subHeaderText});
@@ -14,14 +14,12 @@ class CustomAuthHeader extends BaseStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppStyle styles = context.styles;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(headerText, style: styles.text.h3),
+        Text(headerText, style: styles.text.h3.textColor(styles.theme.grey8)),
         Gap(styles.insets.xs),
-        Text(subHeaderText, style: styles.text.caption.textColor(kGray04)),
+        Text(subHeaderText, style: styles.text.caption.textColor(styles.theme.grey5)),
         Gap(styles.insets.md),
       ],
     );

@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class CustomCheckbox extends BaseStatelessWidget {
   final CustomCheckboxEnum value;
@@ -43,17 +43,16 @@ class CustomCheckbox extends BaseStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppStyle styles = context.styles;
     return Row(
       children: [
         Container(
           width: size,
           height: size,
           decoration: BoxDecoration(
-            color: value == CustomCheckboxEnum.unchecked ? Colors.transparent : kBlue,
+            color: value == CustomCheckboxEnum.unchecked ? Colors.transparent : styles.theme.blue,
             borderRadius: BorderRadius.circular(styles.corners.check),
             border: Border.all(
-              color: value == CustomCheckboxEnum.unchecked ? kGray04 : kBlue,
+              color: value == CustomCheckboxEnum.unchecked ? styles.theme.grey4 : styles.theme.blue,
               width: 1.5,
             ),
           ),

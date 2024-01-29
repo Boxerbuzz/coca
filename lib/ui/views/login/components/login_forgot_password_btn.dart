@@ -2,10 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
 
-import '../../forgot_password/forgot_password_screen.dart';
+import '../../../../coca.dart';
 
 class LoginForgetPasswordButton extends StatelessWidget {
   const LoginForgetPasswordButton({super.key});
@@ -13,9 +12,9 @@ class LoginForgetPasswordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => context.push(const ForgotPasswordScreen()),
+      onPressed: () => context.go(ForgotPasswordScreen.route),
       style: TextButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: context.styles.insets.xs),
+        padding: EdgeInsets.symmetric(horizontal: styles.insets.xs),
         minimumSize: Size.zero,
       ),
       child: Row(
@@ -23,7 +22,7 @@ class LoginForgetPasswordButton extends StatelessWidget {
         children: [
           Text(
             'Forgot Password?',
-            style: context.styles.text.b1.textColor(kBlue),
+            style: styles.text.b1.textColor(styles.theme.blue),
           ),
         ],
       ),

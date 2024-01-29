@@ -2,8 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/core/core.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../coca.dart';
 
 class OtpResendCode extends StatelessWidget {
   const OtpResendCode({super.key});
@@ -15,11 +16,11 @@ class OtpResendCode extends StatelessWidget {
       children: [
         Text(
           'Resend code in',
-          style: context.styles.text.t2.textColor(kGray04),
+          style: styles.text.t2.textColor(styles.theme.grey4),
         ),
         Text(
           ' 00:30',
-          style: context.styles.text.t2.textColor(kBlue),
+          style: styles.text.t2.textColor(styles.theme.blue),
         )
       ],
     );

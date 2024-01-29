@@ -4,21 +4,20 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class CustomAuthDivider extends BaseStatelessWidget {
   const CustomAuthDivider({super.key});
 
   @override
   Widget build(BuildContext context) {
-    AppStyle styles = context.styles;
     return Row(
       children: [
-        const Expanded(child: Divider(color: kGray03)),
+        Expanded(child: Divider(color: styles.theme.grey3)),
         Gap(styles.insets.md),
-        Text('OR', style: styles.text.t1.textColor(kGray04)),
+        Text('OR', style: styles.text.t1.textColor(styles.theme.grey4)),
         Gap(styles.insets.md),
-        const Expanded(child: Divider(color: kGray03)),
+        Expanded(child: Divider(color: styles.theme.grey3)),
       ],
     );
   }

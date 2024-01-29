@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../ui/coca.dart';
+import '../../../coca.dart';
 
 class AuthProvider extends ChangeNotifier {
   bool _isAuth = false;
@@ -22,13 +22,6 @@ class AuthProvider extends ChangeNotifier {
 
   set tcAgreement(CustomCheckboxEnum value) {
     _tcAgreement = value;
-    notifyListeners();
-  }
-
-  UserModel _user = UserModel();
-  UserModel get user => _user;
-  set user(UserModel value) {
-    _user = value;
     notifyListeners();
   }
 }

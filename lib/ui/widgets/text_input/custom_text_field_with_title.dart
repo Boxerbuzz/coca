@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class CustomTextFieldWithTitle extends BaseStatelessWidget {
   final TextEditingController? controller;
@@ -40,7 +40,7 @@ class CustomTextFieldWithTitle extends BaseStatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: context.textTheme.titleSmall?.copyWith(color: kGray04)),
+        Text(title, style: context.textTheme.titleSmall?.copyWith(color: styles.theme.grey4)),
         const SizedBox(height: 10),
         CustomTextField(
           controller: controller,

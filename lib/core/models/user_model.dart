@@ -2,7 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-class UserModel {
+import 'package:equatable/equatable.dart';
+
+class UserModel extends Equatable {
   final String id;
   final String firstName;
   final String lastName;
@@ -11,7 +13,7 @@ class UserModel {
   final String createdAt;
   final String updatedAt;
 
-  UserModel(
+  const UserModel(
       {this.id = '',
       this.firstName = '',
       this.lastName = '',
@@ -34,11 +36,15 @@ class UserModel {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'name': firstName,
+      'firstName': firstName,
+      'lastName': lastName,
       'email': email,
       'image': image,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
     };
   }
+
+  @override
+  List<Object?> get props => [id, firstName, lastName, email, image, createdAt, updatedAt];
 }

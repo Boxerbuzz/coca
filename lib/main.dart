@@ -1,58 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 
 import 'core/core.dart';
 import 'ui/app_router.dart';
-import 'ui/views/views.dart';
 
 void main() {
-  runApp(const Coca());
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => AuthProvider()),
+    ChangeNotifierProvider(create: (_) => MainProvider()),
+    ChangeNotifierProvider(create: (_) => TaskProvider()),
+    ChangeNotifierProvider(create: (_) => ProjectProvider()),
+    ChangeNotifierProvider(create: (_) => NotificationProvider()),
+  ], child: const CocaApp()));
+
+  FlutterNativeSplash.remove();
 }
 
-class Coca extends StatefulWidget {
-  const Coca({super.key});
-
-  @override
-  State<Coca> createState() => _CocaState();
-}
-
-class _CocaState extends State<Coca> {
-  var routes = {for (var entry in AppRouter.allRoutes.entries) entry.key: entry.value.createScreen};
+class CocaApp extends StatelessWidget {
+  const CocaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => AuthProvider()),
-        ChangeNotifierProvider(create: (_) => MainProvider()),
-      ],
-      child: MaterialApp(
-        title: 'Coca',
-        theme: AppTheme.light(),
-        home: const LoginScreen(),
-        onGenerateRoute: (RouteSettings settings) {
-          Widget Function(BuildContext)? pageFunction = routes[settings.name];
-          if (pageFunction != null) {
-            return PageRouteBuilder(
-              settings: settings,
-              // Add safe area on all pages to avoid overlapping the status bar
-              pageBuilder: (context, animation, secondaryAnimation) => Container(
-                color: Theme.of(context).colorScheme.background,
-                child: SafeArea(
-                  left: false,
-                  right: false,
-                  bottom: false,
-                  top: true,
-                  child: pageFunction(context),
-                ),
-              ),
-              transitionDuration: Duration.zero,
-            );
-          }
-
-          return MaterialPageRoute(builder: (_) => Text("Invalid page ${settings.name ?? "(null)"}"));
-        },
-      ),
+    return MaterialApp.router(
+      routeInformationProvider: routes.routeInformationProvider,
+      routeInformationParser: routes.routeInformationParser,
+      debugShowCheckedModeBanner: false,
+      routerDelegate: routes.routerDelegate,
+      theme: ThemeData(fontFamily: styles.text.urbanist.fontFamily, useMaterial3: true),
     );
   }
 }
+
+CustomAppStyles styles = CustomAppStyles();

@@ -17,6 +17,15 @@ class $AssetsImagesGen {
   $AssetsImagesAvatarGen get avatar => const $AssetsImagesAvatarGen();
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
   $AssetsImagesLogoGen get logo => const $AssetsImagesLogoGen();
+
+  /// File path: assets/images/mock.png
+  AssetGenImage get mock => const AssetGenImage('assets/images/mock.png');
+
+  /// File path: assets/images/puzzle.png
+  AssetGenImage get puzzle => const AssetGenImage('assets/images/puzzle.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [mock, puzzle];
 }
 
 class $AssetsImagesAvatarGen {
@@ -66,14 +75,32 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/images/icons/arrow-left.svg');
 
+  /// File path: assets/images/icons/bell.svg
+  SvgGenImage get bell => const SvgGenImage('assets/images/icons/bell.svg');
+
   /// File path: assets/images/icons/calendar.svg
   SvgGenImage get calendar => const SvgGenImage('assets/images/icons/calendar.svg');
+
+  /// File path: assets/images/icons/check-circle.svg
+  SvgGenImage get checkCircle => const SvgGenImage('assets/images/icons/check-circle.svg');
 
   /// File path: assets/images/icons/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/icons/check.svg');
 
+  /// File path: assets/images/icons/coffee.svg
+  SvgGenImage get coffee => const SvgGenImage('assets/images/icons/coffee.svg');
+
+  /// File path: assets/images/icons/compass.svg
+  SvgGenImage get compass => const SvgGenImage('assets/images/icons/compass.svg');
+
+  /// File path: assets/images/icons/empty-notification.svg
+  SvgGenImage get emptyNotification => const SvgGenImage('assets/images/icons/empty-notification.svg');
+
   /// File path: assets/images/icons/eye-off.svg
   SvgGenImage get eyeOff => const SvgGenImage('assets/images/icons/eye-off.svg');
+
+  /// File path: assets/images/icons/flag.svg
+  SvgGenImage get flag => const SvgGenImage('assets/images/icons/flag.svg');
 
   /// File path: assets/images/icons/google-logo.svg
   SvgGenImage get googleLogo => const SvgGenImage('assets/images/icons/google-logo.svg');
@@ -114,14 +141,23 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/users.svg
   SvgGenImage get users => const SvgGenImage('assets/images/icons/users.svg');
 
+  /// File path: assets/images/icons/x.svg
+  SvgGenImage get x => const SvgGenImage('assets/images/icons/x.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         agenda,
         arrowDown,
         arrowLeft,
+        bell,
         calendar,
+        checkCircle,
         check,
+        coffee,
+        compass,
+        emptyNotification,
         eyeOff,
+        flag,
         googleLogo,
         home,
         kanban,
@@ -134,7 +170,8 @@ class $AssetsImagesIconsGen {
         plus,
         search,
         user,
-        users
+        users,
+        x
       ];
 }
 
@@ -144,20 +181,20 @@ class $AssetsImagesLogoGen {
   /// File path: assets/images/logo/coca.svg
   SvgGenImage get coca => const SvgGenImage('assets/images/logo/coca.svg');
 
-  /// File path: assets/images/logo/san.png
-  AssetGenImage get sanPng => const AssetGenImage('assets/images/logo/san.png');
-
   /// File path: assets/images/logo/san.svg
-  SvgGenImage get sanSvg => const SvgGenImage('assets/images/logo/san.svg');
+  SvgGenImage get san => const SvgGenImage('assets/images/logo/san.svg');
 
   /// File path: assets/images/logo/suteki.svg
   SvgGenImage get suteki => const SvgGenImage('assets/images/logo/suteki.svg');
+
+  /// File path: assets/images/logo/unreal.svg
+  SvgGenImage get unreal => const SvgGenImage('assets/images/logo/unreal.svg');
 
   /// File path: assets/images/logo/zan.svg
   SvgGenImage get zan => const SvgGenImage('assets/images/logo/zan.svg');
 
   /// List of all assets
-  List<dynamic> get values => [coca, sanPng, sanSvg, suteki, zan];
+  List<SvgGenImage> get values => [coca, san, suteki, unreal, zan];
 }
 
 class Assets {

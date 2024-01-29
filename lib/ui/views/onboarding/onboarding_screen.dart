@@ -4,18 +4,15 @@
 
 import 'package:flutter/material.dart';
 
-class OnboardingScreen extends StatefulWidget {
+import 'components/onboarding_body.dart';
+
+class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
-  static String route = '/onboarding';
+  static String route = '/';
 
-  @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
-}
-
-class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const OnboardingBody();
   }
 }

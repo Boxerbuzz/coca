@@ -4,16 +4,17 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../coca.dart';
+import '../../../../coca.dart';
 
 class OtpSuccessModal extends StatelessWidget {
   const OtpSuccessModal({super.key});
 
+  static String route = '/otp_success';
+
   @override
   Widget build(BuildContext context) {
-    AppStyle styles = context.styles;
     return Scaffold(
-      backgroundColor: kBlue,
+      backgroundColor: styles.theme.blue,
       body: Padding(
         padding: EdgeInsets.all(styles.insets.md),
         child: Column(
@@ -23,18 +24,15 @@ class OtpSuccessModal extends StatelessWidget {
             Container(
               height: 124,
               width: 124,
-              decoration: BoxDecoration(
-                color: primary.shade700,
-                borderRadius: BorderRadius.circular(62),
-              ),
+              decoration: BoxDecoration(color: primary.shade700, borderRadius: BorderRadius.circular(62)),
               child: Assets.images.icons.check.svg(),
             ),
             const Gap(40),
-            Text('Account Verified', style: styles.text.h3.textColor(kWhite)),
+            Text('Account Verified', style: styles.text.h3.textColor(styles.theme.white)),
             Gap(styles.insets.xs),
             Text(
               'Your account has been successfully verified and all features are at your disposal',
-              style: styles.text.caption.textColor(kGray02),
+              style: styles.text.caption.textColor(styles.theme.grey2),
               textAlign: TextAlign.center,
             ),
           ],
@@ -42,10 +40,7 @@ class OtpSuccessModal extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(styles.insets.md),
-        child: CustomSecondaryButton(
-          label: 'Get Started',
-          onTap: () => context.pushNamed(MainScreen.route),
-        ),
+        child: CustomSecondaryButton(label: 'Get Started', onTap: () => context.go(MainScreen.route)),
       ),
     );
   }

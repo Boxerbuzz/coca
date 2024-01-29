@@ -4,23 +4,20 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 import 'components/main_nav_bar.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
-  static String route = '/main_screen';
+  static String route = '/main';
 
   @override
   Widget build(BuildContext context) {
     return Consumer<MainProvider>(
       builder: (context, store, child) {
         return Scaffold(
-          body: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CustomIndexedStack(index: store.pageIndex, children: store.screens),
-          ),
+          body: CustomIndexedStack(index: store.index, children: store.screens),
           bottomNavigationBar: const MainNavBar(),
         );
       },

@@ -8,6 +8,7 @@ export 'home/home_screen.dart';
 export 'login/login_screen.dart';
 export 'main/main_screen.dart';
 export 'message/message_screen.dart';
+export 'notification/notification_screen.dart';
 export 'onboarding/onboarding_screen.dart';
 export 'otp/otp_screen.dart';
 export 'profile/profile_screen.dart';
