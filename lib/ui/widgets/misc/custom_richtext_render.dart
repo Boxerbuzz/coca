@@ -2,8 +2,7 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'dart:ui';
-
+import 'package:coca/coca.dart';
 import 'package:flutter/material.dart';
 import 'package:xml/xml.dart';
 
@@ -11,7 +10,7 @@ import 'package:xml/xml.dart';
 typedef _TextStyleBuilder = TextStyle Function(TextStyle parentStyle);
 
 final Map<String, _TextStyleBuilder> _styleBuildersByTagName = {
-  'b': (parentStyle) => parentStyle.copyWith(fontVariations: [const FontVariation('wght', 700)]),
+  'b': (parentStyle) => parentStyle.weight(FontWeight.w700),
   'i': (parentStyle) => parentStyle.copyWith(fontStyle: FontStyle.italic),
 };
 

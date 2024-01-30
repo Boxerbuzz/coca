@@ -14,17 +14,19 @@ class MainNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 85,
-      decoration: BoxDecoration(color: styles.theme.white, boxShadow: styles.shadows.sm),
+      decoration: BoxDecoration(
+        color: styles.theme.white,
+        boxShadow: styles.shadows.custom(const Color(0xff9EA0A9), .07),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           ...nav.map(
             (e) => MainNavItem(
-              index: e.index,
-              icon: e.icon,
-              isFab: e.index == 2 ? true : false,
-              onPressed: e.index == 2 ? () {} : null,
-            ),
+                index: e.index,
+                icon: e.icon,
+                isFab: e.index == 2 ? true : false,
+                onPressed: e.index == 2 ? () {} : null),
           ),
         ],
       ),

@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class OneLineClickableText extends StatelessWidget {
   const OneLineClickableText({super.key, required this.actionText, required this.mainText, this.onTap});

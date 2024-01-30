@@ -30,7 +30,7 @@ class UserModel extends Equatable {
         email: json['email'],
         image: json['image'],
         createdAt: json['createdAt'],
-        updatedAt: json['updatedAt']);
+        updatedAt: json['updatedAt'] ?? '');
   }
 
   Map<String, dynamic> toJson() {
@@ -41,7 +41,7 @@ class UserModel extends Equatable {
       'email': email,
       'image': image,
       'createdAt': createdAt,
-      'updatedAt': updatedAt,
+      'updatedAt': updatedAt
     };
   }
 

@@ -32,6 +32,8 @@ class AppTheme {
   final Color grey6 = const Color(0xff2B3453);
   final Color grey5 = const Color(0xff808D9E);
   final Color grey4 = const Color(0xff7E8CA0);
+  final Color shadow = const Color(0xff9EA0A9);
+
   final Color grey3 = const Color(0xffE9ECF2);
   final Color grey2 = const Color(0xffF8F8FB);
   final Color grey1 = const Color(0xffEDF2F7);
@@ -65,7 +67,7 @@ class AppTheme {
     /// theme definition
     var t = ThemeData.from(textTheme: txtTheme, colorScheme: colorScheme, useMaterial3: true).copyWith(
         textSelectionTheme: TextSelectionThemeData(cursorColor: blue),
-        highlightColor: blue,
+        highlightColor: grey1,
         inputDecorationTheme: InputDecorationTheme(
           outlineBorder: const BorderSide(width: 1.0),
           border: inputBorder,

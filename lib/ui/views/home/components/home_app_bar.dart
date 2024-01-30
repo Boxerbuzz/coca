@@ -14,7 +14,10 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double appBarHeight = AppBar().preferredSize.height + 50;
+    final double barHeight = AppBar().preferredSize.height;
+    final double statusBar = context.mq.padding.top;
+
+    UserModel user = context.watch<MainProvider>().user ?? const UserModel();
 
     return AnimatedBuilder(
       animation: controller,
@@ -24,17 +27,23 @@ class HomeAppBar extends StatelessWidget {
           child: Transform(
             transform: Matrix4.translationValues(0.0, 40 * (1.0 - animation.value), 0.0),
             child: Container(
-              height: appBarHeight,
-              padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
-              decoration: BoxDecoration(boxShadow: styles.shadows.sm, color: styles.theme.white.withOpacity(opacity)),
+              height: barHeight + 30,
+              padding: EdgeInsets.symmetric(horizontal: styles.insets.md).add(EdgeInsets.only(top: statusBar)),
+              decoration: BoxDecoration(
+                boxShadow: styles.shadows.custom(styles.theme.shadow, .07),
+                color: styles.theme.white.withOpacity(opacity),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Assets.images.logo.coca.svg(height: 24, width: 24),
                   const Spacer(),
-                  IconButton(icon: Assets.images.icons.bell.svg(), onPressed: () => context.pop()),
-                  CustomAvatar(path: Assets.images.avatar.user.path, size: 35, isLocal: true, bg: styles.theme.grey3),
+                  IconButton(
+                    icon: Assets.images.icons.bell.svg(),
+                    onPressed: () => context.push(NotificationScreen.route),
+                  ),
+                  CustomAvatar(user: user, size: 35, bg: styles.theme.grey3),
                 ],
               ),
             ),

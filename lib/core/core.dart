@@ -11,6 +11,8 @@ export 'const/app_constants.dart';
 /// data
 export 'data/nav_data.dart';
 export 'data/notification_data.dart';
+export 'data/policy_data.dart';
+export 'data/premium_data.dart';
 export 'data/project_data.dart';
 export 'data/stat_data.dart';
 export 'data/task_data.dart';
@@ -19,10 +21,13 @@ export 'data/workspace_data.dart';
 
 /// enum
 export 'enums/notification_type_enum.dart';
+export 'enums/policy_text_enum.dart';
 
 /// models
 export 'models/nav_model.dart';
 export 'models/notification_model.dart';
+export 'models/policy_model.dart';
+export 'models/premium_model.dart';
 export 'models/project_model.dart';
 export 'models/stat_model.dart';
 export 'models/task_model.dart';

@@ -12,49 +12,38 @@ class NotificationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(2),
-      child: Material(
-        child: InkWell(
-          onTap: () {},
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              Hero(
+                tag: data.id,
+                child: CustomAvatar(
+                  path: Assets.images.avatar.user.path,
+                  isLocal: true,
+                ),
+              ),
+              Gap(styles.insets.btn),
+              Expanded(
                 child: Column(
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Hero(
-                          tag: data.id,
-                          child: CustomAvatar(
-                            path: Assets.images.avatar.user.path,
-                            isLocal: true,
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              CustomRichTextRender(data.subject),
-                              const SizedBox(height: 2),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    CustomRichTextRender(data.subject),
+                    const SizedBox(height: 2),
+                    Text(data.time, style: styles.text.b2.textColor(styles.theme.grey4)),
                   ],
                 ),
               ),
-              Divider(color: styles.theme.silver),
             ],
           ),
         ),
-      ),
+        Divider(color: styles.theme.silver),
+      ],
     );
   }
 }

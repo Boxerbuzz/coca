@@ -36,7 +36,7 @@ class _CustomHorizontalScrollState extends State<CustomHorizontalScroll> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       controller: _controller,
-      physics: widget.physics ?? const ClampingScrollPhysics(),
+      physics: widget.physics,
       child: Container(child: widget.child),
     );
   }

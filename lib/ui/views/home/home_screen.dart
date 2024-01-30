@@ -31,23 +31,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         .animate(CurvedAnimation(parent: _controller, curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
     _ctrl.addListener(() {
       if (_ctrl.offset >= 24) {
-        if (_opacity != 1.0) {
-          setState(() {
-            _opacity = 1.0;
-          });
-        }
+        if (_opacity != 1.0) setState(() => _opacity = 1.0);
       } else if (_ctrl.offset <= 24 && _ctrl.offset >= 0) {
-        if (_opacity != _ctrl.offset / 24) {
-          setState(() {
-            _opacity = _ctrl.offset / 24;
-          });
-        }
+        if (_opacity != _ctrl.offset / 24) setState(() => _opacity = _ctrl.offset / 24);
       } else if (_ctrl.offset <= 0) {
-        if (_opacity != 0.0) {
-          setState(() {
-            _opacity = 0.0;
-          });
-        }
+        if (_opacity != 0.0) setState(() => _opacity = 0.0);
       }
     });
     _controller.forward();
@@ -62,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           children: [
             SingleChildScrollView(
               controller: _ctrl,
-              padding: EdgeInsets.only(top: AppBar().preferredSize.height + 30),
+              padding: EdgeInsets.only(top: AppBar().preferredSize.height + 60),
               child: Column(
                 children: [
                   HomeWorkspaceSwitcher(workspace: store.workspace ?? workspaces.first),

@@ -7,6 +7,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 
+import '../../coca.dart';
+
 class CustomScrollBehaviour extends ScrollBehavior {
   @override
   // Add mouse drag on desktop for easier responsive testing
@@ -20,12 +22,17 @@ class CustomScrollBehaviour extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) => const BouncingScrollPhysics();
 
-  // TODO: Finalize scrollbar strategy (Do we use them at all? Where specifically?)
   @override
   Widget buildScrollbar(BuildContext context, Widget child, ScrollableDetails details) {
-    //return child;
     return Platform.isAndroid
-        ? RawScrollbar(controller: details.controller, trackVisibility: false, child: child)
+        ? RawScrollbar(
+            controller: details.controller,
+            trackVisibility: false,
+            radius: Radius.circular(styles.corners.sm),
+            trackColor: styles.theme.white,
+            thumbColor: styles.theme.blue,
+            thickness: 0,
+            child: child)
         : CupertinoScrollbar(controller: details.controller, child: child);
   }
 }

@@ -14,16 +14,17 @@ class SwitchWorkspaceAddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: 50,
       child: CustomAppButton(
         onPressed: () {},
         bgColor: styles.theme.grey2,
+        padding: EdgeInsets.all(styles.insets.sm),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Assets.images.icons.plus.svg(color: styles.theme.grey7),
             Gap(styles.insets.sm),
-            Text('Add Workspace', style: styles.text.b1),
+            Text('Add Workspace', style: styles.text.b1.textColor(styles.theme.grey7)),
           ],
         ),
       ),

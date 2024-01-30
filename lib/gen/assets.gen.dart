@@ -75,8 +75,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/images/icons/arrow-left.svg');
 
+  /// File path: assets/images/icons/arrow-right.svg
+  SvgGenImage get arrowRight => const SvgGenImage('assets/images/icons/arrow-right.svg');
+
   /// File path: assets/images/icons/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/images/icons/bell.svg');
+
+  /// File path: assets/images/icons/box.svg
+  SvgGenImage get box => const SvgGenImage('assets/images/icons/box.svg');
 
   /// File path: assets/images/icons/calendar.svg
   SvgGenImage get calendar => const SvgGenImage('assets/images/icons/calendar.svg');
@@ -87,17 +93,32 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/icons/check.svg');
 
+  /// File path: assets/images/icons/coca.svg
+  SvgGenImage get coca => const SvgGenImage('assets/images/icons/coca.svg');
+
   /// File path: assets/images/icons/coffee.svg
   SvgGenImage get coffee => const SvgGenImage('assets/images/icons/coffee.svg');
 
   /// File path: assets/images/icons/compass.svg
   SvgGenImage get compass => const SvgGenImage('assets/images/icons/compass.svg');
 
+  /// File path: assets/images/icons/copy.svg
+  SvgGenImage get copy => const SvgGenImage('assets/images/icons/copy.svg');
+
+  /// File path: assets/images/icons/edit.svg
+  SvgGenImage get edit => const SvgGenImage('assets/images/icons/edit.svg');
+
   /// File path: assets/images/icons/empty-notification.svg
   SvgGenImage get emptyNotification => const SvgGenImage('assets/images/icons/empty-notification.svg');
 
+  /// File path: assets/images/icons/empty-search.svg
+  SvgGenImage get emptySearch => const SvgGenImage('assets/images/icons/empty-search.svg');
+
   /// File path: assets/images/icons/eye-off.svg
   SvgGenImage get eyeOff => const SvgGenImage('assets/images/icons/eye-off.svg');
+
+  /// File path: assets/images/icons/eye.svg
+  SvgGenImage get eye => const SvgGenImage('assets/images/icons/eye.svg');
 
   /// File path: assets/images/icons/flag.svg
   SvgGenImage get flag => const SvgGenImage('assets/images/icons/flag.svg');
@@ -105,11 +126,20 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/google-logo.svg
   SvgGenImage get googleLogo => const SvgGenImage('assets/images/icons/google-logo.svg');
 
+  /// File path: assets/images/icons/headphone.svg
+  SvgGenImage get headphone => const SvgGenImage('assets/images/icons/headphone.svg');
+
   /// File path: assets/images/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/images/icons/home.svg');
 
   /// File path: assets/images/icons/kanban.svg
   SvgGenImage get kanban => const SvgGenImage('assets/images/icons/kanban.svg');
+
+  /// File path: assets/images/icons/life-buoy.svg
+  SvgGenImage get lifeBuoy => const SvgGenImage('assets/images/icons/life-buoy.svg');
+
+  /// File path: assets/images/icons/link.svg
+  SvgGenImage get link => const SvgGenImage('assets/images/icons/link.svg');
 
   /// File path: assets/images/icons/list.svg
   SvgGenImage get list => const SvgGenImage('assets/images/icons/list.svg');
@@ -117,8 +147,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/lock.svg
   SvgGenImage get lock => const SvgGenImage('assets/images/icons/lock.svg');
 
+  /// File path: assets/images/icons/log-out.svg
+  SvgGenImage get logOut => const SvgGenImage('assets/images/icons/log-out.svg');
+
   /// File path: assets/images/icons/mail.svg
   SvgGenImage get mail => const SvgGenImage('assets/images/icons/mail.svg');
+
+  /// File path: assets/images/icons/message-circle.svg
+  SvgGenImage get messageCircle => const SvgGenImage('assets/images/icons/message-circle.svg');
 
   /// File path: assets/images/icons/message.svg
   SvgGenImage get message => const SvgGenImage('assets/images/icons/message.svg');
@@ -132,14 +168,32 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
 
+  /// File path: assets/images/icons/premium.svg
+  SvgGenImage get premium => const SvgGenImage('assets/images/icons/premium.svg');
+
   /// File path: assets/images/icons/search.svg
   SvgGenImage get search => const SvgGenImage('assets/images/icons/search.svg');
+
+  /// File path: assets/images/icons/share.svg
+  SvgGenImage get share => const SvgGenImage('assets/images/icons/share.svg');
+
+  /// File path: assets/images/icons/star.svg
+  SvgGenImage get star => const SvgGenImage('assets/images/icons/star.svg');
+
+  /// File path: assets/images/icons/trash.svg
+  SvgGenImage get trash => const SvgGenImage('assets/images/icons/trash.svg');
+
+  /// File path: assets/images/icons/upload.svg
+  SvgGenImage get upload => const SvgGenImage('assets/images/icons/upload.svg');
 
   /// File path: assets/images/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/icons/user.svg');
 
   /// File path: assets/images/icons/users.svg
   SvgGenImage get users => const SvgGenImage('assets/images/icons/users.svg');
+
+  /// File path: assets/images/icons/users1.svg
+  SvgGenImage get users1 => const SvgGenImage('assets/images/icons/users1.svg');
 
   /// File path: assets/images/icons/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/icons/x.svg');
@@ -149,28 +203,46 @@ class $AssetsImagesIconsGen {
         agenda,
         arrowDown,
         arrowLeft,
+        arrowRight,
         bell,
+        box,
         calendar,
         checkCircle,
         check,
+        coca,
         coffee,
         compass,
+        copy,
+        edit,
         emptyNotification,
+        emptySearch,
         eyeOff,
+        eye,
         flag,
         googleLogo,
+        headphone,
         home,
         kanban,
+        lifeBuoy,
+        link,
         list,
         lock,
+        logOut,
         mail,
+        messageCircle,
         message,
         person,
         phone,
         plus,
+        premium,
         search,
+        share,
+        star,
+        trash,
+        upload,
         user,
         users,
+        users1,
         x
       ];
 }

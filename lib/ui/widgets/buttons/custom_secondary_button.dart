@@ -19,6 +19,7 @@ class CustomSecondaryButton extends StatelessWidget {
       child: CustomAppButton(
         bgColor: styles.theme.white,
         onPressed: onTap,
+        isSecondary: true,
         child: Center(
           child: Text(label, style: styles.text.b1.copyWith(color: styles.theme.blue)),
         ),

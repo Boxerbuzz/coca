@@ -40,7 +40,7 @@ class MainProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  UserModel? _user;
+  UserModel? _user = userData;
   UserModel? get user => _user;
   set user(UserModel? value) {
     _user = value;

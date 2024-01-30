@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
-import '../custom_padded_safe_area.dart';
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({super.key, this.icon, this.onPressed, this.bgColor, this.iconColor});

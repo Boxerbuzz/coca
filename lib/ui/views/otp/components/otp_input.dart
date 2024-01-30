@@ -29,6 +29,12 @@ class _OtpInputState extends State<OtpInput> {
   }
 
   @override
+  void initState() {
+    focusNode.requestFocus();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
       width: 56,

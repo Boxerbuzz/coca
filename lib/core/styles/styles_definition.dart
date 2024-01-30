@@ -113,6 +113,9 @@ class Insets {
 
 @immutable
 class Shadows {
+  static bool enabled = true;
+
+  static double get mRadius => 8;
   final textSoft = [
     Shadow(color: Colors.black.withOpacity(.25), offset: const Offset(0, 2), blurRadius: 4),
   ];
@@ -139,6 +142,23 @@ class Shadows {
       blurRadius: 8,
     )
   ];
+
+  List<BoxShadow> custom(Color color, [double opacity = 0]) {
+    return enabled
+        ? [
+            BoxShadow(
+                color: color.withOpacity(opacity),
+                blurRadius: mRadius,
+                spreadRadius: mRadius / 2,
+                offset: const Offset(1, 0)),
+            BoxShadow(
+                color: color.withOpacity(opacity),
+                blurRadius: mRadius / 2,
+                spreadRadius: mRadius / 4,
+                offset: const Offset(1, 0))
+          ]
+        : const <BoxShadow>[];
+  }
 }
 
 @immutable

@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../coca.dart';
+import '../../../coca.dart';
 
 class CustomPaddedSafeArea extends StatelessWidget {
   const CustomPaddedSafeArea({super.key, required this.child});
