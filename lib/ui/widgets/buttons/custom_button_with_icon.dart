@@ -16,6 +16,7 @@ class CustomButtonWithIcon extends StatelessWidget {
     this.iconColor,
     this.border,
     this.txtColor,
+    this.onPressed,
   });
   final String text;
   final String icon;
@@ -23,6 +24,7 @@ class CustomButtonWithIcon extends StatelessWidget {
   final Color? iconColor;
   final BorderSide? border;
   final Color? txtColor;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -31,7 +33,7 @@ class CustomButtonWithIcon extends StatelessWidget {
         bgColor: btnColor ?? styles.theme.blue,
         border: border,
         expand: true,
-        onPressed: () {},
+        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
