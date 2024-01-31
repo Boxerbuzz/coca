@@ -282,7 +282,7 @@ List<UserModel> participants() {
 
   temp.shuffle(random);
 
-  return temp.take(5).toList();
+  return temp.take(3).toList();
 }
 
 UserModel userData = UserModel.fromJson(const {

@@ -41,6 +41,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool empty = Provider.of<NotificationProvider>(context, listen: false).empty;
     return Scaffold(
       appBar: const CustomAppBar(title: 'Notifications'),
       body: Column(
@@ -49,7 +50,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
             Gap(styles.insets.sm),
             const NotificationCategoryList(),
           ],
-          Divider(color: styles.theme.silver),
+          if (empty) ...{
+            Divider(color: styles.theme.silver),
+          },
           const NotificationBody(),
         ],
       ),
