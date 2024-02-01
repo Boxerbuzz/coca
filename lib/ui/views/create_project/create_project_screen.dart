@@ -4,15 +4,14 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../coca.dart';
+import 'components/create_project_body.dart';
+
 class CreateProjectScreen extends StatelessWidget {
   const CreateProjectScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [],
-      ),
-    );
+    return const CustomBottomSheetLayout(child: CreateProjectBody());
   }
 }

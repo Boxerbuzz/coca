@@ -26,7 +26,9 @@ class MainNavBar extends StatelessWidget {
                 index: e.index,
                 icon: e.icon,
                 isFab: e.index == 2 ? true : false,
-                onPressed: e.index == 2 ? () {} : null),
+                onPressed: e.index == 2
+                    ? () => showMaterialModalBottomSheet(context: context, builder: (_) => const CreateProjectScreen())
+                    : null),
           ),
         ],
       ),
