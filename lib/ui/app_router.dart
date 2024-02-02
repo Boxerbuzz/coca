@@ -61,3 +61,5 @@ class AppRouter extends GoRoute {
           },
         );
 }
+
+GlobalKey<NavigatorState> rootKey = routes.routerDelegate.navigatorKey;

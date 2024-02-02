@@ -31,8 +31,10 @@ class CustomScrollBehaviour extends ScrollBehavior {
             radius: Radius.circular(styles.corners.sm),
             trackColor: styles.theme.white,
             thumbColor: styles.theme.blue,
+            interactive: false,
             thickness: 0,
-            child: child)
+            child: child,
+          )
         : CupertinoScrollbar(controller: details.controller, child: child);
   }
 }

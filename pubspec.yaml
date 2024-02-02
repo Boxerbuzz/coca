@@ -41,3 +41,5 @@ flutter:
      - assets/images/
      - assets/images/avatar/
      - assets/images/logo/
+  shaders:
+     - assets/shaders/scroll_view_fade.frag

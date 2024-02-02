@@ -15,12 +15,9 @@ class HomeRecentProjectList extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
-          child: CustomSubHeader(title: 'Recent Projects', onPressed: () {}),
-        ),
+            padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+            child: CustomSubHeader(title: 'Recent Projects', onPressed: () {})),
         CustomHorizontalScroll(
-          curve: Curves.easeIn,
-          duration: 2.milliseconds,
           child: Row(
             children: [
               Gap(styles.insets.md),

@@ -21,9 +21,9 @@ class ProjectHeader extends BaseStatelessWidget implements PreferredSizeWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('My Task', style: styles.text.h2.textColor(styles.theme.grey7)),
+            Text('Projects', style: styles.text.h2.textColor(styles.theme.grey7)),
             Expanded(child: Container()),
-            Assets.images.icons.search.svg(height: 20, width: 20),
+            Assets.images.icons.search.svg(height: 24, width: 24),
           ],
         ),
       );

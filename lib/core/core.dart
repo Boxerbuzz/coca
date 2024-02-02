@@ -53,5 +53,6 @@ export 'utils/custom_scroll_behaviour.dart';
 export 'utils/extensions/context.dart';
 export 'utils/extensions/text_style.dart';
 export 'utils/extensions/time.dart';
+export 'utils/extensions/widget.dart';
 export 'utils/haptics.dart';
 export 'utils/helpers.dart';

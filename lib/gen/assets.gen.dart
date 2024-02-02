@@ -69,6 +69,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/agenda.svg
   SvgGenImage get agenda => const SvgGenImage('assets/images/icons/agenda.svg');
 
+  /// File path: assets/images/icons/align-center.svg
+  SvgGenImage get alignCenter => const SvgGenImage('assets/images/icons/align-center.svg');
+
   /// File path: assets/images/icons/arrow-down.svg
   SvgGenImage get arrowDown => const SvgGenImage('assets/images/icons/arrow-down.svg');
 
@@ -77,6 +80,12 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/arrow-right.svg
   SvgGenImage get arrowRight => const SvgGenImage('assets/images/icons/arrow-right.svg');
+
+  /// File path: assets/images/icons/attachment.svg
+  SvgGenImage get attachment => const SvgGenImage('assets/images/icons/attachment.svg');
+
+  /// File path: assets/images/icons/bars.svg
+  SvgGenImage get bars => const SvgGenImage('assets/images/icons/bars.svg');
 
   /// File path: assets/images/icons/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/images/icons/bell.svg');
@@ -90,6 +99,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/check-circle.svg
   SvgGenImage get checkCircle => const SvgGenImage('assets/images/icons/check-circle.svg');
 
+  /// File path: assets/images/icons/check-square.svg
+  SvgGenImage get checkSquare => const SvgGenImage('assets/images/icons/check-square.svg');
+
   /// File path: assets/images/icons/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/icons/check.svg');
 
@@ -99,20 +111,35 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/coffee.svg
   SvgGenImage get coffee => const SvgGenImage('assets/images/icons/coffee.svg');
 
+  /// File path: assets/images/icons/columns.svg
+  SvgGenImage get columns => const SvgGenImage('assets/images/icons/columns.svg');
+
   /// File path: assets/images/icons/compass.svg
   SvgGenImage get compass => const SvgGenImage('assets/images/icons/compass.svg');
 
   /// File path: assets/images/icons/copy.svg
   SvgGenImage get copy => const SvgGenImage('assets/images/icons/copy.svg');
 
+  /// File path: assets/images/icons/dots.svg
+  SvgGenImage get dots => const SvgGenImage('assets/images/icons/dots.svg');
+
   /// File path: assets/images/icons/edit.svg
   SvgGenImage get edit => const SvgGenImage('assets/images/icons/edit.svg');
+
+  /// File path: assets/images/icons/emoticon.svg
+  SvgGenImage get emoticon => const SvgGenImage('assets/images/icons/emoticon.svg');
 
   /// File path: assets/images/icons/empty-notification.svg
   SvgGenImage get emptyNotification => const SvgGenImage('assets/images/icons/empty-notification.svg');
 
+  /// File path: assets/images/icons/empty-projects.svg
+  SvgGenImage get emptyProjects => const SvgGenImage('assets/images/icons/empty-projects.svg');
+
   /// File path: assets/images/icons/empty-search.svg
   SvgGenImage get emptySearch => const SvgGenImage('assets/images/icons/empty-search.svg');
+
+  /// File path: assets/images/icons/eye-check.svg
+  SvgGenImage get eyeCheck => const SvgGenImage('assets/images/icons/eye-check.svg');
 
   /// File path: assets/images/icons/eye-off.svg
   SvgGenImage get eyeOff => const SvgGenImage('assets/images/icons/eye-off.svg');
@@ -156,6 +183,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/message-circle.svg
   SvgGenImage get messageCircle => const SvgGenImage('assets/images/icons/message-circle.svg');
 
+  /// File path: assets/images/icons/message-sqr.svg
+  SvgGenImage get messageSqr => const SvgGenImage('assets/images/icons/message-sqr.svg');
+
   /// File path: assets/images/icons/message.svg
   SvgGenImage get message => const SvgGenImage('assets/images/icons/message.svg');
 
@@ -165,14 +195,23 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/phone.svg
   SvgGenImage get phone => const SvgGenImage('assets/images/icons/phone.svg');
 
+  /// File path: assets/images/icons/photo.svg
+  SvgGenImage get photo => const SvgGenImage('assets/images/icons/photo.svg');
+
   /// File path: assets/images/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
 
   /// File path: assets/images/icons/premium.svg
   SvgGenImage get premium => const SvgGenImage('assets/images/icons/premium.svg');
 
+  /// File path: assets/images/icons/puzzle.png
+  AssetGenImage get puzzle => const AssetGenImage('assets/images/icons/puzzle.png');
+
   /// File path: assets/images/icons/search.svg
   SvgGenImage get search => const SvgGenImage('assets/images/icons/search.svg');
+
+  /// File path: assets/images/icons/send.svg
+  SvgGenImage get send => const SvgGenImage('assets/images/icons/send.svg');
 
   /// File path: assets/images/icons/share.svg
   SvgGenImage get share => const SvgGenImage('assets/images/icons/share.svg');
@@ -185,6 +224,9 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/upload.svg
   SvgGenImage get upload => const SvgGenImage('assets/images/icons/upload.svg');
+
+  /// File path: assets/images/icons/user-plus.svg
+  SvgGenImage get userPlus => const SvgGenImage('assets/images/icons/user-plus.svg');
 
   /// File path: assets/images/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/icons/user.svg');
@@ -199,23 +241,32 @@ class $AssetsImagesIconsGen {
   SvgGenImage get x => const SvgGenImage('assets/images/icons/x.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [
+  List<dynamic> get values => [
         agenda,
+        alignCenter,
         arrowDown,
         arrowLeft,
         arrowRight,
+        attachment,
+        bars,
         bell,
         box,
         calendar,
         checkCircle,
+        checkSquare,
         check,
         coca,
         coffee,
+        columns,
         compass,
         copy,
+        dots,
         edit,
+        emoticon,
         emptyNotification,
+        emptyProjects,
         emptySearch,
+        eyeCheck,
         eyeOff,
         eye,
         flag,
@@ -230,16 +281,21 @@ class $AssetsImagesIconsGen {
         logOut,
         mail,
         messageCircle,
+        messageSqr,
         message,
         person,
         phone,
+        photo,
         plus,
         premium,
+        puzzle,
         search,
+        send,
         share,
         star,
         trash,
         upload,
+        userPlus,
         user,
         users,
         users1,

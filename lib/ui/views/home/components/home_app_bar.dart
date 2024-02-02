@@ -30,7 +30,7 @@ class HomeAppBar extends StatelessWidget {
               height: barHeight + 30,
               padding: EdgeInsets.symmetric(horizontal: styles.insets.md).add(EdgeInsets.only(top: statusBar)),
               decoration: BoxDecoration(
-                boxShadow: styles.shadows.custom(styles.theme.shadow, .07),
+                boxShadow: opacity > 0 ? styles.shadows.custom(styles.theme.shadow, .07) : null,
                 color: styles.theme.white.withOpacity(opacity),
               ),
               child: Row(
@@ -40,9 +40,8 @@ class HomeAppBar extends StatelessWidget {
                   Assets.images.logo.coca.svg(height: 24, width: 24),
                   const Spacer(),
                   IconButton(
-                    icon: Assets.images.icons.bell.svg(),
-                    onPressed: () => context.push(NotificationScreen.route),
-                  ),
+                      icon: Assets.images.icons.bell.svg(height: 24, width: 24),
+                      onPressed: () => context.push(NotificationScreen.route)),
                   CustomAvatar(user: user, size: 35, bg: styles.theme.grey3),
                 ],
               ),

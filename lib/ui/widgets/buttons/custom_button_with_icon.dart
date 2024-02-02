@@ -17,6 +17,7 @@ class CustomButtonWithIcon extends StatelessWidget {
     this.border,
     this.txtColor,
     this.onPressed,
+    this.shrinkWrap = false,
   });
   final String text;
   final String icon;
@@ -25,24 +26,27 @@ class CustomButtonWithIcon extends StatelessWidget {
   final BorderSide? border;
   final Color? txtColor;
   final VoidCallback? onPressed;
+  final bool shrinkWrap;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 48,
-      child: CustomAppButton(
-        bgColor: btnColor ?? styles.theme.blue,
-        border: border,
-        expand: true,
-        onPressed: onPressed,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgGenImage(icon).svg(height: 20, width: 20, color: iconColor ?? styles.theme.white),
-            const Gap(12),
-            Text(text, style: styles.text.b1.textColor(txtColor ?? styles.theme.white)),
-          ],
-        ),
+    Widget content = CustomAppButton(
+      bgColor: btnColor ?? styles.theme.blue,
+      border: border,
+      expand: shrinkWrap ? false : true,
+      onPressed: onPressed,
+      padding: shrinkWrap ? const EdgeInsets.symmetric(horizontal: 15, vertical: 8) : null,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgGenImage(icon).svg(height: 20, width: 20, color: iconColor ?? styles.theme.white),
+          const Gap(12),
+          Text(text, style: styles.text.b1.textColor(txtColor ?? styles.theme.white)),
+        ],
       ),
     );
+
+    if (shrinkWrap) return content;
+
+    return SizedBox(height: 48, child: content);
   }
 }

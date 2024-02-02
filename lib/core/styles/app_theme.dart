@@ -34,6 +34,8 @@ class AppTheme {
   final Color grey4 = const Color(0xff7E8CA0);
   final Color shadow = const Color(0xff9EA0A9);
 
+  final Color ash = const Color(0xffF6F7FA);
+
   final Color grey3 = const Color(0xffE9ECF2);
   final Color grey2 = const Color(0xffF8F8FB);
   final Color grey1 = const Color(0xffEDF2F7);

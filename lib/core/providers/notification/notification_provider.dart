@@ -12,7 +12,7 @@ class NotificationProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool _empty = false;
+  bool _empty = true;
   bool get empty => _empty;
   set empty(bool value) {
     _empty = value;

@@ -25,4 +25,10 @@ final List<TaskModel> tasks = [
       title: 'Walkthrough Design Files with @Erik and team',
       isCompleted: true,
       date: '28 Jan, 2024'),
+  const TaskModel(
+      id: '5',
+      description: '',
+      title: 'Define Problems Statement with @Mike #TwinMotion',
+      isCompleted: true,
+      date: '28 Jan, 2024'),
 ];

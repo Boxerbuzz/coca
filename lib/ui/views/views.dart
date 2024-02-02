@@ -17,3 +17,4 @@ export 'premium/premium_screen.dart';
 export 'profile/profile_screen.dart';
 export 'project/project_screen.dart';
 export 'signup/signup_screen.dart';
+export 'task/task_screen.dart';
