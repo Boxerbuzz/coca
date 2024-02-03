@@ -44,13 +44,11 @@ class DropDownListMenu extends StatefulWidget {
 
   /// Show a drop-down menu originating from the given pivot rect [pRect] and created using the [builder]. It will be
   /// automatically placed at the side of the rectangle with the most space.
-  static void showAtRect(
-    BuildContext context, {
-    required Rect pRect,
-    required DropDownListMenuBuilder builder,
-    bool bStretch = false,
-    void Function()? onPopped,
-  }) {
+  static void showAtRect(BuildContext context,
+      {required Rect pRect,
+      required DropDownListMenuBuilder builder,
+      bool bStretch = false,
+      void Function()? onPopped}) {
     final route = DropDownListMenuRoute(
       placement: DropDownListPlacementModel(bStretch: bStretch, pivotRect: pRect),
       builder: builder,
@@ -212,9 +210,7 @@ class _DropDownListMenuState extends State<DropDownListMenu> {
         late final Widget? originTab;
         if (widget.originTabBuilder != null) {
           // Ignore the pointer so tapping the tab also closes the dropdown
-          originTab = IgnorePointer(
-            child: widget.originTabBuilder!(context, bIsOriginTop),
-          );
+          originTab = IgnorePointer(child: widget.originTabBuilder!(context, bIsOriginTop));
         } else {
           originTab = null;
         }
@@ -254,26 +250,14 @@ class _DropDownListMenuState extends State<DropDownListMenu> {
   }
 
   void _onMenuMeasured(Size size) {
-    if (_menuSize != size) {
-      setState(() {
-        _menuSize = size;
-      });
-    }
+    if (_menuSize != size) setState(() => _menuSize = size);
   }
 
   void _onMenuWithScrollBarMeasured(Size size) {
-    if (_menuSizeWithScrollbar != size) {
-      setState(() {
-        _menuSizeWithScrollbar = size;
-      });
-    }
+    if (_menuSizeWithScrollbar != size) setState(() => _menuSizeWithScrollbar = size);
   }
 
   void _onOriginTabMeasured(Size size) {
-    if (_originTabSize != size) {
-      setState(() {
-        _originTabSize = size;
-      });
-    }
+    if (_originTabSize != size) setState(() => _originTabSize = size);
   }
 }

@@ -31,10 +31,15 @@ class CustomScrollBehaviour extends ScrollBehavior {
             radius: Radius.circular(styles.corners.sm),
             trackColor: styles.theme.white,
             thumbColor: styles.theme.blue,
+            thumbVisibility: false,
             interactive: false,
             thickness: 0,
-            child: child,
-          )
+            child: child)
         : CupertinoScrollbar(controller: details.controller, child: child);
+  }
+
+  @override
+  Widget buildOverscrollIndicator(BuildContext context, Widget child, ScrollableDetails details) {
+    return child;
   }
 }

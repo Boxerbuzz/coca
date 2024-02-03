@@ -22,6 +22,7 @@ export 'data/workspace_data.dart';
 /// enum
 export 'enums/notification_type_enum.dart';
 export 'enums/policy_text_enum.dart';
+export 'enums/project_display_enum.dart';
 
 /// models
 export 'models/nav_model.dart';
@@ -51,6 +52,7 @@ export 'utils/base/base_stateful_widget.dart';
 export 'utils/base/base_stateless_widget.dart';
 export 'utils/custom_scroll_behaviour.dart';
 export 'utils/extensions/context.dart';
+export 'utils/extensions/string.dart';
 export 'utils/extensions/text_style.dart';
 export 'utils/extensions/time.dart';
 export 'utils/extensions/widget.dart';

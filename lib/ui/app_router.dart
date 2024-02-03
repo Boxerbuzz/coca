@@ -27,6 +27,7 @@ final routes = GoRouter(
         AppRouter(ForgotPasswordScreen.route, (s) => const ForgotPasswordScreen()),
         AppRouter(HelpScreen.route, (s) => const HelpScreen()),
         AppRouter(PolicyScreen.route, (s) => const PolicyScreen()),
+        AppRouter(TaskScreen.route, (s) => const TaskScreen()),
       ],
     ),
   ],

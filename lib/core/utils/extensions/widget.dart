@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 import '../haptics.dart';
 
 extension WidgetExtension on Widget {
-  Widget clickable(void Function() action, {bool opaque = true}) {
+  Widget clickable(void Function()? action, {bool opaque = true}) {
     return GestureDetector(
       behavior: opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
       onTap: () {
         AppHaptics.buttonPress();
-        action();
+        action?.call();
       },
       child: MouseRegion(
         cursor: SystemMouseCursors.click,

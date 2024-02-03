@@ -282,19 +282,5 @@ List<UserModel> participants() {
 
   temp.shuffle(random);
 
-  return temp.take(3).toList();
+  return temp.take(20).take(random.nextInt(4) + 1).toList();
 }
-
-UserModel userData = UserModel.fromJson(const {
-  "gender": "male",
-  "firstName": "Oscar",
-  "lastName": "Andersen",
-  "email": "oscar.andersen@example.com",
-  "username": "browndog398",
-  "dob": "1981-02-18T20:53:47.767Z",
-  "createdAt": "2010-07-02T06:04:54.995Z",
-  "phone": "67240172",
-  "id": "b0147e45-1853-4f1f-9b32-5a60ab3701b4",
-  "image": "https://randomuser.me/api/portraits/men/1.jpg",
-  "nat": "DK"
-});

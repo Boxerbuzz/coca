@@ -67,19 +67,19 @@ class _CustomDropdownButtonState<ItemType> extends State<CustomDropdownButton<It
       throw Exception('Failed to find widget render box for $this');
     }
 
-    final RenderObject rootRenderObject = context.findRenderObject()!;
+    final RenderObject rootRenderObject = Navigator.of(context, rootNavigator: true).context.findRenderObject()!;
 
-    double width = widgetBox.size.width + widget.openRectExtraSpace.horizontal;
-    double height = widgetBox.size.height + widget.openRectExtraSpace.vertical;
+    final Size rectSize = Size(
+      widgetBox.size.width + widget.openRectExtraSpace.horizontal,
+      widgetBox.size.height + widget.openRectExtraSpace.vertical,
+    );
 
-    final Size size = Size(width, height);
+    final Offset globalPos = widgetBox.localToGlobal(
+      Offset(-widget.openRectExtraSpace.left, -widget.openRectExtraSpace.bottom),
+      ancestor: rootRenderObject,
+    );
 
-    Offset point = Offset(-widget.openRectExtraSpace.left, -widget.openRectExtraSpace.bottom);
-
-    /// global position
-    final Offset position = widgetBox.localToGlobal(point, ancestor: rootRenderObject);
-
-    final Rect widgetRect = Rect.fromLTWH(position.dx, position.dy, size.width, size.height);
+    final Rect widgetRect = Rect.fromLTWH(globalPos.dx, globalPos.dy, rectSize.width, rectSize.height);
 
     DropDownListMenu.showAtRect(
       context,
@@ -87,13 +87,10 @@ class _CustomDropdownButtonState<ItemType> extends State<CustomDropdownButton<It
       bStretch: widget.bStretchDropdown,
       builder: (context) => widget.menuBuilder(
         context,
-        (context, bIsOnTop) {
-          DropdownButtonStateEnum state = bIsOnTop ? DropdownButtonStateEnum.top : DropdownButtonStateEnum.bottom;
-          return ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: widgetRect.width, maxHeight: widgetRect.height),
-            child: widget.buttonBuilder(context, state),
-          );
-        },
+        (context, bIsOnTop) => ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: widgetRect.width, maxHeight: widgetRect.height),
+          child: widget.buttonBuilder(context, bIsOnTop ? DropdownButtonStateEnum.top : DropdownButtonStateEnum.bottom),
+        ),
       ),
     );
   }

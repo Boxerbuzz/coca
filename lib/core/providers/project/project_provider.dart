@@ -4,4 +4,13 @@
 
 import 'package:flutter/material.dart';
 
-class ProjectProvider extends ChangeNotifier {}
+import '../../enums/project_display_enum.dart';
+
+class ProjectProvider extends ChangeNotifier {
+  ProjectDisplayEnum _display = ProjectDisplayEnum.board;
+  ProjectDisplayEnum get display => _display;
+  set display(ProjectDisplayEnum value) {
+    _display = value;
+    notifyListeners();
+  }
+}

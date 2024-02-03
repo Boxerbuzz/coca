@@ -61,9 +61,9 @@ class DropdownList extends StatelessWidget {
 
     return Container(
       constraints: BoxConstraints(minWidth: minWidth, maxWidth: maxWidth, minHeight: minHeight),
-      decoration: BoxDecoration(color: styles.theme.grey6, borderRadius: boxBorderRadius),
-      clipBehavior: Clip.antiAlias,
-      child: SingleChildScrollView(child: contents),
+      decoration: BoxDecoration(color: styles.theme.white, borderRadius: boxBorderRadius),
+      clipBehavior: Clip.hardEdge,
+      child: SingleChildScrollView(padding: EdgeInsets.all(styles.insets.xs), child: contents),
     );
   }
 }

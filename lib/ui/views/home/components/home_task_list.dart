@@ -16,7 +16,7 @@ class HomeTaskList extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
       child: Column(
         children: [
-          CustomSubHeader(title: "Today's Task", onPressed: () {}),
+          CustomSubHeader(title: "Today's Task", onPressed: () => context.push(TaskScreen.route)),
           const Gap(12),
           ...tasks.map((e) => HomeTaskItem(data: e))
         ],
