@@ -7,31 +7,32 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 
 class CustomCheckbox extends BaseStatelessWidget {
-  final CustomCheckboxEnum value;
+  final bool value;
   final double size;
-  final void Function(CustomCheckboxEnum)? onChanged;
+  final void Function(bool)? onChanged;
   final String? label;
 
-  const CustomCheckbox(
-      {super.key, this.value = CustomCheckboxEnum.unchecked, this.size = 22, this.onChanged, this.label});
+  final Color? color;
+
+  const CustomCheckbox({super.key, this.value = false, this.size = 22, this.onChanged, this.label, this.color});
 
   void _handleTapUp(TapUpDetails details) {
     AppHaptics.buttonPress();
     switch (value) {
-      case CustomCheckboxEnum.unchecked:
-        onChanged?.call(CustomCheckboxEnum.checked);
+      case false:
+        onChanged?.call(true);
         break;
-      case CustomCheckboxEnum.checked:
-        onChanged?.call(CustomCheckboxEnum.unchecked);
+      case true:
+        onChanged?.call(false);
         break;
     }
   }
 
-  Widget _getIconForCurrentState() {
+  Widget _icon() {
     switch (value) {
-      case CustomCheckboxEnum.checked:
+      case true:
         return Assets.images.icons.check.svg(color: Colors.white);
-      case CustomCheckboxEnum.unchecked:
+      case false:
         return Container();
     }
   }
@@ -49,14 +50,11 @@ class CustomCheckbox extends BaseStatelessWidget {
           width: size,
           height: size,
           decoration: BoxDecoration(
-            color: value == CustomCheckboxEnum.unchecked ? Colors.transparent : styles.theme.blue,
+            color: !value ? Colors.transparent : color ?? styles.theme.blue,
             borderRadius: BorderRadius.circular(styles.corners.check),
-            border: Border.all(
-              color: value == CustomCheckboxEnum.unchecked ? styles.theme.grey4 : styles.theme.blue,
-              width: 1.5,
-            ),
+            border: Border.all(color: !value ? styles.theme.grey4 : color ?? styles.theme.blue, width: 1.5),
           ),
-          child: _wrapGestures(_getIconForCurrentState()),
+          child: _wrapGestures(_icon()),
         ),
         if (label != null) ...[
           Gap(styles.insets.sm),

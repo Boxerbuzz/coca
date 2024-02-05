@@ -1,3 +1,4 @@
+import 'package:appflowy_editor/appflowy_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -31,6 +32,7 @@ class CocaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerDelegate: routes.routerDelegate,
       theme: ThemeData(fontFamily: styles.text.urbanist.fontFamily, useMaterial3: true),
+      localizationsDelegates: const [AppFlowyEditorLocalizations.delegate],
     );
   }
 }

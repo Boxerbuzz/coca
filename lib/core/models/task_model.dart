@@ -13,7 +13,7 @@ class TaskModel extends Equatable {
   final String date;
   final String status;
   final bool isCompleted;
-  final UserModel? assignee;
+  final List<UserModel> assignee;
   final UserModel? assigner;
 
   const TaskModel(
@@ -23,7 +23,7 @@ class TaskModel extends Equatable {
       this.date = '',
       this.status = '',
       this.isCompleted = false,
-      this.assignee,
+      this.assignee = const [],
       this.assigner});
 
   @override

@@ -2,7 +2,7 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/ui/widgets/kanban/appyflow.dart';
+import 'package:appflowy_board/appflowy_board.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../coca.dart';
@@ -32,11 +32,11 @@ class _ProjectBoardDisplayState extends State<ProjectBoardDisplay> {
   void initState() {
     _boardController = AppFlowyBoardScrollController();
 
-    _controller.addGroup(group1);
-    _controller.addGroup(group2);
-    _controller.addGroup(group3);
-    _controller.addGroup(group4);
-    _controller.addGroup(group5);
+    _controller.addGroup(todo);
+    _controller.addGroup(backlog);
+    _controller.addGroup(progress);
+    _controller.addGroup(completed);
+    _controller.addGroup(canceled);
 
     super.initState();
   }
@@ -51,6 +51,7 @@ class _ProjectBoardDisplayState extends State<ProjectBoardDisplay> {
       groupMargin: EdgeInsets.symmetric(horizontal: styles.insets.xxs),
       groupCornerRadius: 23,
       boardMargin: EdgeInsets.symmetric(horizontal: styles.insets.md),
+      showScrollBars: false,
     );
 
     return ScrollConfiguration(
@@ -74,7 +75,9 @@ class _ProjectBoardDisplayState extends State<ProjectBoardDisplay> {
   }
 
   Widget _buildCard(AppFlowyGroupItem item) {
-    if (item is ProjectModel) return ProjectBoardCard(data: item);
+    if (item is ProjectModel) {
+      return ProjectBoardCard(data: item).clickable(() => context.push(ProjectDetailScreen.route));
+    }
     throw UnimplementedError();
   }
 }

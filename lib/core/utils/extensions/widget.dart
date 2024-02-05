@@ -3,6 +3,7 @@
  */
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../haptics.dart';
@@ -163,6 +164,133 @@ extension WidgetExtension on Widget {
           );
         },
       );
+
+  Widget gestures({
+    GestureOnTapChangeCallback? onTapChange,
+    GestureTapDownCallback? onTapDown,
+    GestureTapUpCallback? onTapUp,
+    GestureTapCallback? onTap,
+    GestureTapCancelCallback? onTapCancel,
+    GestureTapDownCallback? onSecondaryTapDown,
+    GestureTapUpCallback? onSecondaryTapUp,
+    GestureTapCancelCallback? onSecondaryTapCancel,
+    GestureTapCallback? onDoubleTap,
+    GestureLongPressCallback? onLongPress,
+    GestureLongPressStartCallback? onLongPressStart,
+    GestureLongPressMoveUpdateCallback? onLongPressMoveUpdate,
+    GestureLongPressUpCallback? onLongPressUp,
+    GestureLongPressEndCallback? onLongPressEnd,
+    GestureDragDownCallback? onVerticalDragDown,
+    GestureDragStartCallback? onVerticalDragStart,
+    GestureDragUpdateCallback? onVerticalDragUpdate,
+    GestureDragEndCallback? onVerticalDragEnd,
+    GestureDragCancelCallback? onVerticalDragCancel,
+    GestureDragDownCallback? onHorizontalDragDown,
+    GestureDragStartCallback? onHorizontalDragStart,
+    GestureDragUpdateCallback? onHorizontalDragUpdate,
+    GestureDragEndCallback? onHorizontalDragEnd,
+    GestureDragCancelCallback? onHorizontalDragCancel,
+    GestureDragDownCallback? onPanDown,
+    GestureDragStartCallback? onPanStart,
+    GestureDragUpdateCallback? onPanUpdate,
+    GestureDragEndCallback? onPanEnd,
+    GestureDragCancelCallback? onPanCancel,
+    GestureScaleStartCallback? onScaleStart,
+    GestureScaleUpdateCallback? onScaleUpdate,
+    GestureScaleEndCallback? onScaleEnd,
+    GestureForcePressStartCallback? onForcePressStart,
+    GestureForcePressPeakCallback? onForcePressPeak,
+    GestureForcePressUpdateCallback? onForcePressUpdate,
+    GestureForcePressEndCallback? onForcePressEnd,
+    HitTestBehavior? behavior,
+    bool excludeFromSemantics = false,
+    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
+  }) =>
+      GestureDetector(
+        onTapDown: (TapDownDetails tapDownDetails) {
+          if (onTapDown != null) onTapDown(tapDownDetails);
+          if (onTapChange != null) onTapChange(true);
+        },
+        onTapCancel: () {
+          if (onTapCancel != null) onTapCancel();
+          if (onTapChange != null) onTapChange(false);
+        },
+        onTap: () {
+          if (onTap != null) onTap();
+          if (onTapChange != null) onTapChange(false);
+        },
+        onTapUp: onTapUp,
+        onDoubleTap: onDoubleTap,
+        onLongPress: onLongPress,
+        onLongPressStart: onLongPressStart,
+        onLongPressEnd: onLongPressEnd,
+        onLongPressMoveUpdate: onLongPressMoveUpdate,
+        onLongPressUp: onLongPressUp,
+        onVerticalDragStart: onVerticalDragStart,
+        onVerticalDragEnd: onVerticalDragEnd,
+        onVerticalDragDown: onVerticalDragDown,
+        onVerticalDragCancel: onVerticalDragCancel,
+        onVerticalDragUpdate: onVerticalDragUpdate,
+        onHorizontalDragStart: onHorizontalDragStart,
+        onHorizontalDragEnd: onHorizontalDragEnd,
+        onHorizontalDragCancel: onHorizontalDragCancel,
+        onHorizontalDragUpdate: onHorizontalDragUpdate,
+        onHorizontalDragDown: onHorizontalDragDown,
+        onForcePressStart: onForcePressStart,
+        onForcePressEnd: onForcePressEnd,
+        onForcePressPeak: onForcePressPeak,
+        onForcePressUpdate: onForcePressUpdate,
+        onPanStart: onPanStart,
+        onPanEnd: onPanEnd,
+        onPanCancel: onPanCancel,
+        onPanDown: onPanDown,
+        onPanUpdate: onPanUpdate,
+        onScaleStart: onScaleStart,
+        onScaleEnd: onScaleEnd,
+        onScaleUpdate: onScaleUpdate,
+        behavior: behavior,
+        excludeFromSemantics: excludeFromSemantics,
+        dragStartBehavior: dragStartBehavior,
+        child: this,
+      );
+
+  Widget constrained(
+      {double? width,
+      double? height,
+      double minWidth = 0.0,
+      double maxWidth = double.infinity,
+      double minHeight = 0.0,
+      double maxHeight = double.infinity,
+      bool animate = false}) {
+    BoxConstraints constraints = BoxConstraints(
+      minWidth: minWidth,
+      maxWidth: maxWidth,
+      minHeight: minHeight,
+      maxHeight: maxHeight,
+    );
+    constraints = (width != null || height != null) ? constraints.tighten(width: width, height: height) : constraints;
+    return animate
+        ? _StyledAnimatedBuilder(builder: (animation) {
+            return _AnimatedConstrainedBox(
+                constraints: constraints, duration: animation.duration, curve: animation.curve, child: this);
+          })
+        : ConstrainedBox(constraints: constraints, child: this);
+  }
+
+  Widget opacity(double opacity, {bool animate = false, bool alwaysIncludeSemantics = false}) => animate
+      ? _StyledAnimatedBuilder(builder: (animation) {
+          return AnimatedOpacity(
+              opacity: opacity,
+              alwaysIncludeSemantics: alwaysIncludeSemantics,
+              duration: animation.duration,
+              curve: animation.curve,
+              child: this);
+        })
+      : Opacity(opacity: opacity, alwaysIncludeSemantics: alwaysIncludeSemantics, child: this);
+
+  Widget expanded({int flex = 1}) => Expanded(flex: flex, child: this);
+
+  Widget flexible({int flex = 1, FlexFit fit = FlexFit.loose}) => Flexible(flex: flex, fit: fit, child: this);
 }
 
 class _StyledInheritedAnimation extends InheritedWidget {
@@ -262,3 +390,5 @@ class _StyledAnimatedModel {
     this.curve = Curves.linear,
   });
 }
+
+typedef GestureOnTapChangeCallback = void Function(bool tapState);

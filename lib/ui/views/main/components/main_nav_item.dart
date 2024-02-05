@@ -37,7 +37,7 @@ class MainNavItem extends StatelessWidget {
                     SvgPicture.asset(
                       icon,
                       colorFilter: ColorFilter.mode(
-                        store.index == index ? styles.theme.blue : styles.theme.grey7,
+                        store.index == index ? styles.theme.blue : styles.theme.grey4,
                         BlendMode.srcIn,
                       ),
                     ),

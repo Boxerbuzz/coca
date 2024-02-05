@@ -31,20 +31,23 @@ class _CustomAvatarPileState extends State<CustomAvatarPile> with SingleTickerPr
   @override
   void didUpdateWidget(CustomAvatarPile oldWidget) {
     super.didUpdateWidget(oldWidget);
-
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) => _sync());
+    if (widget.users != oldWidget.users) {
+      _sync();
+    }
   }
 
   void _sync() {
-    setState(() {
-      final newUsers = widget.users.where(
-        (user) => _visibleUsers.where((visibleUser) => visibleUser == user).isEmpty,
-      );
+    if (mounted) {
+      setState(() {
+        final newUsers = widget.users.where(
+          (user) => _visibleUsers.where((visibleUser) => visibleUser == user).isEmpty,
+        );
 
-      for (final newUser in newUsers) {
-        _visibleUsers.add(newUser);
-      }
-    });
+        for (final newUser in newUsers) {
+          _visibleUsers.add(newUser);
+        }
+      });
+    }
   }
 
   @override
@@ -74,6 +77,7 @@ class _CustomAvatarPileState extends State<CustomAvatarPile> with SingleTickerPr
           height: widget.size,
           child: Stack(
             clipBehavior: Clip.antiAlias,
+            fit: StackFit.passthrough,
             children: [
               for (var i = 0; i < facesCount; i += 1)
                 AnimatedPositioned(

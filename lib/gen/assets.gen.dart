@@ -75,6 +75,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/arrow-down.svg
   SvgGenImage get arrowDown => const SvgGenImage('assets/images/icons/arrow-down.svg');
 
+  /// File path: assets/images/icons/arrow-dropdown.svg
+  SvgGenImage get arrowDropdown => const SvgGenImage('assets/images/icons/arrow-dropdown.svg');
+
   /// File path: assets/images/icons/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/images/icons/arrow-left.svg');
 
@@ -120,6 +123,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/copy.svg
   SvgGenImage get copy => const SvgGenImage('assets/images/icons/copy.svg');
 
+  /// File path: assets/images/icons/description.svg
+  SvgGenImage get description => const SvgGenImage('assets/images/icons/description.svg');
+
   /// File path: assets/images/icons/dots.svg
   SvgGenImage get dots => const SvgGenImage('assets/images/icons/dots.svg');
 
@@ -147,6 +153,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/eye.svg
   SvgGenImage get eye => const SvgGenImage('assets/images/icons/eye.svg');
 
+  /// File path: assets/images/icons/file.svg
+  SvgGenImage get file => const SvgGenImage('assets/images/icons/file.svg');
+
   /// File path: assets/images/icons/flag.svg
   SvgGenImage get flag => const SvgGenImage('assets/images/icons/flag.svg');
 
@@ -158,6 +167,9 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/images/icons/home.svg');
+
+  /// File path: assets/images/icons/image.svg
+  SvgGenImage get image => const SvgGenImage('assets/images/icons/image.svg');
 
   /// File path: assets/images/icons/kanban.svg
   SvgGenImage get kanban => const SvgGenImage('assets/images/icons/kanban.svg');
@@ -245,6 +257,7 @@ class $AssetsImagesIconsGen {
         agenda,
         alignCenter,
         arrowDown,
+        arrowDropdown,
         arrowLeft,
         arrowRight,
         attachment,
@@ -260,6 +273,7 @@ class $AssetsImagesIconsGen {
         columns,
         compass,
         copy,
+        description,
         dots,
         edit,
         emoticon,
@@ -269,10 +283,12 @@ class $AssetsImagesIconsGen {
         eyeCheck,
         eyeOff,
         eye,
+        file,
         flag,
         googleLogo,
         headphone,
         home,
+        image,
         kanban,
         lifeBuoy,
         link,

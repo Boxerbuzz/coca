@@ -14,6 +14,7 @@ class CustomAppBar extends BaseStatelessWidget implements PreferredSizeWidget {
   final Widget? trailing;
   final bool transparent;
   final bool? centerTitle;
+  final bool x;
 
   @override
   final Size preferredSize;
@@ -25,7 +26,8 @@ class CustomAppBar extends BaseStatelessWidget implements PreferredSizeWidget {
       this.leading,
       this.trailing,
       this.transparent = false,
-      this.centerTitle})
+      this.centerTitle,
+      this.x = false})
       : preferredSize = const Size.fromHeight(kToolbarHeight);
 
   @override
@@ -34,7 +36,7 @@ class CustomAppBar extends BaseStatelessWidget implements PreferredSizeWidget {
         leading: leading ??
             Padding(
               padding: EdgeInsets.only(left: styles.insets.xs, top: styles.insets.xs),
-              child: const CustomBackButton(),
+              child: x ? CustomBackButton.close() : const CustomBackButton(),
             ),
         title: Text(title, style: styles.text.t1.textColor(titleColor ?? styles.theme.grey7)),
         centerTitle: centerTitle ?? true,

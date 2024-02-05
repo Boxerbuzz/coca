@@ -23,7 +23,9 @@ class DropDownListMenu extends StatefulWidget {
       this.originTabBuilder,
       this.bCenterOriginTabOnPivot = false,
       this.minHeight = 0,
-      this.bIsScrollable = true})
+      this.bIsScrollable = true,
+      this.padding = EdgeInsets.zero,
+      this.separator})
       : super(key: widgetKey);
 
   final bool bIsScrollable;
@@ -41,6 +43,10 @@ class DropDownListMenu extends StatefulWidget {
   /// The list's minimum height. If list would extend off the screen, it will be constrained to this height at minimum
   /// and add a scroll bar.
   final double minHeight;
+
+  final EdgeInsets padding;
+
+  final Widget? separator;
 
   /// Show a drop-down menu originating from the given pivot rect [pRect] and created using the [builder]. It will be
   /// automatically placed at the side of the rectangle with the most space.
@@ -83,8 +89,8 @@ class _DropDownListMenuState extends State<DropDownListMenu> {
                 children: [
                   if (widget.originTabBuilder != null)
                     Measurable(onMeasured: _onOriginTabMeasured, child: widget.originTabBuilder!(context, true)),
-                  Measurable(onMeasured: _onMenuMeasured, child: DropdownList(children: widget.children)),
-                  Measurable(onMeasured: _onMenuWithScrollBarMeasured, child: DropdownList(children: widget.children)),
+                  Measurable(onMeasured: _onMenuMeasured, child: DropdownList(items: widget.children)),
+                  Measurable(onMeasured: _onMenuWithScrollBarMeasured, child: DropdownList(items: widget.children)),
                 ],
               ),
             ),
@@ -220,7 +226,9 @@ class _DropDownListMenuState extends State<DropDownListMenu> {
             minWidth: dropdownData.bStretch ? pivotRect.width : 0,
             maxWidth: dropdownData.bStretch ? pivotRect.width : double.infinity,
             edgeDirection: edgeDirection,
-            children: widget.children);
+            padding: widget.padding,
+            separator: widget.separator,
+            items: widget.children);
 
         // Wrap with scrolling view
         if (bWillScroll) {

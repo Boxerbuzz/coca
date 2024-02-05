@@ -17,7 +17,7 @@ class ProjectBoardHeader extends StatelessWidget {
       padding: EdgeInsets.all(styles.insets.sm),
       child: Row(
         children: [
-          Text(title, style: styles.text.t1.textColor(styles.theme.grey4)),
+          Text(title, style: styles.text.t2.textColor(styles.theme.grey4)),
           const Spacer(),
           Assets.images.icons.dots.svg().clickable(onMorePressed),
         ],

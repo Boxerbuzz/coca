@@ -2,10 +2,10 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/ui/views/policy/components/policy_header.dart';
 import 'package:flutter/material.dart';
 
 import 'components/policy_body.dart';
+import 'components/policy_header.dart';
 
 class PolicyScreen extends StatelessWidget {
   const PolicyScreen({super.key});
@@ -14,9 +14,9 @@ class PolicyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: PolicyHeader(),
-      body: const PolicyBody(),
+      body: PolicyBody(),
     );
   }
 }

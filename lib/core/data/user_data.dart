@@ -275,12 +275,12 @@ List<UserModel> _userData() {
 
 final List<UserModel> users = _userData();
 
-List<UserModel> participants() {
+List<UserModel> participants({int count = 4}) {
   Random random = Random();
 
   List<UserModel> temp = users;
 
   temp.shuffle(random);
 
-  return temp.take(20).take(random.nextInt(4) + 1).toList();
+  return temp.take(20).take(random.nextInt(count) + 1).toList();
 }

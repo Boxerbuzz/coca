@@ -18,6 +18,7 @@ class CustomLinearProgress extends StatelessWidget {
         Container(
           height: 5,
           width: double.infinity,
+          clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             color: styles.theme.silver,
             borderRadius: BorderRadius.circular(5),
@@ -31,6 +32,7 @@ class CustomLinearProgress extends StatelessWidget {
               widthFactor: value,
               child: Container(
                 height: 5,
+                clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(color: styles.theme.green, borderRadius: BorderRadius.circular(5)),
               ),
             );

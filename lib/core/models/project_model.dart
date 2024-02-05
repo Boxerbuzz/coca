@@ -2,7 +2,7 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/ui/widgets/kanban/appyflow.dart';
+import 'package:appflowy_board/appflowy_board.dart';
 
 import 'task_model.dart';
 import 'user_model.dart';

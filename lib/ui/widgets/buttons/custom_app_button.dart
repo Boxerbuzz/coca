@@ -23,6 +23,7 @@ class CustomAppButton extends StatelessWidget {
     this.minimumSize,
     this.bgColor,
     this.border,
+    this.radius,
   }) : _builder = null;
 
   // interaction:
@@ -45,6 +46,7 @@ class CustomAppButton extends StatelessWidget {
   final BorderSide? border;
   final Color? bgColor;
   final bool pressEffect;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class CustomAppButton extends StatelessWidget {
 
     OutlinedBorder shape = circular
         ? CircleBorder(side: side)
-        : RoundedRectangleBorder(side: side, borderRadius: BorderRadius.circular(styles.corners.sm));
+        : RoundedRectangleBorder(side: side, borderRadius: BorderRadius.circular(radius ?? styles.corners.sm));
 
     ButtonStyle style = ButtonStyle(
       minimumSize: ButtonStyleButton.allOrNull<Size>(minimumSize ?? Size.zero),

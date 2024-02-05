@@ -7,6 +7,7 @@ library;
 
 /// constants
 export 'const/app_constants.dart';
+export 'data/file_data.dart';
 
 /// data
 export 'data/nav_data.dart';
@@ -18,11 +19,14 @@ export 'data/stat_data.dart';
 export 'data/task_data.dart';
 export 'data/user_data.dart';
 export 'data/workspace_data.dart';
+export 'enums/file_extension_enum.dart';
 
 /// enum
 export 'enums/notification_type_enum.dart';
 export 'enums/policy_text_enum.dart';
 export 'enums/project_display_enum.dart';
+export 'enums/task_state_enum.dart';
+export 'models/asset_model.dart';
 
 /// models
 export 'models/nav_model.dart';

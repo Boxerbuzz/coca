@@ -25,7 +25,7 @@ class AppTheme {
   final Color hYellow = const Color(0xffFFD88D);
   final Color hBlue = const Color(0xffB1E5FC);
   final Color hPurple = const Color(0xffCABDFF);
-
+  final Color hGreen = const Color(0xffA3E4B7);
   //greyscale
   final Color grey8 = const Color(0xff1D1E25);
   final Color grey7 = const Color(0xff242B42);

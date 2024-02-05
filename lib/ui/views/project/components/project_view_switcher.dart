@@ -30,22 +30,21 @@ class ProjectViewSwitcher extends StatelessWidget {
                 isOpen: __,
               ),
               bIsScrollable: false,
+              padding: EdgeInsets.all(styles.insets.xs),
+              separator: Gap(styles.insets.xs),
               children: [
                 ...displays.map(
                   (e) {
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: displays.indexOf(e) == 0 ? 0 : styles.insets.xs),
-                      child: ProjectViewSwitcherItem(
-                        icon: e.icon,
-                        label: e.name,
-                        isSelected: e.name.toLowerCase() == store.display.name.toLowerCase(),
-                        onPressed: () {
-                          store.display = ProjectDisplayEnum.values.firstWhere(
-                            (element) => element.name.toLowerCase() == e.name.toLowerCase(),
-                          );
-                          context.pop();
-                        },
-                      ),
+                    return ProjectViewSwitcherItem(
+                      icon: e.icon,
+                      label: e.name,
+                      isSelected: e.name.toLowerCase() == store.display.name.toLowerCase(),
+                      onPressed: () {
+                        store.display = ProjectDisplayEnum.values.firstWhere(
+                          (element) => element.name.toLowerCase() == e.name.toLowerCase(),
+                        );
+                        context.pop();
+                      },
                     );
                   },
                 ),

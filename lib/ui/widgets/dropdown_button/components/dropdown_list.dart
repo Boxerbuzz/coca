@@ -11,15 +11,17 @@ import '../utils/list_menu_edge_direction_enum.dart';
 class DropdownList extends StatelessWidget {
   const DropdownList({
     Key? widgetKey,
-    required this.children,
+    required this.items,
     this.edgeDirection = ListMenuEdgeDirectionEnum.none,
     this.minWidth = 0,
     this.maxWidth = double.infinity,
     this.minHeight = 0,
+    this.padding = EdgeInsets.zero,
+    this.separator,
   }) : super(key: widgetKey);
 
   /// Widgets to show in the list.
-  final List<Widget> children;
+  final List<Widget> items;
 
   /// Which edge of the menu to flatten. Regardless of value, the menu will be the same size.
   final ListMenuEdgeDirectionEnum edgeDirection;
@@ -32,6 +34,10 @@ class DropdownList extends StatelessWidget {
 
   /// The minimum height of the menu.
   final double minHeight;
+
+  final EdgeInsets? padding;
+
+  final Widget? separator;
 
   /// Radius of the list menu's borders.
   static const Radius borderRadius = Radius.circular(8);
@@ -55,6 +61,15 @@ class DropdownList extends StatelessWidget {
               : Radius.zero,
     );
 
+    List<Widget> children = [];
+
+    for (int i = 0; i < items.length; i++) {
+      children.add(items[i]);
+      if (i < items.length - 1) {
+        children.add(separator ?? const SizedBox.shrink());
+      }
+    }
+
     Widget contents = IntrinsicWidth(
       child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: children),
     );
@@ -63,7 +78,7 @@ class DropdownList extends StatelessWidget {
       constraints: BoxConstraints(minWidth: minWidth, maxWidth: maxWidth, minHeight: minHeight),
       decoration: BoxDecoration(color: styles.theme.white, borderRadius: boxBorderRadius),
       clipBehavior: Clip.hardEdge,
-      child: SingleChildScrollView(padding: EdgeInsets.all(styles.insets.xs), child: contents),
+      child: SingleChildScrollView(padding: padding, child: contents),
     );
   }
 }

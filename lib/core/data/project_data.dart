@@ -4,7 +4,7 @@
 
 import 'dart:math';
 
-import 'package:coca/ui/widgets/kanban/appyflow.dart';
+import 'package:appflowy_board/appflowy_board.dart';
 
 import '../models/project_model.dart';
 import '../models/task_model.dart';
@@ -379,38 +379,42 @@ List<ProjectModel> _projects(int count) {
   _data.shuffle(random);
   _tasks.shuffle(random);
 
-  int num = random.nextInt(20);
-  return _data
-      .take(count)
-      .map((e) => ProjectModel(
-          uid: e['uid'],
-          name: e['name'],
-          description: e['description'],
-          image: e['image'],
-          url: e['url'],
-          access: e['access'],
-          participants: participants(),
-          attachments: [],
-          hasAttachments: false,
-          progress: e['progress'],
-          tasks: _tasks
-              .take(num)
-              .map((e) => TaskModel(
-                  id: e['id'].toString(),
-                  description: e['description'],
-                  title: e['title'],
-                  isCompleted: e['isCompleted'],
-                  date: e['date'],
-                  status: ['completed', 'in_progress', 'backlogged', 'pending'][random.nextInt(3)]))
-              .toList()))
-      .toList();
+  return _data.take(count).map((e) {
+    int num = random.nextInt(15);
+    return ProjectModel(
+        uid: e['uid'],
+        name: e['name'],
+        description: e['description'],
+        image: e['image'],
+        url: e['url'],
+        access: e['access'],
+        participants: participants(),
+        attachments: [],
+        hasAttachments: false,
+        progress: e['progress'],
+        tasks: _tasks
+            .take(num)
+            .map((e) => TaskModel(
+                id: e['id'].toString(),
+                description: e['description'],
+                title: e['title'],
+                isCompleted: e['isCompleted'],
+                date: e['date'],
+                assignee: participants(count: 3),
+                status: ['completed', 'in_progress', 'backlogged', 'pending'][random.nextInt(3)]))
+            .toList());
+  }).toList();
 }
 
-final group1 = AppFlowyGroupData(id: "todo", name: "To Do", items: List<AppFlowyGroupItem>.from(_projects(2)));
+// Kanban Board Data
 
-final group2 =
-    AppFlowyGroupData(id: "in_progress", name: "In Progress", items: List<AppFlowyGroupItem>.from(_projects(1)));
+final todo = AppFlowyGroupData(id: "todo", name: "🗂 To Do", items: List<AppFlowyGroupItem>.from(_projects(2)));
 
-final group3 = AppFlowyGroupData(id: "pending", name: "Pending", items: List<AppFlowyGroupItem>.from(_projects(4)));
-final group4 = AppFlowyGroupData(id: "canceled", name: "Canceled", items: List<AppFlowyGroupItem>.from(_projects(2)));
-final group5 = AppFlowyGroupData(id: "urgent", name: "Urgent", items: List<AppFlowyGroupItem>.from(_projects(3)));
+final progress =
+    AppFlowyGroupData(id: "progress", name: "🚧 In Progress", items: List<AppFlowyGroupItem>.from(_projects(1)));
+
+final completed =
+    AppFlowyGroupData(id: "completed", name: "✅ Completed", items: List<AppFlowyGroupItem>.from(_projects(4)));
+final canceled =
+    AppFlowyGroupData(id: "canceled", name: "⛔️ Canceled", items: List<AppFlowyGroupItem>.from(_projects(2)));
+final backlog = AppFlowyGroupData(id: "backlog", name: "🗒 Backlog", items: List<AppFlowyGroupItem>.from(_projects(3)));
