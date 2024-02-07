@@ -14,6 +14,7 @@ export 'buttons/custom_secondary_button.dart';
 export 'checkbox/custom_checkbox.dart';
 export 'checkbox/custom_checkbox_enum.dart';
 export 'dropdown_button/dropdown_button.dart';
+export 'image/custom_svg.dart';
 export 'misc/custom_auth_divider.dart';
 export 'misc/custom_auth_header.dart';
 export 'misc/custom_empty_placeholder.dart';

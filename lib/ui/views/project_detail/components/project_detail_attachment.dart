@@ -8,7 +8,8 @@ import '../../../../coca.dart';
 import 'project_detail_attachment_gallery.dart';
 
 class ProjectDetailAttachment extends StatelessWidget {
-  const ProjectDetailAttachment({super.key});
+  const ProjectDetailAttachment({super.key, this.shouldAdd = true});
+  final bool? shouldAdd;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,9 @@ class ProjectDetailAttachment extends StatelessWidget {
             Gap(styles.insets.sm),
             Text('Attachments', style: styles.text.t1),
             Expanded(child: Container()),
-            CustomIconButton(icon: Assets.images.icons.plus.path, onPressed: () {}, color: styles.theme.grey4),
+            shouldAdd == true
+                ? CustomIconButton(icon: Assets.images.icons.plus.path, onPressed: () {}, color: styles.theme.grey4)
+                : const SizedBox.shrink(),
           ],
         ).padding(all: styles.insets.md, bottom: styles.insets.xxs),
         Gap(styles.insets.sm),

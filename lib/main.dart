@@ -5,6 +5,8 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'coca.dart';
 import 'ui/app_router.dart';
 
+///¯\_(ツ)_/¯
+
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
@@ -16,6 +18,7 @@ void main() async {
     ChangeNotifierProvider(create: (_) => TaskProvider()),
     ChangeNotifierProvider(create: (_) => ProjectProvider()),
     ChangeNotifierProvider(create: (_) => NotificationProvider()),
+    ChangeNotifierProvider(create: (_) => MailProvider()),
   ], child: const CocaApp()));
 
   FlutterNativeSplash.remove();

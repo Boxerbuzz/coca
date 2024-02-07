@@ -2,6 +2,7 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
+import 'package:coca/ui/views/project_detail/components/project_detail_comment_block.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
@@ -27,7 +28,8 @@ class ProjectDetailBody extends StatelessWidget {
         Container(height: 12, color: styles.theme.grey2),
         const ProjectDetailTasks(),
         Container(height: 12, color: styles.theme.grey2),
-        const ProjectDetailComments()
+        const ProjectDetailComments(),
+        const ProjectDetailCommentBlock(),
       ],
     );
   }

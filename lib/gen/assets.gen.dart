@@ -15,6 +15,7 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   $AssetsImagesAvatarGen get avatar => const $AssetsImagesAvatarGen();
+  $AssetsImagesEditorGen get editor => const $AssetsImagesEditorGen();
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
   $AssetsImagesLogoGen get logo => const $AssetsImagesLogoGen();
 
@@ -63,6 +64,106 @@ class $AssetsImagesAvatarGen {
       [avatarEight, avatarFive, avatarFour, avatarOne, avatarSeven, avatarSix, avatarThree, avatarTwo, user];
 }
 
+class $AssetsImagesEditorGen {
+  const $AssetsImagesEditorGen();
+
+  /// File path: assets/images/editor/bold.svg
+  SvgGenImage get bold => const SvgGenImage('assets/images/editor/bold.svg');
+
+  /// File path: assets/images/editor/bulleted-list.svg
+  SvgGenImage get bulletedList => const SvgGenImage('assets/images/editor/bulleted-list.svg');
+
+  /// File path: assets/images/editor/checked.svg
+  SvgGenImage get checked => const SvgGenImage('assets/images/editor/checked.svg');
+
+  /// File path: assets/images/editor/code.svg
+  SvgGenImage get code => const SvgGenImage('assets/images/editor/code.svg');
+
+  /// File path: assets/images/editor/direction.svg
+  SvgGenImage get direction => const SvgGenImage('assets/images/editor/direction.svg');
+
+  /// File path: assets/images/editor/h1.svg
+  SvgGenImage get h1 => const SvgGenImage('assets/images/editor/h1.svg');
+
+  /// File path: assets/images/editor/h2.svg
+  SvgGenImage get h2 => const SvgGenImage('assets/images/editor/h2.svg');
+
+  /// File path: assets/images/editor/h3.svg
+  SvgGenImage get h3 => const SvgGenImage('assets/images/editor/h3.svg');
+
+  /// File path: assets/images/editor/h4.svg
+  SvgGenImage get h4 => const SvgGenImage('assets/images/editor/h4.svg');
+
+  /// File path: assets/images/editor/italic.svg
+  SvgGenImage get italic => const SvgGenImage('assets/images/editor/italic.svg');
+
+  /// File path: assets/images/editor/link.svg
+  SvgGenImage get link => const SvgGenImage('assets/images/editor/link.svg');
+
+  /// File path: assets/images/editor/numberd-list.svg
+  SvgGenImage get numberdList => const SvgGenImage('assets/images/editor/numberd-list.svg');
+
+  /// File path: assets/images/editor/palette.svg
+  SvgGenImage get palette => const SvgGenImage('assets/images/editor/palette.svg');
+
+  /// File path: assets/images/editor/paragraph.svg
+  SvgGenImage get paragraph => const SvgGenImage('assets/images/editor/paragraph.svg');
+
+  /// File path: assets/images/editor/plus.svg
+  SvgGenImage get plus => const SvgGenImage('assets/images/editor/plus.svg');
+
+  /// File path: assets/images/editor/quote.svg
+  SvgGenImage get quote => const SvgGenImage('assets/images/editor/quote.svg');
+
+  /// File path: assets/images/editor/redo.svg
+  SvgGenImage get redo => const SvgGenImage('assets/images/editor/redo.svg');
+
+  /// File path: assets/images/editor/square.svg
+  SvgGenImage get square => const SvgGenImage('assets/images/editor/square.svg');
+
+  /// File path: assets/images/editor/strikethrough.svg
+  SvgGenImage get strikethrough => const SvgGenImage('assets/images/editor/strikethrough.svg');
+
+  /// File path: assets/images/editor/title-case.svg
+  SvgGenImage get titleCase => const SvgGenImage('assets/images/editor/title-case.svg');
+
+  /// File path: assets/images/editor/todo.svg
+  SvgGenImage get todo => const SvgGenImage('assets/images/editor/todo.svg');
+
+  /// File path: assets/images/editor/underline.svg
+  SvgGenImage get underline => const SvgGenImage('assets/images/editor/underline.svg');
+
+  /// File path: assets/images/editor/undo.svg
+  SvgGenImage get undo => const SvgGenImage('assets/images/editor/undo.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        bold,
+        bulletedList,
+        checked,
+        code,
+        direction,
+        h1,
+        h2,
+        h3,
+        h4,
+        italic,
+        link,
+        numberdList,
+        palette,
+        paragraph,
+        plus,
+        quote,
+        redo,
+        square,
+        strikethrough,
+        titleCase,
+        todo,
+        underline,
+        undo
+      ];
+}
+
 class $AssetsImagesIconsGen {
   const $AssetsImagesIconsGen();
 
@@ -71,6 +172,12 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/align-center.svg
   SvgGenImage get alignCenter => const SvgGenImage('assets/images/icons/align-center.svg');
+
+  /// File path: assets/images/icons/alt.svg
+  SvgGenImage get alt => const SvgGenImage('assets/images/icons/alt.svg');
+
+  /// File path: assets/images/icons/archive.svg
+  SvgGenImage get archive => const SvgGenImage('assets/images/icons/archive.svg');
 
   /// File path: assets/images/icons/arrow-down.svg
   SvgGenImage get arrowDown => const SvgGenImage('assets/images/icons/arrow-down.svg');
@@ -93,8 +200,14 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/images/icons/bell.svg');
 
+  /// File path: assets/images/icons/bin.svg
+  SvgGenImage get bin => const SvgGenImage('assets/images/icons/bin.svg');
+
   /// File path: assets/images/icons/box.svg
   SvgGenImage get box => const SvgGenImage('assets/images/icons/box.svg');
+
+  /// File path: assets/images/icons/burger.svg
+  SvgGenImage get burger => const SvgGenImage('assets/images/icons/burger.svg');
 
   /// File path: assets/images/icons/calendar.svg
   SvgGenImage get calendar => const SvgGenImage('assets/images/icons/calendar.svg');
@@ -135,6 +248,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/emoticon.svg
   SvgGenImage get emoticon => const SvgGenImage('assets/images/icons/emoticon.svg');
 
+  /// File path: assets/images/icons/empty-inbox.svg
+  SvgGenImage get emptyInbox => const SvgGenImage('assets/images/icons/empty-inbox.svg');
+
   /// File path: assets/images/icons/empty-notification.svg
   SvgGenImage get emptyNotification => const SvgGenImage('assets/images/icons/empty-notification.svg');
 
@@ -170,6 +286,9 @@ class $AssetsImagesIconsGen {
 
   /// File path: assets/images/icons/image.svg
   SvgGenImage get image => const SvgGenImage('assets/images/icons/image.svg');
+
+  /// File path: assets/images/icons/inbox.svg
+  SvgGenImage get inbox => const SvgGenImage('assets/images/icons/inbox.svg');
 
   /// File path: assets/images/icons/kanban.svg
   SvgGenImage get kanban => const SvgGenImage('assets/images/icons/kanban.svg');
@@ -210,6 +329,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/photo.svg
   SvgGenImage get photo => const SvgGenImage('assets/images/icons/photo.svg');
 
+  /// File path: assets/images/icons/plane.svg
+  SvgGenImage get plane => const SvgGenImage('assets/images/icons/plane.svg');
+
   /// File path: assets/images/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/icons/plus.svg');
 
@@ -231,6 +353,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/icons/star.svg');
 
+  /// File path: assets/images/icons/text.svg
+  SvgGenImage get text => const SvgGenImage('assets/images/icons/text.svg');
+
   /// File path: assets/images/icons/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/images/icons/trash.svg');
 
@@ -249,13 +374,24 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/users1.svg
   SvgGenImage get users1 => const SvgGenImage('assets/images/icons/users1.svg');
 
+  /// File path: assets/images/icons/volume.svg
+  SvgGenImage get volume => const SvgGenImage('assets/images/icons/volume.svg');
+
+  /// File path: assets/images/icons/write.svg
+  SvgGenImage get write => const SvgGenImage('assets/images/icons/write.svg');
+
   /// File path: assets/images/icons/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/icons/x.svg');
+
+  /// File path: assets/images/icons/youtube.svg
+  SvgGenImage get youtube => const SvgGenImage('assets/images/icons/youtube.svg');
 
   /// List of all assets
   List<dynamic> get values => [
         agenda,
         alignCenter,
+        alt,
+        archive,
         arrowDown,
         arrowDropdown,
         arrowLeft,
@@ -263,7 +399,9 @@ class $AssetsImagesIconsGen {
         attachment,
         bars,
         bell,
+        bin,
         box,
+        burger,
         calendar,
         checkCircle,
         checkSquare,
@@ -277,6 +415,7 @@ class $AssetsImagesIconsGen {
         dots,
         edit,
         emoticon,
+        emptyInbox,
         emptyNotification,
         emptyProjects,
         emptySearch,
@@ -289,6 +428,7 @@ class $AssetsImagesIconsGen {
         headphone,
         home,
         image,
+        inbox,
         kanban,
         lifeBuoy,
         link,
@@ -302,6 +442,7 @@ class $AssetsImagesIconsGen {
         person,
         phone,
         photo,
+        plane,
         plus,
         premium,
         puzzle,
@@ -309,13 +450,17 @@ class $AssetsImagesIconsGen {
         send,
         share,
         star,
+        text,
         trash,
         upload,
         userPlus,
         user,
         users,
         users1,
-        x
+        volume,
+        write,
+        x,
+        youtube
       ];
 }
 

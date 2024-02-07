@@ -20,7 +20,7 @@ class MainProvider with ChangeNotifier {
     const HomeScreen(),
     const ProjectScreen(),
     Container(),
-    const MessageScreen(),
+    const MailScreen(),
     const ProfileScreen()
   ];
   List<Widget> get screens => _screens;

@@ -21,7 +21,7 @@ class LoginBody extends StatelessWidget {
         const LoginForm(),
         const Align(alignment: Alignment.centerRight, child: LoginForgetPasswordButton()),
         Gap(styles.insets.xl),
-        CustomPrimaryButton(label: 'Sign In', onTap: () {}),
+        CustomPrimaryButton(label: 'Sign In', onTap: () => context.go(MainScreen.route)),
         Gap(styles.insets.md),
         OneLineClickableText(
           actionText: 'Sign Up',

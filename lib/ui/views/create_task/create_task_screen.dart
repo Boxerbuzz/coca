@@ -5,13 +5,16 @@
 import 'dart:convert';
 
 import 'package:appflowy_editor/appflowy_editor.dart';
-import 'package:coca/ui/views/create_task/data.dart';
-import 'package:flutter/gestures.dart';
+import 'package:coca/ui/views/create_task/misc/data.dart';
+import 'package:coca/ui/views/create_task/toolbar/bold_action.dart';
+import 'package:coca/ui/views/create_task/toolbar/input_action.dart';
+import 'package:coca/ui/views/create_task/toolbar/redo_action.dart';
+import 'package:coca/ui/views/create_task/toolbar/undo_action.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../../coca.dart';
 import 'components/create_task_header.dart';
+import 'misc/editor_config.dart';
+import 'toolbar/styling_action.dart';
 
 class CreateTaskScreen extends StatefulWidget {
   const CreateTaskScreen({super.key});
@@ -23,7 +26,7 @@ class CreateTaskScreen extends StatefulWidget {
 }
 
 class _CreateTaskScreenState extends State<CreateTaskScreen> {
-  late final EditorScrollController editorScrollController;
+  late final EditorScrollController _scrollController;
   late final editorState = EditorState(document: Document.fromJson(json)); // with an empty paragraph
   late final AppFlowyEditor editor;
 
@@ -39,140 +42,19 @@ class _CreateTaskScreenState extends State<CreateTaskScreen> {
 
   final json = Map<String, Object>.from(jsonDecode(document));
 
-  EditorStyle style() {
-    return EditorStyle.mobile(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      cursorColor: styles.theme.grey7,
-      selectionColor: styles.theme.hBlue.withOpacity(0.3),
-      textStyleConfiguration: TextStyleConfiguration(
-        text: TextStyle(fontSize: 18.0, color: styles.theme.grey7),
-        bold: TextStyle(color: styles.theme.grey7).bold,
-        href: TextStyle(
-          color: styles.theme.blue,
-          decoration: TextDecoration.combine([TextDecoration.overline, TextDecoration.underline]),
-        ),
-        code: styles.text.p.italic.textColor(styles.theme.blue),
-      ),
-      textSpanDecorator: (context, node, index, text, textSpan, textSpan1) {
-        final attributes = text.attributes;
-        final href = attributes?[AppFlowyRichTextKeys.href];
-        if (href != null) {
-          return TextSpan(
-            text: text.text,
-            style: textSpan.style,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                debugPrint('onTap: $href');
-              }
-              ..onSecondaryTap = () {
-                debugPrint('onSecondaryTap: $href');
-              }
-              ..onTapDown = (details) {
-                debugPrint('onTapDown: $href');
-              },
-          );
-        }
-        return textSpan;
-      },
-      dragHandleColor: Colors.black,
-    );
-  }
-
-  Map<String, BlockComponentBuilder> blocks() {
-    final configuration = BlockComponentConfiguration(
-      padding: (node) {
-        if (HeadingBlockKeys.type == node.type) {
-          return const EdgeInsets.symmetric(vertical: 30);
-        }
-        return const EdgeInsets.symmetric(vertical: 10);
-      },
-      textStyle: (node) {
-        if (HeadingBlockKeys.type == node.type) {
-          return const TextStyle(color: Colors.yellow);
-        }
-        return const TextStyle();
-      },
-    );
-    final map = {
-      ...standardBlockComponentBuilderMap,
-    };
-    // customize the heading block component
-    final levelToFontSize = [
-      24.0,
-      22.0,
-      20.0,
-      18.0,
-      16.0,
-      14.0,
-    ];
-    map[HeadingBlockKeys.type] = HeadingBlockComponentBuilder(
-      textStyleBuilder: (level) => GoogleFonts.urbanist(
-        fontSize: levelToFontSize.elementAtOrNull(level - 1) ?? 14.0,
-        fontWeight: FontWeight.w600,
-      ),
-    );
-    map[ParagraphBlockKeys.type] = ParagraphBlockComponentBuilder(
-      configuration: BlockComponentConfiguration(
-        placeholderText: (node) => 'Type something...',
-      ),
-    );
-    // customize heading block style
-    return {
-      ...standardBlockComponentBuilderMap,
-      // todo-list block
-      TodoListBlockKeys.type: TodoListBlockComponentBuilder(
-        configuration: configuration,
-        iconBuilder: (context, node) {
-          final checked = node.attributes[TodoListBlockKeys.checked] as bool;
-          return Icon(
-            checked ? Icons.check_box : Icons.check_box_outline_blank,
-            size: 20,
-            color: Colors.white,
-          );
-        },
-      ),
-      // bulleted list block
-      BulletedListBlockKeys.type: BulletedListBlockComponentBuilder(
-        configuration: configuration,
-        iconBuilder: (context, node) {
-          return const Icon(
-            Icons.circle,
-            size: 20,
-            color: Colors.green,
-          );
-        },
-      ),
-      // quote block
-      QuoteBlockKeys.type: QuoteBlockComponentBuilder(
-        configuration: configuration,
-        iconBuilder: (context, node) {
-          return const EditorSvg(
-            width: 20,
-            height: 20,
-            padding: EdgeInsets.only(right: 5.0),
-            name: 'quote',
-            color: Colors.pink,
-          );
-        },
-      ),
-    };
-  }
-
   @override
   void initState() {
     super.initState();
-    editorScrollController = EditorScrollController(
+    _scrollController = EditorScrollController(
       editorState: editorState,
       shrinkWrap: false,
     );
     editor = AppFlowyEditor(
       editorState: editorState,
-      characterShortcutEvents: [
-        italic,
-      ],
+      characterShortcutEvents: [italic],
       blockComponentBuilders: blocks(),
       editorStyle: style(),
-      editorScrollController: editorScrollController,
+      editorScrollController: _scrollController,
     );
   }
 
@@ -181,14 +63,9 @@ class _CreateTaskScreenState extends State<CreateTaskScreen> {
     return Scaffold(
       appBar: const CreateTaskHeader(),
       body: MobileToolbarV2(
-        toolbarHeight: 48.0,
-        toolbarItems: [
-          textDecorationMobileToolbarItemV2,
-          buildTextAndBackgroundColorMobileToolbarItem(),
-          blocksMobileToolbarItem,
-          linkMobileToolbarItem,
-          dividerMobileToolbarItem,
-        ],
+        toolbarHeight: 60.0,
+        buttonHeight: 40,
+        toolbarItems: [redoAction, undoAction, styleBlockAction, inputBlockAction(), boldAction],
         editorState: editorState,
         child: Column(
           children: [
@@ -196,7 +73,7 @@ class _CreateTaskScreenState extends State<CreateTaskScreen> {
             Expanded(
               child: MobileFloatingToolbar(
                 editorState: editorState,
-                editorScrollController: editorScrollController,
+                editorScrollController: _scrollController,
                 toolbarBuilder: (context, anchor, closeToolbar) {
                   return AdaptiveTextSelectionToolbar.editable(
                     clipboardStatus: ClipboardStatus.pasteable,
@@ -207,13 +84,11 @@ class _CreateTaskScreenState extends State<CreateTaskScreen> {
                     onCut: () => cutCommand.execute(editorState),
                     onPaste: () => pasteCommand.execute(editorState),
                     onSelectAll: () => selectAllCommand.execute(editorState),
-                    onLiveTextInput: null,
-                    onLookUp: null,
-                    onSearchWeb: null,
-                    onShare: null,
-                    anchors: TextSelectionToolbarAnchors(
-                      primaryAnchor: anchor,
-                    ),
+                    onLiveTextInput: () {},
+                    onLookUp: () {},
+                    onSearchWeb: () {},
+                    onShare: () {},
+                    anchors: TextSelectionToolbarAnchors(primaryAnchor: anchor),
                   );
                 },
                 child: editor,
