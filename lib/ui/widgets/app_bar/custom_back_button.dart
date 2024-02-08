@@ -15,14 +15,14 @@ class CustomBackButton extends StatelessWidget {
   final VoidCallback? onPressed;
 
   CustomBackButton.close({Key? key, VoidCallback? onPressed, Color? bgColor, Color? iconColor})
-      : this(key: key, icon: Assets.images.icons.x.path, onPressed: onPressed, bgColor: bgColor, iconColor: iconColor);
+      : this(key: key, icon: Assets.images.icons.x, onPressed: onPressed, bgColor: bgColor, iconColor: iconColor);
 
   @override
   Widget build(BuildContext context) {
     return CustomIconButton(
-      icon: icon ?? Assets.images.icons.arrowLeft.path,
+      icon: icon ?? Assets.images.icons.arrowLeft,
       bgColor: bgColor,
-      color: iconColor,
+      color: iconColor ?? styles.theme.grey7,
       onPressed: onPressed ?? () => context.pop(),
     );
   }

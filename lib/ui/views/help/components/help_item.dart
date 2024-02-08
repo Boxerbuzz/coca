@@ -19,10 +19,8 @@ class HelpItem extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: styles.insets.md, vertical: styles.insets.sm),
         child: Row(
           children: [
-            Expanded(
-              child: Text(title, style: styles.text.b1),
-            ),
-            Assets.images.icons.arrowRight.svg(color: styles.theme.grey4, height: 24, width: 24),
+            Expanded(child: Text(title, style: styles.text.b1)),
+            CustomSvg(Assets.images.icons.arrowRight).svg(color: styles.theme.grey4, height: 24, width: 24),
           ],
         ),
       ),

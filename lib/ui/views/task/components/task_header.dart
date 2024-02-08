@@ -23,7 +23,7 @@ class TaskHeader extends BaseStatelessWidget implements PreferredSizeWidget {
           children: [
             Text('My Task', style: styles.text.h2.textColor(styles.theme.grey7)),
             Expanded(child: Container()),
-            Assets.images.icons.search.svg(height: 20, width: 20),
+            CustomSvg(Assets.images.icons.search).svg(height: 20, width: 20),
           ],
         ),
       );

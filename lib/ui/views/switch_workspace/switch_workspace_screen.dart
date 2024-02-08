@@ -27,8 +27,8 @@ class SwitchWorkspaceScreen extends StatelessWidget {
                 SwitchWorkspaceAddButton(onPressed: () {}),
                 Gap(styles.insets.md),
                 SwitchWorkspaceSelector(
-                  workspaces: workspaces,
-                  selectedWorkspace: store.workspace ?? workspaces.first,
+                  workspaces: store.workspaces,
+                  selectedWorkspace: store.workspace ?? store.workspaces.first,
                   onChanged: (value) => store.workspace = value,
                 ),
               ],

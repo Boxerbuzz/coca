@@ -39,13 +39,13 @@ class MailItem extends StatelessWidget {
         decoration: BoxDecoration(color: styles.theme.amber),
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: CustomSvg(Assets.images.icons.star.path).svg(color: styles.theme.grey7),
+        child: CustomSvg(Assets.images.icons.star).svg(color: styles.theme.grey7),
       ),
       secondaryBackground: Container(
         decoration: BoxDecoration(color: styles.theme.grey7),
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: CustomSvg(Assets.images.icons.trash.path).svg(color: styles.theme.silver),
+        child: CustomSvg(Assets.images.icons.trash).svg(color: styles.theme.silver),
       ),
       child: Container(
         decoration: BoxDecoration(

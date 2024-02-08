@@ -23,7 +23,7 @@ class ProjectHeader extends BaseStatelessWidget implements PreferredSizeWidget {
           children: [
             Text('Projects', style: styles.text.h2.textColor(styles.theme.grey7)),
             Expanded(child: Container()),
-            Assets.images.icons.search.svg(height: 24, width: 24),
+            CustomSvg(Assets.images.icons.search).svg(height: 24, width: 24),
           ],
         ),
       );

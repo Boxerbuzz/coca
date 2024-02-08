@@ -26,7 +26,7 @@ class MailDetailMessageRender extends StatelessWidget {
                 'Hi sis,\n \nI hope you are doing well. I am writing to inform you that we are in the process of '
                 'redesigning our website. We are looking for a new design that is more modern and user-friendly. '
                 'We would like to get your input on this. Please let me know if you have any ideas or suggestions'
-                '. \nThank you!',
+                '. \n\nThank you!',
                 style: styles.text.caption.textColor(styles.theme.grey7),
               ),
               Gap(styles.insets.md),

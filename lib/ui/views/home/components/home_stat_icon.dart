@@ -17,7 +17,7 @@ class HomeStatIcon extends StatelessWidget {
       height: 36,
       width: 36,
       decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(18)),
-      child: SvgGenImage(icon).svg(),
+      child: CustomSvg(icon).svg(),
     );
   }
 }

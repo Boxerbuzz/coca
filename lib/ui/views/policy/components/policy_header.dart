@@ -26,7 +26,7 @@ class PolicyHeader extends BaseStatelessWidget implements PreferredSizeWidget {
             const Spacer(),
             Text('Privacy Policy', style: styles.text.t1.textColor(styles.theme.grey7)),
             const Spacer(),
-            Assets.images.icons.share.svg(height: 24, width: 24),
+            CustomSvg(Assets.images.icons.share).svg(height: 24, width: 24),
           ],
         ),
       );

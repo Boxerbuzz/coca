@@ -23,7 +23,7 @@ class CreateProjectBody extends StatelessWidget {
           CustomTextFieldWithIcon(
             labelText: 'Project Name',
             hintText: 'Enter project name',
-            prefixIcon: Assets.images.icons.agenda.svg(),
+            prefixIcon: CustomSvg(Assets.images.icons.agenda).svg(),
           ),
           Gap(styles.insets.md),
           CreateProjectLayoutSelector(onChanged: (v) {}),

@@ -26,7 +26,7 @@ class PolicyBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Assets.images.icons.calendar.svg(color: styles.theme.blue, height: 18, width: 18),
+                CustomSvg(Assets.images.icons.calendar).svg(color: styles.theme.blue, height: 18, width: 18),
                 Gap(styles.insets.xs),
                 Text('Last Updated: Jan 25, 2024 - v:1.2.5', style: styles.text.b1.textColor(styles.theme.blue))
               ],

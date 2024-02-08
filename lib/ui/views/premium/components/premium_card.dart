@@ -57,15 +57,15 @@ class PremiumCard extends StatelessWidget {
               children: [
                 PremiumCardItem(
                     text: 'Unlimited Projects',
-                    icon: Assets.images.icons.box.path,
+                    icon: Assets.images.icons.box,
                     subTittle: 'Limits has got nothing on you'),
                 PremiumCardItem(
                     text: 'Unlimited Members',
-                    icon: Assets.images.icons.users1.path,
+                    icon: Assets.images.icons.users1,
                     subTittle: 'No limits to members invite'),
                 PremiumCardItem(
                     text: 'Unlimited File Uploads',
-                    icon: Assets.images.icons.upload.path,
+                    icon: Assets.images.icons.upload,
                     subTittle: 'No limits on project file uploads'),
               ],
             ),

@@ -18,7 +18,8 @@ class HelpScreen extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Help Center',
         trailing: CustomIconButton(
-          icon: Assets.images.icons.search.path,
+          icon: Assets.images.icons.search,
+          color: styles.theme.grey7,
           onPressed: () {},
         ),
       ),

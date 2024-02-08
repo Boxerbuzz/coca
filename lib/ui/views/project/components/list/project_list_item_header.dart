@@ -24,7 +24,7 @@ class ProjectListItemHeader extends StatelessWidget {
             child: Center(child: Text('${data.items.length}', style: styles.text.b1))),
         Expanded(child: Container()),
         CustomIconButton(
-            icon: Assets.images.icons.plus.path, size: 24, iconSize: 18, color: styles.theme.grey4, onPressed: () {}),
+            icon: Assets.images.icons.plus, size: 24, iconSize: 18, color: styles.theme.grey4, onPressed: () {}),
       ],
     );
   }

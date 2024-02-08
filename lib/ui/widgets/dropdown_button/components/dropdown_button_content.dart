@@ -37,12 +37,12 @@ class DropdownButtonContent extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[
-            SvgGenImage(icon!).svg(),
+            CustomSvg(icon!).svg(color: styles.theme.grey7),
             Gap(styles.insets.xs),
           ],
           Text(value.capitalize(), style: styles.text.b1),
           const Spacer(),
-          Icon(Icons.arrow_drop_down, size: styles.sizes.icon, color: styles.theme.grey4),
+          CustomSvg(Assets.images.icons.arrowDropdown).svg(color: styles.theme.grey6),
         ],
       ),
     );

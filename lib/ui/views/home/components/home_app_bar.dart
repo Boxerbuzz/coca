@@ -37,10 +37,10 @@ class HomeAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Assets.images.logo.coca.svg(height: 24, width: 24),
+                  CustomSvg(Assets.images.logo.coca).svg(height: 24, width: 24),
                   const Spacer(),
                   IconButton(
-                      icon: Assets.images.icons.bell.svg(height: 24, width: 24),
+                      icon: CustomSvg(Assets.images.icons.bell).svg(height: 24, width: 24),
                       onPressed: () => context.push(NotificationScreen.route)),
                   CustomAvatar(user: user, size: 35, bg: styles.theme.grey3),
                 ],

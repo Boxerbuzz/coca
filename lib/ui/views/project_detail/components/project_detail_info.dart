@@ -41,7 +41,7 @@ class ProjectDetailInfo extends StatelessWidget {
                   childValue: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Assets.images.icons.flag.svg(width: 16, height: 16),
+                      CustomSvg(Assets.images.icons.flag).svg(width: 16, height: 16),
                       Gap(styles.insets.xxs),
                       Text('Urgent', style: styles.text.t2).padding(bottom: 4),
                     ],

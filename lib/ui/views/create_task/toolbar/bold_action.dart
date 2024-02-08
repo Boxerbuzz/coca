@@ -8,6 +8,6 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 
 final boldAction = MobileToolbarItem.action(
-  itemIconBuilder: (_, __, ___) => CustomSvg(Assets.images.editor.bold.path).svg(),
+  itemIconBuilder: (_, __, ___) => CustomSvg(Assets.images.editor.bold).svg(size: 24),
   actionHandler: (BuildContext context, EditorState editorState) {},
 );

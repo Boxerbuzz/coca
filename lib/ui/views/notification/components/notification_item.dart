@@ -21,7 +21,7 @@ class NotificationItem extends StatelessWidget {
         children: <Widget>[
           if (data.avatar.isEmpty) ...{
             CustomIconButton(
-              icon: Assets.images.icons.bell.path,
+              icon: Assets.images.icons.bell,
               bgColor: styles.theme.grey2,
               size: 48,
               onPressed: () {},

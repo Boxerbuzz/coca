@@ -18,7 +18,7 @@ class ProjectDetailDescription extends StatelessWidget {
         children: [
           Row(
             children: [
-              Assets.images.icons.description.svg(width: 20, height: 20),
+              CustomSvg(Assets.images.icons.description).svg(color: styles.theme.grey7),
               const Gap(15),
               Text('Description', style: styles.text.t1),
             ],
@@ -26,7 +26,7 @@ class ProjectDetailDescription extends StatelessWidget {
           const Gap(13),
           Text(
             'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam...',
-            style: styles.text.p,
+            style: styles.text.caption,
           ).padding(left: styles.insets.lg),
           Gap(styles.insets.sm),
           Text(

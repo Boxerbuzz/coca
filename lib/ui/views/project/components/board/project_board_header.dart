@@ -19,7 +19,7 @@ class ProjectBoardHeader extends StatelessWidget {
         children: [
           Text(title, style: styles.text.t2.textColor(styles.theme.grey4)),
           const Spacer(),
-          Assets.images.icons.dots.svg().clickable(onMorePressed),
+          CustomSvg(Assets.images.icons.dots).svg().clickable(onMorePressed),
         ],
       ),
     );

@@ -33,7 +33,7 @@ class MainProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  List<WorkspaceModel> _workspaces = [];
+  List<WorkspaceModel> _workspaces = workspacesData;
   List<WorkspaceModel> get workspaces => _workspaces;
   set workspaces(List<WorkspaceModel> value) {
     _workspaces = value;

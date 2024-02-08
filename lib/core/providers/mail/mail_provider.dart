@@ -2,8 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/coca.dart';
 import 'package:flutter/material.dart';
+
+import '../../../coca.dart';
 
 class MailProvider extends ChangeNotifier {
   MailModel? _selectedMail;

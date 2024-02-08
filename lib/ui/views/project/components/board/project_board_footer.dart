@@ -22,7 +22,7 @@ class ProjectBoardFooter extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomIconButton(
-            icon: Assets.images.icons.plus.path,
+            icon: Assets.images.icons.plus,
             onPressed: () {},
             bgColor: Colors.transparent,
             color: styles.theme.grey4,

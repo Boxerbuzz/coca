@@ -14,20 +14,20 @@ class ProjectDetailCommentBlock extends StatelessWidget {
     return Container(
       height: 72,
       padding: EdgeInsets.symmetric(horizontal: styles.insets.sm),
+      decoration: BoxDecoration(color: styles.theme.white, border: Border(top: BorderSide(color: styles.theme.silver))),
       child: Row(
         children: [
-          CustomIconButton(icon: Assets.images.icons.attachment.path, onPressed: () {}, color: styles.theme.grey4),
+          CustomIconButton(icon: Assets.images.icons.attachment, onPressed: () {}, color: styles.theme.grey7),
           const Gap(12),
-          CustomIconButton(icon: Assets.images.icons.emoticon.path, onPressed: () {}, color: styles.theme.grey4),
-          Gap(styles.insets.sm),
-          Expanded(child: Text('Write a comment...', style: styles.text.p.textColor(styles.theme.grey4))),
           CustomIconButton(
-            icon: Assets.images.icons.send.path,
+            icon: Assets.images.icons.emoticon,
             onPressed: () {},
-            color: styles.theme.blue,
-            bgColor: styles.theme.grey2,
-            size: 50,
+            color: styles.theme.grey7,
           ),
+          Gap(styles.insets.sm),
+          Expanded(child: Text('Write a comment...', style: styles.text.caption.textColor(styles.theme.grey4))),
+          CustomIconButton(
+              icon: Assets.images.icons.send, onPressed: () {}, color: styles.theme.blue, bgColor: styles.theme.grey2),
         ],
       ),
     );

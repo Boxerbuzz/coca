@@ -19,44 +19,53 @@ class ProjectDetailTasks extends StatelessWidget {
         children: [
           Gap(styles.insets.sm),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Assets.images.icons.checkSquare.svg(width: 24, height: 24),
+              CustomSvg(Assets.images.icons.checkSquare).svg(color: styles.theme.grey7),
               Gap(styles.insets.sm),
-              Text('Task List', style: styles.text.t1),
-              Expanded(child: Container()),
-              CustomIconButton(
-                  icon: Assets.images.icons.plus.path,
-                  onPressed: () => context.push(CreateTaskScreen.route),
-                  color: styles.theme.grey4),
-            ],
-          ),
-          const Gap(13),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: styles.insets.xl),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Column(
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text('73%', style: styles.text.t1),
-                    Text('Progress', style: styles.text.t3),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Task List', style: styles.text.t1),
+                        Expanded(child: Container()),
+                        CustomSvg(Assets.images.icons.plus)
+                            .svg(color: styles.theme.grey7)
+                            .clickable(() => context.push(CreateTaskScreen.route)),
+                      ],
+                    ),
+                    Gap(styles.insets.xs),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('73%', style: styles.text.t1),
+                            Text('Progress', style: styles.text.t3),
+                          ],
+                        ),
+                        Gap(styles.insets.sm),
+                        CircularPercentIndicator(
+                          radius: 18,
+                          lineWidth: 4.0,
+                          animation: true,
+                          percent: 0.7,
+                          circularStrokeCap: CircularStrokeCap.round,
+                          progressColor: styles.theme.green,
+                          backgroundColor: styles.theme.grey3,
+                          animateFromLastPercent: true,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-                Gap(styles.insets.sm),
-                CircularPercentIndicator(
-                  radius: 18,
-                  lineWidth: 4.0,
-                  animation: true,
-                  percent: 0.7,
-                  circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: styles.theme.green,
-                  backgroundColor: styles.theme.grey3,
-                  animateFromLastPercent: true,
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           Gap(styles.insets.sm),
           Divider(color: styles.theme.silver),

@@ -21,16 +21,11 @@ class MailItemHeader extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                '${email.sender} — ${email.time}',
-                style: styles.text.caption.textColor(styles.theme.grey4),
-              ),
+              Text('${email.sender} — ${email.time}', style: styles.text.caption.textColor(styles.theme.grey4)),
               const Gap(2),
-              Text(
-                email.subject,
-                style: email.containsPictures ? styles.text.t2 : styles.text.t2.textColor(styles.theme.grey7),
-                overflow: TextOverflow.ellipsis,
-              ),
+              Text(email.subject,
+                  style: email.containsPictures ? styles.text.t2 : styles.text.t2.textColor(styles.theme.grey7),
+                  overflow: TextOverflow.ellipsis),
             ],
           ),
         ),

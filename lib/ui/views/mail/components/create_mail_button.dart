@@ -19,9 +19,9 @@ class CreateMailButton extends StatelessWidget {
         child: CustomButtonWithIcon(
           onPressed: () => context.push(CreateMailScreen.route),
           btnColor: styles.theme.grey2,
-          icon: Assets.images.icons.write.path,
+          icon: Assets.images.icons.write,
           text: 'Write Message',
-          iconColor: styles.theme.grey4,
+          iconColor: styles.theme.grey7,
           txtColor: styles.theme.grey7,
         ),
       ),

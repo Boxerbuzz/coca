@@ -14,7 +14,7 @@ class ProjectEmptyPlaceholder extends StatelessWidget {
     return CustomEmptyPlaceHolder(
         title: "Plan your project & Create Task",
         subtitle: "Create task to manage and tracking your project easily instantly incredibly",
-        assets: Assets.images.icons.emptyProjects.path,
+        assets: Assets.images.icons.emptyProjects,
         size: const Size(178, 195));
   }
 }

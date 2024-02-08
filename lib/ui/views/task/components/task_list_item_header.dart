@@ -32,7 +32,7 @@ class TaskListItemHeader extends StatelessWidget {
               quarterTurns: isOpened ? 2 : 3,
               child: CustomIconButton(
                   onPressed: toggleReveal,
-                  icon: Assets.images.icons.arrowDown.path,
+                  icon: Assets.images.icons.arrowDown,
                   size: 16,
                   iconSize: 20,
                   color: styles.theme.grey4),
@@ -48,7 +48,7 @@ class TaskListItemHeader extends StatelessWidget {
             ),
             Expanded(child: Container()),
             CustomIconButton(
-              icon: Assets.images.icons.dots.path,
+              icon: Assets.images.icons.dots,
               onPressed: showContextMenu,
               size: 24,
               iconSize: 18,

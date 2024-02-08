@@ -12,6 +12,6 @@ class ProjectSwitcherModel {
 }
 
 final List<ProjectSwitcherModel> displays = [
-  ProjectSwitcherModel(name: 'List', icon: Assets.images.icons.list.path),
-  ProjectSwitcherModel(name: 'Board', icon: Assets.images.icons.columns.path),
+  ProjectSwitcherModel(name: 'List', icon: Assets.images.icons.list),
+  ProjectSwitcherModel(name: 'Board', icon: Assets.images.icons.columns),
 ];

@@ -20,7 +20,7 @@ class MailDetailReplySection extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              CustomIconButton(icon: Assets.images.editor.undo.path, onPressed: () {}),
+              CustomIconButton(icon: Assets.images.editor.undo, onPressed: () {}),
               const SizedBox(width: 12),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,8 +30,9 @@ class MailDetailReplySection extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              CustomIconButton(icon: Assets.images.icons.trash.path, onPressed: () {}),
-              CustomIconButton(icon: Assets.images.icons.dots.path, onPressed: () {})
+              CustomIconButton(icon: Assets.images.icons.edit, onPressed: () {}),
+              CustomIconButton(icon: Assets.images.icons.trash, onPressed: () {}),
+              CustomIconButton(icon: Assets.images.icons.dots, onPressed: () {})
             ],
           ),
         ),
@@ -65,8 +66,8 @@ class MailDetailReplySection extends StatelessWidget {
                 child: CustomPrimaryButton(label: 'Reply Message', onTap: () {}),
               ),
               const Spacer(),
-              CustomIconButton(icon: Assets.images.editor.titleCase.path, onPressed: () {}),
-              CustomIconButton(icon: Assets.images.icons.attachment.path, onPressed: () {})
+              CustomIconButton(icon: Assets.images.editor.titleCase, onPressed: () {}),
+              CustomIconButton(icon: Assets.images.icons.attachment, onPressed: () {})
             ],
           ),
         ),

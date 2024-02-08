@@ -14,7 +14,7 @@ class MailDetailSenderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(border: Border.symmetric(horizontal: BorderSide(color: styles.theme.silver, width: 1))),
+      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: styles.theme.silver, width: 1))),
       padding: EdgeInsets.all(styles.insets.sm),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,10 +29,9 @@ class MailDetailSenderSection extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Text(
-            "Today, ${DateFormat('h:mm a').format(DateTime.now())}",
-            style: styles.text.t3.textColor(styles.theme.grey4),
-          ),
+          Text("Today, ${DateFormat('h:mm a').format(DateTime.now())}",
+              style: styles.text.t3.textColor(styles.theme.grey4)),
+          CustomIconButton(icon: Assets.images.icons.star, onPressed: () {}, color: styles.theme.grey4),
         ],
       ),
     );

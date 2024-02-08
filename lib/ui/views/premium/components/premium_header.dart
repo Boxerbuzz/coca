@@ -19,11 +19,12 @@ class PremiumHeader extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomIconButton(icon: Assets.images.icons.x.path, onPressed: () => context.pop()),
+            CustomIconButton(icon: Assets.images.icons.x, onPressed: () => context.pop(), color: styles.theme.grey7),
             Expanded(child: Container()),
             CustomIconButton(
-              icon: Assets.images.icons.share.path,
+              icon: Assets.images.icons.share,
               onPressed: () => context.pop(),
+              color: styles.theme.grey7,
             ),
           ],
         ),

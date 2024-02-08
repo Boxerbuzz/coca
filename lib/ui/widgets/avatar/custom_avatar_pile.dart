@@ -8,11 +8,12 @@ import '../../../coca.dart';
 import 'custom_avatar_wrapper.dart';
 
 class CustomAvatarPile extends StatefulWidget {
-  const CustomAvatarPile({super.key, required this.users, this.size = 48, this.overlap = 0.4});
+  const CustomAvatarPile({super.key, required this.users, this.size = 48, this.overlap = 0.4, this.faceCountToShow});
 
   final List<UserModel> users;
   final double size;
   final double overlap;
+  final int? faceCountToShow;
 
   @override
   State<CustomAvatarPile> createState() => _CustomAvatarPileState();
@@ -39,9 +40,8 @@ class _CustomAvatarPileState extends State<CustomAvatarPile> with SingleTickerPr
   void _sync() {
     if (mounted) {
       setState(() {
-        final newUsers = widget.users.where(
-          (user) => _visibleUsers.where((visibleUser) => visibleUser == user).isEmpty,
-        );
+        final newUsers =
+            widget.users.where((user) => _visibleUsers.where((visibleUser) => visibleUser.image == user.image).isEmpty);
 
         for (final newUser in newUsers) {
           _visibleUsers.add(newUser);
@@ -54,7 +54,7 @@ class _CustomAvatarPileState extends State<CustomAvatarPile> with SingleTickerPr
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final facesCount = _visibleUsers.length;
+        final facesCount = widget.faceCountToShow ?? _visibleUsers.length;
 
         double visiblePercent = 1.0 - widget.overlap;
 

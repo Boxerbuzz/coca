@@ -22,7 +22,7 @@ class SwitchWorkspaceAddButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Assets.images.icons.plus.svg(color: styles.theme.grey7),
+            CustomSvg(Assets.images.icons.plus).svg(color: styles.theme.grey7),
             Gap(styles.insets.sm),
             Text('Add Workspace', style: styles.text.b1.textColor(styles.theme.grey7)),
           ],

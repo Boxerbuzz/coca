@@ -24,7 +24,7 @@ class ProjectDetailHeader extends StatelessWidget implements PreferredSizeWidget
           children: [
             CustomBackButton.close(),
             const Spacer(),
-            Assets.images.icons.dots.svg(height: 24, width: 24),
+            CustomSvg(Assets.images.icons.dots).svg(height: 24, width: 24),
           ],
         ),
       );

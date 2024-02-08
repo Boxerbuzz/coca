@@ -30,7 +30,7 @@ class _SwitchWorkspaceSelectorState extends State<SwitchWorkspaceSelector> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...workspaces.map(
+        ...workspacesData.map(
           (e) => Padding(
             padding: EdgeInsets.only(bottom: styles.insets.btn),
             child: SwitchWorkspaceItem(

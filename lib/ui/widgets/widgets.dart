@@ -5,6 +5,7 @@
 library;
 
 export 'app_bar/custom_app_bar.dart';
+export 'app_bar/custom_sliver_app_bar_delegate.dart';
 export 'avatar/custom_avatar.dart';
 export 'avatar/custom_avatar_pile.dart';
 export 'buttons/custom_icon_button.dart';

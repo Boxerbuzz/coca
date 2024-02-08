@@ -24,7 +24,7 @@ class CreateTaskHeader extends StatelessWidget implements PreferredSizeWidget {
           children: [
             CustomBackButton.close(),
             Expanded(child: Center(child: Text('Create New Task', style: styles.text.t1))),
-            CustomIconButton(icon: Assets.images.icons.alt.path, onPressed: () {}),
+            CustomIconButton(icon: Assets.images.icons.alt, onPressed: () {}),
           ],
         ),
       );

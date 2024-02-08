@@ -35,10 +35,10 @@ class ProjectDetailAttachmentGallery extends StatelessWidget {
                   height: 48,
                   width: 48,
                   decoration: BoxDecoration(color: color.withOpacity(.4), borderRadius: styles.corners.br12),
-                  child: SvgGenImage(isImage ? Assets.images.icons.image.path : Assets.images.icons.file.path).svg()),
+                  child: CustomSvg(isImage ? Assets.images.icons.image : Assets.images.icons.file).svg()),
               Gap(styles.insets.sm),
               Expanded(child: _buildLabel(e)),
-              Assets.images.icons.dots.svg(width: 24, height: 24, color: styles.theme.grey4)
+              CustomSvg(Assets.images.icons.dots).svg(width: 24, height: 24, color: styles.theme.grey4)
             ],
           ),
         );

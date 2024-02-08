@@ -17,12 +17,12 @@ class ProjectDetailAttachment extends StatelessWidget {
       children: [
         Row(
           children: [
-            Assets.images.icons.attachment.svg(width: 24, height: 24),
+            CustomSvg(Assets.images.icons.attachment).svg(color: styles.theme.grey7),
             Gap(styles.insets.sm),
             Text('Attachments', style: styles.text.t1),
             Expanded(child: Container()),
             shouldAdd == true
-                ? CustomIconButton(icon: Assets.images.icons.plus.path, onPressed: () {}, color: styles.theme.grey4)
+                ? CustomIconButton(icon: Assets.images.icons.plus, onPressed: () {}, color: styles.theme.grey7)
                 : const SizedBox.shrink(),
           ],
         ).padding(all: styles.insets.md, bottom: styles.insets.xxs),

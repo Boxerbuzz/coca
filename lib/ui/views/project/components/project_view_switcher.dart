@@ -18,7 +18,7 @@ class ProjectViewSwitcher extends StatelessWidget {
         return CustomDropdownButton(
           buttonBuilder: (_, __) => DropdownButtonContent(
             value: store.display.name,
-            icon: Assets.images.icons.columns.path,
+            icon: Assets.images.icons.columns,
           ),
           menuBuilder: (_, __) {
             return DropDownListMenu(
@@ -26,7 +26,7 @@ class ProjectViewSwitcher extends StatelessWidget {
               minHeight: 150,
               originTabBuilder: (_, __) => DropdownButtonContent(
                 value: store.display.name,
-                icon: Assets.images.icons.columns.path,
+                icon: Assets.images.icons.columns,
                 isOpen: __,
               ),
               bIsScrollable: false,

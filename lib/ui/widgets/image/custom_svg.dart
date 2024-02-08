@@ -24,12 +24,9 @@ class CustomSvg {
     String? semanticsLabel,
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
-    ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     Color? color,
     double? size,
-    @Deprecated('') BlendMode colorBlendMode = BlendMode.srcIn,
-    @Deprecated('') bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
       _assetName,
@@ -46,11 +43,8 @@ class CustomSvg {
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
       theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
+      colorFilter: color != null ? ColorFilter.mode(color, BlendMode.srcIn) : null,
       clipBehavior: clipBehavior,
-      cacheColorFilter: cacheColorFilter,
     );
   }
 

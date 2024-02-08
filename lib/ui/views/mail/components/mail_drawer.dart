@@ -28,27 +28,27 @@ class _MailDrawerState extends State<MailDrawer> {
   List<Map<String, dynamic>> menu = [
     {
       'title': 'Inbox',
-      'icon': Assets.images.icons.inbox.path,
+      'icon': Assets.images.icons.inbox,
       'type': MailPageEnum.inbox,
     },
     {
       'title': 'Sent',
-      'icon': Assets.images.icons.plane.path,
+      'icon': Assets.images.icons.plane,
       'type': MailPageEnum.sent,
     },
     {
       'title': 'Starred',
-      'icon': Assets.images.icons.star.path,
+      'icon': Assets.images.icons.star,
       'type': MailPageEnum.stared,
     },
     {
       'title': 'Draft',
-      'icon': Assets.images.icons.file.path,
+      'icon': Assets.images.icons.file,
       'type': MailPageEnum.drafts,
     },
     {
       'title': 'Trash',
-      'icon': Assets.images.icons.trash.path,
+      'icon': Assets.images.icons.trash,
       'type': MailPageEnum.trash,
     },
   ];

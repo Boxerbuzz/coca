@@ -31,7 +31,7 @@ class CustomCheckbox extends BaseStatelessWidget {
   Widget _icon() {
     switch (value) {
       case true:
-        return Assets.images.icons.check.svg(color: Colors.white);
+        return CustomSvg(Assets.images.icons.check).svg(color: Colors.white);
       case false:
         return Container();
     }

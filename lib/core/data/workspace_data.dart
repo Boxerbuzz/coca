@@ -2,10 +2,9 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import '../models/workspace_model.dart';
-import 'user_data.dart';
+import '../../coca.dart';
 
-final List<WorkspaceModel> workspaces = [
+final List<WorkspaceModel> workspacesData = [
   WorkspaceModel(
       id: '1',
       name: 'San Designs',
@@ -20,8 +19,8 @@ final List<WorkspaceModel> workspaces = [
       participants: users.getRange(10, 20).toList()),
   WorkspaceModel(
       id: '3',
-      name: 'Unreal',
+      name: 'Unreal Engine',
       description: "#1 most innovative startup for 2024.",
-      image: 'assets/images/logo/unreal.svg',
+      image: Assets.images.logo.brandUnrealEngine,
       participants: users.getRange(0, 10).toList()),
 ];

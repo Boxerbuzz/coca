@@ -28,13 +28,13 @@ class ProfileInfoSection extends StatelessWidget {
                         style: styles.text.caption.textColor(styles.theme.grey4), overflow: TextOverflow.ellipsis),
                   ),
                   CustomIconButton(
-                      icon: Assets.images.icons.bell.path,
+                      icon: Assets.images.icons.bell,
                       onPressed: () => context.push(NotificationScreen.route),
                       bgColor: styles.theme.grey2,
                       size: 48),
                   Gap(styles.insets.sm),
                   CustomIconButton(
-                      icon: Assets.images.icons.edit.path, onPressed: () {}, bgColor: styles.theme.grey2, size: 48),
+                      icon: Assets.images.icons.edit, onPressed: () {}, bgColor: styles.theme.grey2, size: 48),
                 ],
               ),
             ],

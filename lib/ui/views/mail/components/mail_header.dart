@@ -23,12 +23,13 @@ class MailHeader extends BaseStatelessWidget implements PreferredSizeWidget {
           children: [
             Text('Inbox', style: styles.text.h2.textColor(styles.theme.grey7)),
             Expanded(child: Container()),
-            Assets.images.icons.search.svg(height: 24, width: 24),
+            CustomSvg(Assets.images.icons.search).svg(height: 24, width: 24),
             const Gap(24),
             CustomIconButton(
-              icon: Assets.images.icons.burger.path,
+              icon: Assets.images.icons.burger,
               bgColor: styles.theme.grey2,
               onPressed: () => Scaffold.of(context).openEndDrawer(),
+              color: styles.theme.grey8,
             ),
           ],
         ),

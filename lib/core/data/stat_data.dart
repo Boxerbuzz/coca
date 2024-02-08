@@ -11,7 +11,7 @@ final List<StatModel> stats = [
   StatModel(
       label: 'Project Completed',
       stat: '140',
-      icon: Assets.images.icons.checkCircle.path,
+      icon: Assets.images.icons.checkCircle,
       color: const Color(0xffFFD88D),
       isMini: false,
       index: 0,
@@ -20,7 +20,7 @@ final List<StatModel> stats = [
   StatModel(
       label: 'Inquiry',
       stat: '12',
-      icon: Assets.images.icons.coffee.path,
+      icon: Assets.images.icons.coffee,
       color: const Color(0xffB1E5FC),
       isMini: true,
       index: 1,
@@ -29,7 +29,7 @@ final List<StatModel> stats = [
   StatModel(
       label: 'On Going',
       stat: '28',
-      icon: Assets.images.icons.compass.path,
+      icon: Assets.images.icons.compass,
       color: const Color(0xffCABDFF),
       isMini: true,
       index: 2,

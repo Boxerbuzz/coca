@@ -30,7 +30,9 @@ class CustomGoogleButton extends BaseStatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(padding: const EdgeInsets.symmetric(vertical: 15), child: Assets.images.icons.googleLogo.svg()),
+            Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: CustomSvg(Assets.images.icons.googleLogo).svg()),
             const Gap(10),
             Text(label, style: styles.text.b1.textColor(styles.theme.grey6)),
           ],

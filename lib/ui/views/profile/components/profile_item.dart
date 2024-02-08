@@ -29,11 +29,11 @@ class ProfileItem extends StatelessWidget {
               height: 40,
               width: 40,
               decoration: BoxDecoration(borderRadius: styles.corners.br24, color: styles.theme.grey2),
-              child: SvgGenImage(icon).svg(width: 24, height: 24, color: icColor),
+              child: CustomSvg(icon).svg(width: 24, height: 24, color: icColor),
             ),
             const Gap(16),
             Expanded(child: Text(title, style: styles.text.b1.textColor(txtColor ?? styles.theme.grey7))),
-            Assets.images.icons.arrowRight.svg(width: 24, height: 24)
+            CustomSvg(Assets.images.icons.arrowRight).svg(width: 24, height: 24)
           ],
         ),
       ),

@@ -22,7 +22,7 @@ class MailItemPreview extends StatelessWidget {
             if (email.hasAttachment)
               Padding(
                 padding: EdgeInsets.only(right: styles.insets.xxs),
-                child: CustomSvg(Assets.images.icons.attachment.path).svg(color: styles.theme.grey4, size: 17),
+                child: CustomSvg(Assets.images.icons.attachment).svg(color: styles.theme.grey4, size: 17),
               ),
             Flexible(
               child: Text(

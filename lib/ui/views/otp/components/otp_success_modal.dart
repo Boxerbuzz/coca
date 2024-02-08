@@ -25,7 +25,7 @@ class OtpSuccessModal extends StatelessWidget {
               height: 124,
               width: 124,
               decoration: BoxDecoration(color: primary.shade700, borderRadius: BorderRadius.circular(62)),
-              child: Assets.images.icons.check.svg(),
+              child: CustomSvg(Assets.images.icons.check).svg(),
             ),
             const Gap(40),
             Text('Account Verified', style: styles.text.h3.textColor(styles.theme.white)),

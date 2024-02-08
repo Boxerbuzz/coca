@@ -25,7 +25,7 @@ class ProjectViewSwitcherItem extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SvgGenImage(icon).svg(color: isSelected ? styles.theme.blue : styles.theme.grey4),
+          CustomSvg(icon).svg(color: isSelected ? styles.theme.blue : styles.theme.grey4),
           const SizedBox(width: 8),
           Text(
             label.capitalize(),

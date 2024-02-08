@@ -19,7 +19,6 @@ class ProjectDetailBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(height: 1, color: styles.theme.silver),
         const ProjectDetailInfo(),
         Container(height: 12, color: styles.theme.grey2),
         const ProjectDetailDescription(),

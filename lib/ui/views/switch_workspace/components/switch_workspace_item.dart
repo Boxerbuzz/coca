@@ -46,7 +46,7 @@ class SwitchWorkspaceItem extends StatelessWidget {
               ],
             ),
             Expanded(child: Container()),
-            if (isSelected) Assets.images.icons.check.svg(height: 24, width: 24, color: styles.theme.blue),
+            if (isSelected) CustomSvg(Assets.images.icons.check).svg(height: 24, width: 24, color: styles.theme.blue),
           ],
         ),
       ),

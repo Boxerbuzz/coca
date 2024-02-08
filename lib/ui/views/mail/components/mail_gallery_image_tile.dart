@@ -19,7 +19,7 @@ class MailGalleryImageTile extends StatelessWidget {
       height: extent,
       child: Container(
         decoration: BoxDecoration(color: data.color, borderRadius: styles.corners.br12),
-        child: Assets.images.icons.image.svg(color: data.color?.withAlpha(-2)),
+        child: CustomSvg(Assets.images.icons.image).svg(color: data.color?.withAlpha(-2)),
       ),
     );
   }

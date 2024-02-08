@@ -13,13 +13,13 @@ class ProjectAddBoardButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomButtonWithIcon(
-      icon: Assets.images.icons.plus.path,
-      text: 'Create',
+      icon: Assets.images.icons.plus,
+      text: 'Add',
       onPressed: () {},
       border: BorderSide(color: styles.theme.silver),
       shrinkWrap: true,
       btnColor: Colors.white,
-      iconColor: styles.theme.grey4,
+      iconColor: styles.theme.grey7,
       txtColor: styles.theme.grey7,
     );
   }

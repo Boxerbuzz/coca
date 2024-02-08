@@ -27,13 +27,13 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color defaultColor = styles.theme.white;
-    Color iconColor = color ?? styles.theme.grey8;
+    Color iconColor = color ?? styles.theme.grey4;
     return CustomRoundButton(
       onPressed: onPressed,
       bgColor: bgColor ?? defaultColor,
       border: border,
       size: size,
-      child: SvgGenImage(icon).svg(height: iconSize ?? defaultSize, width: iconSize ?? defaultSize, color: iconColor),
+      child: CustomSvg(icon).svg(height: iconSize ?? defaultSize, width: iconSize ?? defaultSize, color: iconColor),
     );
   }
 

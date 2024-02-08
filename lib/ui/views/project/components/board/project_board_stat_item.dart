@@ -15,7 +15,7 @@ class ProjectBoardStatItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgGenImage(icon).svg(),
+        CustomSvg(icon).svg(),
         Gap(styles.insets.xs),
         Text(value, style: styles.text.p),
       ],

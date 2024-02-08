@@ -5,6 +5,7 @@
 import 'package:appflowy_editor/appflowy_editor.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../coca.dart';
 
@@ -35,7 +36,7 @@ Map<String, BlockComponentBuilder> blocks() {
       configuration: configuration,
       iconBuilder: (context, node) {
         final checked = node.attributes[TodoListBlockKeys.checked] as bool;
-        return CustomSvg(checked ? Assets.images.editor.todo.path : Assets.images.editor.checked.path).svg(size: 10);
+        return CustomSvg(checked ? Assets.images.editor.todo : Assets.images.editor.checked).svg(size: 10);
       },
     ),
     BulletedListBlockKeys.type: BulletedListBlockComponentBuilder(
@@ -116,4 +117,118 @@ EditorStyle style() {
     },
     dragHandleColor: Colors.black,
   );
+}
+
+TextStyle baseTextStyle(String fontFamily, {FontWeight? fontWeight}) {
+  try {
+    return GoogleFonts.getFont(fontFamily, fontWeight: fontWeight);
+  } on Exception {
+    throw Exception('Font not found');
+  }
+}
+
+EditorStyle customizeEditorStyle() {
+  return EditorStyle(
+    padding: PlatformExtension.isDesktopOrWeb
+        ? const EdgeInsets.only(left: 100, right: 100, top: 20)
+        : const EdgeInsets.symmetric(horizontal: 20),
+    cursorColor: Colors.green,
+    selectionColor: Colors.green,
+    textStyleConfiguration: TextStyleConfiguration(
+      text: const TextStyle(
+        fontSize: 18.0,
+        color: Colors.white54,
+      ),
+      bold: const TextStyle(
+        fontWeight: FontWeight.w900,
+      ),
+      href: TextStyle(
+        color: Colors.amber,
+        decoration: TextDecoration.combine(
+          [
+            TextDecoration.overline,
+            TextDecoration.underline,
+          ],
+        ),
+      ),
+      code: const TextStyle(
+        fontSize: 14.0,
+        fontStyle: FontStyle.italic,
+        color: Colors.blue,
+        backgroundColor: Colors.black12,
+      ),
+    ),
+    textSpanDecorator: (context, node, index, text, textSpan, anotherTextSpan) {
+      final attributes = text.attributes;
+      final href = attributes?[AppFlowyRichTextKeys.href];
+      if (href != null) {
+        return TextSpan(
+          text: text.text,
+          style: textSpan.style,
+          recognizer: TapGestureRecognizer()
+            ..onTap = () {
+              debugPrint('onTap: $href');
+            },
+        );
+      }
+      return textSpan;
+    },
+    dragHandleColor: Colors.red,
+  );
+}
+
+Map<String, BlockComponentBuilder> customBuilder() {
+  final configuration = BlockComponentConfiguration(
+    padding: (node) {
+      if (HeadingBlockKeys.type == node.type) {
+        return const EdgeInsets.symmetric(vertical: 30);
+      }
+      return const EdgeInsets.symmetric(vertical: 10);
+    },
+    textStyle: (node) {
+      if (HeadingBlockKeys.type == node.type) {
+        return const TextStyle(color: Colors.yellow);
+      }
+      return const TextStyle();
+    },
+  );
+
+  // customize heading block style
+  return {
+    ...standardBlockComponentBuilderMap,
+    HeadingBlockKeys.type: HeadingBlockComponentBuilder(configuration: configuration),
+    TodoListBlockKeys.type: TodoListBlockComponentBuilder(
+      configuration: configuration,
+      iconBuilder: (context, node) {
+        final checked = node.attributes[TodoListBlockKeys.checked] as bool;
+        return Icon(
+          checked ? Icons.check_box : Icons.check_box_outline_blank,
+          size: 20,
+          color: Colors.white,
+        );
+      },
+    ),
+    BulletedListBlockKeys.type: BulletedListBlockComponentBuilder(
+      configuration: configuration,
+      iconBuilder: (context, node) {
+        return const Icon(
+          Icons.circle,
+          size: 20,
+          color: Colors.green,
+        );
+      },
+    ),
+    QuoteBlockKeys.type: QuoteBlockComponentBuilder(
+      configuration: configuration,
+      iconBuilder: (context, node) {
+        return const EditorSvg(
+          width: 20,
+          height: 20,
+          padding: EdgeInsets.only(right: 5.0),
+          name: 'quote',
+          color: Colors.pink,
+        );
+      },
+    ),
+  };
 }

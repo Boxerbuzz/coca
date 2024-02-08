@@ -20,7 +20,7 @@ class TaskCalendarHeader extends StatelessWidget {
           Text('Jan, 2024', style: styles.text.t1),
           const Spacer(),
           CustomButtonWithIcon(
-            icon: Assets.images.icons.alignCenter.path,
+            icon: Assets.images.icons.alignCenter,
             text: 'Filter',
             onPressed: () {},
             border: BorderSide(color: styles.theme.silver),

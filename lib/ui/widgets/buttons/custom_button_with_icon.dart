@@ -38,7 +38,7 @@ class CustomButtonWithIcon extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgGenImage(icon).svg(height: 20, width: 20, color: iconColor ?? styles.theme.white),
+          CustomSvg(icon).svg(height: 20, width: 20, color: iconColor ?? styles.theme.white),
           const Gap(12),
           Text(text, style: styles.text.b1.textColor(txtColor ?? styles.theme.white)),
         ],

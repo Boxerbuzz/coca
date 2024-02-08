@@ -2,13 +2,14 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
-import 'package:coca/ui/views/mail_detail/components/mail_detail_message_render.dart';
-import 'package:coca/ui/views/mail_detail/components/mail_detail_reply_section.dart';
-import 'package:coca/ui/views/mail_detail/components/mail_detail_sender_section.dart';
 import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 import '../project_detail/components/project_detail_attachment.dart';
+import 'components/mail_detail_header.dart';
+import 'components/mail_detail_message_render.dart';
+import 'components/mail_detail_reply_section.dart';
+import 'components/mail_detail_sender_section.dart';
 
 class MailDetailScreen extends StatefulWidget {
   const MailDetailScreen({super.key});
@@ -32,17 +33,9 @@ class _MailDetailScreenState extends State<MailDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: '',
-        trailing: Row(
-          children: [
-            CustomIconButton(icon: Assets.images.editor.redo.path, color: styles.theme.grey6, onPressed: () {}),
-            CustomIconButton(icon: Assets.images.icons.trash.path, color: styles.theme.grey6, onPressed: () {}),
-            CustomIconButton(icon: Assets.images.icons.dots.path, color: styles.theme.grey6, onPressed: () {}),
-          ],
-        ),
-      ),
+      appBar: const MailDetailHeader(),
       body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

@@ -16,7 +16,7 @@ class ProjectDetailComments extends StatelessWidget {
       children: [
         Row(
           children: [
-            Assets.images.icons.message.svg(width: 24, height: 24),
+            CustomSvg(Assets.images.icons.message).svg(color: styles.theme.grey7),
             Gap(styles.insets.sm),
             Text('Comments', style: styles.text.t1),
             Expanded(child: Container()),
@@ -47,14 +47,14 @@ class ProjectDetailComments extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Assets.images.icons.dots.svg(width: 24, height: 24, color: styles.theme.grey4),
+                  CustomSvg(Assets.images.icons.dots).svg(width: 24, height: 24, color: styles.theme.grey7),
                 ],
               ),
               Gap(styles.insets.sm),
               Text(
                 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat'
                 ' duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-                style: styles.text.p,
+                style: styles.text.caption,
               ),
             ],
           ),

@@ -8,6 +8,6 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 
 final redoAction = MobileToolbarItem.action(
-  itemIconBuilder: (_, __, ___) => CustomSvg(Assets.images.editor.redo.path).svg(),
+  itemIconBuilder: (_, __, ___) => CustomSvg(Assets.images.editor.redo).svg(size: 24),
   actionHandler: (BuildContext context, EditorState editorState) => redoCommand.handler(editorState),
 );

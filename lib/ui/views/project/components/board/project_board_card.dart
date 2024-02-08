@@ -24,9 +24,9 @@ class ProjectBoardCard extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ProjectBoardStatItem(icon: Assets.images.icons.attachment.path, value: '0'),
+              ProjectBoardStatItem(icon: Assets.images.icons.attachment, value: '0'),
               Gap(styles.insets.md),
-              ProjectBoardStatItem(icon: Assets.images.icons.checkSquare.path, value: '0/${data.tasks.length}'),
+              ProjectBoardStatItem(icon: Assets.images.icons.checkSquare, value: '0/${data.tasks.length}'),
               const Spacer(),
               Text('3 days left', style: styles.text.b2.textColor(styles.theme.red))
             ],
@@ -38,7 +38,7 @@ class ProjectBoardCard extends StatelessWidget {
               Expanded(
                 child: Row(
                   children: [
-                    Assets.images.icons.bars.svg(),
+                    CustomSvg(Assets.images.icons.bars).svg(),
                     Gap(styles.insets.sm),
                     Expanded(
                       child: Column(

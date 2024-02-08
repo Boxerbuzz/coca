@@ -34,7 +34,7 @@ class HomeTaskItem extends StatelessWidget {
                   borderRadius: styles.corners.br12,
                   color: data.isCompleted ? styles.theme.green : styles.theme.silver),
               padding: const EdgeInsets.all(2),
-              child: data.isCompleted ? Assets.images.icons.check.svg() : const SizedBox.shrink(),
+              child: data.isCompleted ? CustomSvg(Assets.images.icons.check).svg() : const SizedBox.shrink(),
             ),
           ),
           Gap(styles.insets.btn),
@@ -52,7 +52,7 @@ class HomeTaskItem extends StatelessWidget {
                 Gap(styles.insets.xs),
                 Row(
                   children: [
-                    Assets.images.icons.calendar.svg(),
+                    CustomSvg(Assets.images.icons.calendar).svg(),
                     const Gap(8),
                     Text(data.date, style: styles.text.t2.textColor(styles.theme.grey4).regular),
                   ],

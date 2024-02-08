@@ -31,7 +31,7 @@ class HelpChat extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Assets.images.icons.messageCircle.svg(color: styles.theme.white, height: 24, width: 24),
+                  CustomSvg(Assets.images.icons.messageCircle).svg(color: styles.theme.white, height: 24, width: 24),
                   Gap(styles.insets.sm),
                   Text('Chat with our Customer Service', style: styles.text.b1)
                 ],

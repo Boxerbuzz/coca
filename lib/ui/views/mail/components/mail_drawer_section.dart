@@ -35,7 +35,7 @@ class _MailDrawerSectionState extends State<MailDrawerSection> {
                   quarterTurns: _isExpanded ? 2 : 3,
                   child: CustomIconButton(
                       onPressed: () => setState(() => _isExpanded = !_isExpanded),
-                      icon: Assets.images.icons.arrowDown.path,
+                      icon: Assets.images.icons.arrowDown,
                       size: 16,
                       iconSize: 20,
                       color: styles.theme.grey4),

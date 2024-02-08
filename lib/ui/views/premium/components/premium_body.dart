@@ -18,7 +18,7 @@ class PremiumBody extends StatelessWidget {
           padding: EdgeInsets.all(styles.insets.md),
           child: Column(
             children: [
-              Assets.images.icons.coca.svg(height: 60, width: 60),
+              CustomSvg(Assets.images.icons.coca).svg(height: 60, width: 60),
               Gap(styles.insets.sm),
               Text('Upgrade to Premium', style: styles.text.h3.xBold),
               Gap(styles.insets.xs),

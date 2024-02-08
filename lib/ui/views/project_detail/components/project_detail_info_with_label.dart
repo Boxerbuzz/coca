@@ -17,7 +17,7 @@ class ProjectDetailInfoWithLabel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: styles.text.b1.regular),
+        Text(title, style: styles.text.caption.regular),
         const Gap(11),
         childValue ?? Text(value ?? 'No value', style: styles.text.t2.bold),
       ],
