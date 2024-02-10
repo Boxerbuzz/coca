@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import 'notification_category_item.dart';
 
-class NotificationCategoryList extends StatelessWidget {
+class NotificationCategoryList extends BaseStatelessWidget {
   const NotificationCategoryList({super.key});
 
   @override
@@ -18,7 +18,7 @@ class NotificationCategoryList extends StatelessWidget {
       child: CustomHorizontalScroll(
         child: Row(
           children: [
-            Gap(styles.insets.sm),
+            Gap(styles(context).insets.sm),
             const NotificationCategoryItem(index: 0, title: "All"),
             const NotificationCategoryItem(index: 1, title: "Following"),
             const NotificationCategoryItem(index: 2, title: "Assigned to me"),

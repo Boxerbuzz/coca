@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'components/create_project_body.dart';
 
-class CreateProjectScreen extends StatelessWidget {
+class CreateProjectScreen extends BaseStatelessWidget {
   const CreateProjectScreen({super.key});
 
   @override

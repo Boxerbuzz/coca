@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../coca.dart';
 
-class ProjectBoardStatItem extends StatelessWidget {
+class ProjectBoardStatItem extends BaseStatelessWidget {
   const ProjectBoardStatItem({super.key, required this.icon, required this.value});
   final String icon;
   final String value;
@@ -16,8 +16,8 @@ class ProjectBoardStatItem extends StatelessWidget {
     return Row(
       children: [
         CustomSvg(icon).svg(),
-        Gap(styles.insets.xs),
-        Text(value, style: styles.text.p),
+        Gap(styles(context).insets.xs),
+        Text(value, style: styles(context).text.p),
       ],
     );
   }

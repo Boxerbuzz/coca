@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import 'project_detail_attachment_gallery.dart';
 
-class ProjectDetailAttachment extends StatelessWidget {
+class ProjectDetailAttachment extends BaseStatelessWidget {
   const ProjectDetailAttachment({super.key, this.shouldAdd = true});
   final bool? shouldAdd;
 
@@ -17,17 +17,17 @@ class ProjectDetailAttachment extends StatelessWidget {
       children: [
         Row(
           children: [
-            CustomSvg(Assets.images.icons.attachment).svg(color: styles.theme.grey7),
-            Gap(styles.insets.sm),
-            Text('Attachments', style: styles.text.t1),
+            CustomSvg(Assets.images.icons.attachment).svg(color: styles(context).theme.grey7),
+            Gap(styles(context).insets.sm),
+            Text('Attachments', style: styles(context).text.t1),
             Expanded(child: Container()),
             shouldAdd == true
-                ? CustomIconButton(icon: Assets.images.icons.plus, onPressed: () {}, color: styles.theme.grey7)
+                ? CustomIconButton(icon: Assets.images.icons.plus, onPressed: () {}, color: styles(context).theme.grey7)
                 : const SizedBox.shrink(),
           ],
-        ).padding(all: styles.insets.md, bottom: styles.insets.xxs),
-        Gap(styles.insets.sm),
-        ProjectDetailAttachmentGallery(attachments: attachments).padding(horizontal: styles.insets.md),
+        ).padding(all: styles(context).insets.md, bottom: styles(context).insets.xxs),
+        Gap(styles(context).insets.sm),
+        ProjectDetailAttachmentGallery(attachments: attachments).padding(horizontal: styles(context).insets.md),
       ],
     );
   }

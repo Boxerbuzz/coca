@@ -4,8 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../coca.dart';
 import 'components/notification_body.dart';
+import 'components/notification_header.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -15,7 +15,7 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'Notifications'),
+      appBar: NotificationHeader(),
       body: NotificationBody(),
     );
   }

@@ -9,7 +9,7 @@ import 'board/project_board_display.dart';
 import 'list/project_list_display.dart';
 import 'project_tool_header.dart';
 
-class ProjectBody extends StatelessWidget {
+class ProjectBody extends BaseStatelessWidget {
   const ProjectBody({super.key});
 
   final List<Widget> _displays = const [ProjectBoardDisplay(), ProjectListDisplay()];

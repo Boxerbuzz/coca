@@ -10,7 +10,7 @@ import '../board/project_board_display.dart';
 import 'project_item_cell_wrapper.dart';
 import 'project_list_item_title.dart';
 
-class ProjectListItem extends StatelessWidget {
+class ProjectListItem extends BaseStatelessWidget {
   final TaskModel? task;
   final double? parentWidth;
   final bool isSelected;
@@ -22,9 +22,9 @@ class ProjectListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color bgColor = headerMode ? HexColor.fromHex('#F8F8FB') : styles.theme.white;
+    Color bgColor = headerMode ? HexColor.fromHex('#F8F8FB') : styles(context).theme.white;
     if (isSelected) {
-      bgColor = styles.theme.grey2.withOpacity(.35);
+      bgColor = styles(context).theme.grey2.withOpacity(.35);
     }
 
     double width = parentWidth ?? context.widthPx;
@@ -34,7 +34,8 @@ class ProjectListItem extends StatelessWidget {
     if (width > 1000) colCount = 4;
     if (width > 1300) colCount = 5;
 
-    TextStyle textStyle = !headerMode ? styles.text.t2 : styles.text.p.textColor(styles.theme.grey4);
+    TextStyle textStyle =
+        !headerMode ? styles(context).text.t2 : styles(context).text.p.textColor(styles(context).theme.grey4);
 
     Widget row(String v) => Text(v, style: textStyle, maxLines: 1, softWrap: false, overflow: TextOverflow.fade);
 
@@ -47,7 +48,7 @@ class ProjectListItem extends StatelessWidget {
         children: <Widget>[
           /// DIVIDER - Bottom
           if (!headerMode && showDividers) ...{
-            Align(alignment: Alignment.bottomLeft, child: Container(height: 1, color: styles.theme.silver)),
+            Align(alignment: Alignment.bottomLeft, child: Container(height: 1, color: styles(context).theme.silver)),
           },
 
           Row(
@@ -62,7 +63,7 @@ class ProjectListItem extends StatelessWidget {
               ProjectItemCellWrapper(
                   flex: 11, isVisible: colCount > 2, child: row(headerMode ? "Due date" : task!.date)),
             ],
-          ).padding(vertical: styles.insets.sm, horizontal: styles.insets.sm),
+          ).padding(vertical: styles(context).insets.sm, horizontal: styles(context).insets.sm),
         ],
       ),
     );

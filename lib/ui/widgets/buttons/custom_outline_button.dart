@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'custom_app_button.dart';
 
-class CustomOutlineButton extends StatelessWidget {
+class CustomOutlineButton extends BaseStatelessWidget {
   const CustomOutlineButton(
       {super.key, required this.text, this.onPressed, this.textColor, this.borderColor, this.shrinkWrap = false});
   final String text;
@@ -22,9 +22,9 @@ class CustomOutlineButton extends StatelessWidget {
     Widget content = CustomAppButton(
       onPressed: onPressed,
       bgColor: Colors.transparent,
-      border: BorderSide(color: borderColor ?? styles.theme.grey7),
+      border: BorderSide(color: borderColor ?? styles(context).theme.grey7),
       expand: shrinkWrap ? false : true,
-      child: Text(text, style: styles.text.b1.textColor(textColor ?? styles.theme.grey7)),
+      child: Text(text, style: styles(context).text.b1.textColor(textColor ?? styles(context).theme.grey7)),
     );
 
     if (shrinkWrap) return content;

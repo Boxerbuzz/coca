@@ -4,9 +4,10 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../coca.dart';
 import 'components/profile_body.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends BaseStatelessWidget {
   const ProfileScreen({super.key});
 
   @override

@@ -17,7 +17,7 @@ class ProjectBoardDisplay extends StatefulWidget {
   State<ProjectBoardDisplay> createState() => _ProjectBoardDisplayState();
 }
 
-class _ProjectBoardDisplayState extends State<ProjectBoardDisplay> {
+class _ProjectBoardDisplayState extends BaseStatefulWidget<ProjectBoardDisplay> {
   final AppFlowyBoardController _controller = AppFlowyBoardController(
     onMoveGroup: (fromGroupId, fromIndex, toGroupId, toIndex) {},
     onMoveGroupItem: (groupId, fromIndex, toIndex) {},

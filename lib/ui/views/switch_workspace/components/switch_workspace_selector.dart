@@ -17,7 +17,7 @@ class SwitchWorkspaceSelector extends StatefulWidget {
   State<SwitchWorkspaceSelector> createState() => _SwitchWorkspaceSelectorState();
 }
 
-class _SwitchWorkspaceSelectorState extends State<SwitchWorkspaceSelector> {
+class _SwitchWorkspaceSelectorState extends BaseStatefulWidget<SwitchWorkspaceSelector> {
   WorkspaceModel? _selectedWorkspace;
 
   @override

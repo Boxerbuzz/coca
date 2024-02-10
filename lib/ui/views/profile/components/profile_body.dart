@@ -10,7 +10,7 @@ import 'profile_header.dart';
 import 'profile_info_section.dart';
 import 'profile_item.dart';
 
-class ProfileBody extends StatelessWidget {
+class ProfileBody extends BaseStatelessWidget {
   const ProfileBody({super.key});
 
   @override
@@ -25,7 +25,7 @@ class ProfileBody extends StatelessWidget {
               child: Column(
                 children: [
                   const ProfileInfoSection(),
-                  Gap(styles.insets.sm),
+                  Gap(styles(context).insets.sm),
                   ProfileItem(
                       title: 'Upgrade to Premium',
                       icon: Assets.images.icons.premium,
@@ -44,8 +44,8 @@ class ProfileBody extends StatelessWidget {
                       title: 'Log out',
                       icon: Assets.images.icons.logOut,
                       onPressed: () => context.go(LoginScreen.route),
-                      icColor: styles.theme.red,
-                      txtColor: styles.theme.red),
+                      icColor: styles(context).theme.red,
+                      txtColor: styles(context).theme.red),
                   ProfileItem(
                       title: 'Delete Account',
                       icon: Assets.images.icons.trash,
@@ -53,8 +53,8 @@ class ProfileBody extends StatelessWidget {
                             context: context,
                             builder: (context) => const ProfileDeleteAccountModal(),
                           ),
-                      icColor: styles.theme.red,
-                      txtColor: styles.theme.red),
+                      icColor: styles(context).theme.red,
+                      txtColor: styles(context).theme.red),
                 ],
               ),
             ),

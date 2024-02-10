@@ -17,14 +17,9 @@ class TaskListCollapsibleItem extends StatefulWidget {
   State<TaskListCollapsibleItem> createState() => _TaskListCollapsibleItemState();
 }
 
-class _TaskListCollapsibleItemState extends State<TaskListCollapsibleItem> {
+class _TaskListCollapsibleItemState extends BaseStatefulWidget<TaskListCollapsibleItem> {
   bool _isExpanded = false;
   MyTaskModel get data => widget.data;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

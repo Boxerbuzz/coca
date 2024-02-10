@@ -8,7 +8,7 @@ import '../../../../coca.dart';
 import 'mail_item_header.dart';
 import 'mail_item_preview.dart';
 
-class MailItem extends StatelessWidget {
+class MailItem extends BaseStatelessWidget {
   const MailItem({super.key, required this.id, required this.email, this.onDeleted});
 
   final int id;
@@ -32,25 +32,25 @@ class MailItem extends StatelessWidget {
             // TODO: Handle this case.
             break;
           default:
-          // Do not do anything
+          // Do anything
         }
       },
       background: Container(
-        decoration: BoxDecoration(color: styles.theme.amber),
+        decoration: BoxDecoration(color: styles(context).theme.amber),
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: CustomSvg(Assets.images.icons.star).svg(color: styles.theme.grey7),
+        child: CustomSvg(Assets.images.icons.star).svg(color: styles(context).theme.grey7),
       ),
       secondaryBackground: Container(
-        decoration: BoxDecoration(color: styles.theme.grey7),
+        decoration: BoxDecoration(color: styles(context).theme.grey7),
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: CustomSvg(Assets.images.icons.trash).svg(color: styles.theme.silver),
+        child: CustomSvg(Assets.images.icons.trash).svg(color: styles(context).theme.silver),
       ),
       child: Container(
         decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: styles.theme.silver, width: 1)),
-          color: styles.theme.white,
+          border: Border(bottom: BorderSide(color: styles(context).theme.silver, width: 1)),
+          color: styles(context).theme.white,
         ),
         child: Consumer<MailProvider>(builder: (BuildContext context, MailProvider store, Widget? child) {
           return InkWell(
@@ -59,7 +59,7 @@ class MailItem extends StatelessWidget {
               context.push(MailDetailScreen.route);
             },
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: styles.insets.sm),
+              padding: EdgeInsets.symmetric(vertical: styles(context).insets.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

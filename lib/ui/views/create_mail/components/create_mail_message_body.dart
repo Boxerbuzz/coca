@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class CreateMailMessageBody extends StatelessWidget {
+class CreateMailMessageBody extends BaseStatelessWidget {
   const CreateMailMessageBody({super.key});
 
   @override
@@ -15,9 +15,9 @@ class CreateMailMessageBody extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            border: Border.symmetric(horizontal: BorderSide(color: styles.theme.silver, width: 1)),
+            border: Border.symmetric(horizontal: BorderSide(color: styles(context).theme.silver, width: 1)),
           ),
-          padding: EdgeInsets.all(styles.insets.md),
+          padding: EdgeInsets.all(styles(context).insets.md),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class OtpResendCode extends StatelessWidget {
+class OtpResendCode extends BaseStatelessWidget {
   const OtpResendCode({super.key});
 
   @override
@@ -16,11 +16,11 @@ class OtpResendCode extends StatelessWidget {
       children: [
         Text(
           'Resend code in',
-          style: styles.text.t2.textColor(styles.theme.grey4),
+          style: styles(context).text.t2.textColor(styles(context).theme.grey4),
         ),
         Text(
           ' 00:30',
-          style: styles.text.t2.textColor(styles.theme.blue),
+          style: styles(context).text.t2.textColor(styles(context).theme.blue),
         )
       ],
     );

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class CustomInputActionItem extends StatelessWidget {
+class CustomInputActionItem extends BaseStatelessWidget {
   const CustomInputActionItem({super.key, this.color, required this.title, required this.icon, this.onPressed});
   final Color? color;
   final String title;
@@ -22,12 +22,12 @@ class CustomInputActionItem extends StatelessWidget {
           Container(
             height: 90,
             width: 90,
-            decoration: BoxDecoration(color: color, borderRadius: styles.corners.br32),
-            padding: EdgeInsets.all(styles.insets.xs),
-            child: CustomSvg(icon).svg(size: 28, color: styles.theme.grey7),
+            decoration: BoxDecoration(color: color, borderRadius: styles(context).corners.br32),
+            padding: EdgeInsets.all(styles(context).insets.xs),
+            child: CustomSvg(icon).svg(size: 28, color: styles(context).theme.grey7),
           ),
           const Gap(4),
-          Text(title, style: styles.text.caption)
+          Text(title, style: styles(context).text.caption)
         ],
       ),
     );

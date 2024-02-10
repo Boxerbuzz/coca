@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 
-class OneLineClickableText extends StatelessWidget {
+class OneLineClickableText extends BaseStatelessWidget {
   const OneLineClickableText({super.key, required this.actionText, required this.mainText, this.onTap});
 
   final String mainText;
@@ -18,13 +18,13 @@ class OneLineClickableText extends StatelessWidget {
     return TextButton(
       onPressed: onTap,
       style: TextButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: styles.insets.xs),
+        padding: EdgeInsets.symmetric(horizontal: styles(context).insets.xs),
         minimumSize: Size.zero,
       ),
       child: Wrap(
         children: [
-          Text(mainText, style: styles.text.b1.textColor(styles.theme.grey4).regular),
-          Text(' $actionText', style: styles.text.b1.copyWith(color: styles.theme.blue)),
+          Text(mainText, style: styles(context).text.b1.textColor(styles(context).theme.grey4).regular),
+          Text(' $actionText', style: styles(context).text.b1.copyWith(color: styles(context).theme.blue)),
         ],
       ),
     );

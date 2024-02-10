@@ -16,15 +16,15 @@ class PolicyHeader extends BaseStatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) => Container(
         height: preferredSize.height,
-        padding: EdgeInsets.only(right: styles.insets.md),
+        padding: EdgeInsets.only(right: styles(context).insets.md),
         margin: EdgeInsets.only(top: context.mq.padding.top),
-        decoration: BoxDecoration(color: styles.theme.white, boxShadow: styles.shadows.sm),
+        decoration: BoxDecoration(color: styles(context).theme.white, boxShadow: styles(context).shadows.sm),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const CustomBackButton(),
             const Spacer(),
-            Text('Privacy Policy', style: styles.text.t1.textColor(styles.theme.grey7)),
+            Text('Privacy Policy', style: styles(context).text.t1.textColor(styles(context).theme.grey7)),
             const Spacer(),
             CustomSvg(Assets.images.icons.share).svg(height: 24, width: 24),
           ],

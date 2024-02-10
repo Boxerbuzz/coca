@@ -24,7 +24,7 @@ class CustomAvatarWrapper extends StatefulWidget {
   State<CustomAvatarWrapper> createState() => _CustomAvatarWrapperState();
 }
 
-class _CustomAvatarWrapperState extends State<CustomAvatarWrapper> with SingleTickerProviderStateMixin {
+class _CustomAvatarWrapperState extends BaseStatefulWidget<CustomAvatarWrapper> with SingleTickerProviderStateMixin {
   late AnimationController _scaleController;
   late Animation _scaleAnimation;
 

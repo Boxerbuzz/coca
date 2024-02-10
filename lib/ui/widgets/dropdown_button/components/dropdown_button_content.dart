@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class DropdownButtonContent extends StatelessWidget {
+class DropdownButtonContent extends BaseStatelessWidget {
   const DropdownButtonContent(
       {super.key, required this.value, this.icon, this.isOpen = false, this.height = 36, this.width = 100});
   final String value;
@@ -22,13 +22,13 @@ class DropdownButtonContent extends StatelessWidget {
       width: width,
       padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
-        border: Border.all(color: styles.theme.silver),
-        color: styles.theme.white,
+        border: Border.all(color: styles(context).theme.silver),
+        color: styles(context).theme.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(styles.corners.sm),
-          topRight: Radius.circular(styles.corners.sm),
-          bottomLeft: Radius.circular(isOpen ? 0 : styles.corners.sm),
-          bottomRight: Radius.circular(isOpen ? 0 : styles.corners.sm),
+          topLeft: Radius.circular(styles(context).corners.sm),
+          topRight: Radius.circular(styles(context).corners.sm),
+          bottomLeft: Radius.circular(isOpen ? 0 : styles(context).corners.sm),
+          bottomRight: Radius.circular(isOpen ? 0 : styles(context).corners.sm),
         ),
       ),
       child: Row(
@@ -37,12 +37,12 @@ class DropdownButtonContent extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[
-            CustomSvg(icon!).svg(color: styles.theme.grey7),
-            Gap(styles.insets.xs),
+            CustomSvg(icon!).svg(color: styles(context).theme.grey7),
+            Gap(styles(context).insets.xs),
           ],
-          Text(value.capitalize(), style: styles.text.b1),
+          Text(value.capitalize(), style: styles(context).text.b1),
           const Spacer(),
-          CustomSvg(Assets.images.icons.arrowDropdown).svg(color: styles.theme.grey6),
+          CustomSvg(Assets.images.icons.arrowDropdown).svg(color: styles(context).theme.grey6),
         ],
       ),
     );

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import '../../../widgets/app_bar/custom_back_button.dart';
 
-class CreateTaskHeader extends StatelessWidget implements PreferredSizeWidget {
+class CreateTaskHeader extends BaseStatelessWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
 
@@ -16,14 +16,14 @@ class CreateTaskHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) => Container(
         height: preferredSize.height,
-        padding: EdgeInsets.only(right: styles.insets.md),
+        padding: EdgeInsets.only(right: styles(context).insets.md),
         margin: EdgeInsets.only(top: context.mq.padding.top),
-        decoration: BoxDecoration(color: styles.theme.white, boxShadow: styles.shadows.sm),
+        decoration: BoxDecoration(color: styles(context).theme.white, boxShadow: styles(context).shadows.sm),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomBackButton.close(),
-            Expanded(child: Center(child: Text('Create New Task', style: styles.text.t1))),
+            Expanded(child: Center(child: Text('Create New Task', style: styles(context).text.t1))),
             CustomIconButton(icon: Assets.images.icons.alt, onPressed: () {}),
           ],
         ),

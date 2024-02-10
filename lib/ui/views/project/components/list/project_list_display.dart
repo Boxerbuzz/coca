@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import '../../../../../coca.dart';
 import 'project_list_group_item.dart';
 
-class ProjectListDisplay extends StatelessWidget {
+class ProjectListDisplay extends BaseStatelessWidget {
   const ProjectListDisplay({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Gap(styles.insets.xxs),
+        Gap(styles(context).insets.xxs),
         Expanded(
           child: CustomScrollViewWithFade(
             child: Column(

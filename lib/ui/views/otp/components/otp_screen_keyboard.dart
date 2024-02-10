@@ -50,7 +50,7 @@ class OtpScreenKeyboard extends StatefulWidget {
   }
 }
 
-class _OtpScreenKeyboardState extends State<OtpScreenKeyboard> {
+class _OtpScreenKeyboardState extends BaseStatefulWidget<OtpScreenKeyboard> {
   @override
   Widget build(BuildContext context) {
     return Container(

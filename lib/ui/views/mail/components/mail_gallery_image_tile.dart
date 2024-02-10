@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import '../misc/gallery_model.dart';
 
-class MailGalleryImageTile extends StatelessWidget {
+class MailGalleryImageTile extends BaseStatelessWidget {
   const MailGalleryImageTile({super.key, required this.index, this.extent, required this.data});
   final int index;
   final double? extent;
@@ -18,7 +18,7 @@ class MailGalleryImageTile extends StatelessWidget {
     return SizedBox(
       height: extent,
       child: Container(
-        decoration: BoxDecoration(color: data.color, borderRadius: styles.corners.br12),
+        decoration: BoxDecoration(color: data.color, borderRadius: styles(context).corners.br12),
         child: CustomSvg(Assets.images.icons.image).svg(color: data.color?.withAlpha(-2)),
       ),
     );

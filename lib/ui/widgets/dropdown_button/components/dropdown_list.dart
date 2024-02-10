@@ -8,7 +8,7 @@ import '../../../../coca.dart';
 import '../utils/list_menu_edge_direction_enum.dart';
 
 /// A menu containing a vertical list of items.
-class DropdownList extends StatelessWidget {
+class DropdownList extends BaseStatelessWidget {
   const DropdownList({
     Key? widgetKey,
     required this.items,
@@ -76,7 +76,7 @@ class DropdownList extends StatelessWidget {
 
     return Container(
       constraints: BoxConstraints(minWidth: minWidth, maxWidth: maxWidth, minHeight: minHeight),
-      decoration: BoxDecoration(color: styles.theme.white, borderRadius: boxBorderRadius),
+      decoration: BoxDecoration(color: styles(context).theme.white, borderRadius: boxBorderRadius),
       clipBehavior: Clip.hardEdge,
       child: SingleChildScrollView(padding: padding, child: contents),
     );

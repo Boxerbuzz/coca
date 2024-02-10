@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'components/otp_body.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends BaseStatelessWidget {
   const OtpScreen({super.key});
 
   static String route = '/otp';
@@ -17,7 +17,7 @@ class OtpScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(title: ''),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+        padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -25,7 +25,7 @@ class OtpScreen extends StatelessWidget {
               headerText: 'Verify Code',
               subHeaderText: 'Please enter the code we just sent to your mobile number',
             ),
-            Gap(styles.insets.md),
+            Gap(styles(context).insets.md),
             const OtpBody(),
           ],
         ),

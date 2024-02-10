@@ -7,16 +7,23 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 
 class MailDrawerSection extends StatefulWidget {
-  const MailDrawerSection({super.key, required this.title, this.children = const []});
+  const MailDrawerSection({super.key, required this.title, this.children = const [], this.isExpanded = false});
   final String title;
   final List<Widget> children;
+  final bool isExpanded;
 
   @override
   State<MailDrawerSection> createState() => _MailDrawerSectionState();
 }
 
-class _MailDrawerSectionState extends State<MailDrawerSection> {
+class _MailDrawerSectionState extends BaseStatefulWidget<MailDrawerSection> {
   bool _isExpanded = false;
+
+  @override
+  void initState() {
+    _isExpanded = widget.isExpanded;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +50,7 @@ class _MailDrawerSectionState extends State<MailDrawerSection> {
               ],
             ),
           ),
-        ),
+        ).clickable(() => setState(() => _isExpanded = !_isExpanded)),
         AnimatedCrossFade(
           crossFadeState: _isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
           duration: const Duration(milliseconds: 200),

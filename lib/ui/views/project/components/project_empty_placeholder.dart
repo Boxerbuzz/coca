@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class ProjectEmptyPlaceholder extends StatelessWidget {
+class ProjectEmptyPlaceholder extends BaseStatelessWidget {
   const ProjectEmptyPlaceholder({super.key});
 
   @override

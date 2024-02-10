@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class ProjectDetailInfoWithLabel extends StatelessWidget {
+class ProjectDetailInfoWithLabel extends BaseStatelessWidget {
   const ProjectDetailInfoWithLabel({super.key, required this.title, this.value, this.childValue});
   final String title;
   final Widget? childValue;
@@ -17,9 +17,9 @@ class ProjectDetailInfoWithLabel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: styles.text.caption.regular),
+        Text(title, style: styles(context).text.caption.regular),
         const Gap(11),
-        childValue ?? Text(value ?? 'No value', style: styles.text.t2.bold),
+        childValue ?? Text(value ?? 'No value', style: styles(context).text.t2.bold),
       ],
     );
   }

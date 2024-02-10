@@ -5,16 +5,17 @@
 import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
-import 'mail_category_item.dart';
+import '../../../widgets/app_bar/custom_back_button.dart';
+import 'mail_chat_item.dart';
 import 'mail_drawer_indicator.dart';
 import 'mail_drawer_item.dart';
 import 'mail_drawer_section.dart';
 
 class MailDrawerOffsetNotification extends Notification {
   final Offset offset;
-  final MailPageEnum pageType;
+  final MailPageEnum type;
 
-  MailDrawerOffsetNotification(this.pageType, this.offset);
+  MailDrawerOffsetNotification(this.type, this.offset);
 }
 
 class MailDrawer extends StatefulWidget {
@@ -24,121 +25,142 @@ class MailDrawer extends StatefulWidget {
   State<MailDrawer> createState() => _MailDrawerState();
 }
 
-class _MailDrawerState extends State<MailDrawer> {
-  List<Map<String, dynamic>> menu = [
-    {
-      'title': 'Inbox',
-      'icon': Assets.images.icons.inbox,
-      'type': MailPageEnum.inbox,
-    },
-    {
-      'title': 'Sent',
-      'icon': Assets.images.icons.plane,
-      'type': MailPageEnum.sent,
-    },
-    {
-      'title': 'Starred',
-      'icon': Assets.images.icons.star,
-      'type': MailPageEnum.stared,
-    },
-    {
-      'title': 'Draft',
-      'icon': Assets.images.icons.file,
-      'type': MailPageEnum.drafts,
-    },
-    {
-      'title': 'Trash',
-      'icon': Assets.images.icons.trash,
-      'type': MailPageEnum.trash,
-    },
-  ];
-
+class _MailDrawerState extends BaseStatefulWidget<MailDrawer> {
   MailPageEnum? _prevPage;
 
-  final Map<MailPageEnum, Offset> _menuBtnOffsetsByType = {};
-  double _indicatorY = 0.0;
-  double get _headerHeight => 0;
+  /// The offset of the indicator by type.
+  final Map<MailPageEnum, Offset> _offsets = {};
 
-  double get _indicatorHeight => 48;
+  double get _headerHeight => 87;
+
+  double get _indicatorHeight => 30;
 
   double get _btnHeight => 60;
 
-  @override
-  void initState() {
-    Future.delayed(100.milliseconds).then((value) => _updateIndicatorState(context.read<MailProvider>().mailPage));
-    super.initState();
-  }
+  double _indicatorY = 0.0;
 
-  void _handlePageSelected(MailPageEnum pageType) {
+  void _onPageChanged(MailPageEnum pageType) {
     context.read<MailProvider>().mailPage = pageType;
   }
 
-  void _updateIndicatorState(MailPageEnum type) {
-    if (_menuBtnOffsetsByType.containsKey(type)) {
-      Offset o = _menuBtnOffsetsByType[type] ?? Offset.zero;
+  void _updatePosition(MailPageEnum type, {Offset? offset}) {
+    if (!_offsets.containsKey(type)) {
+      _offsets[type] = offset ?? Offset.zero;
+    }
+
+    if (_offsets.containsKey(type)) {
+      Offset o = _offsets[type] ?? Offset.zero;
       setState(() => _indicatorY = o.dy - _headerHeight + _btnHeight * .5 - _indicatorHeight * .5);
+    }
+
+    if (_indicatorY.isNegative) {
+      _indicatorY = 30.0;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    var currentPage = context.select<MailProvider, MailPageEnum>((value) => value.mailPage);
-    if (currentPage != _prevPage) {
-      _updateIndicatorState(currentPage);
-    }
-    _prevPage = currentPage;
+    var page = context.select<MailProvider, MailPageEnum>((value) => value.mailPage);
 
-    return Consumer<MailProvider>(
-      builder: (_, store, __) {
-        return Drawer(
-          backgroundColor: styles.theme.white,
-          width: 250,
-          elevation: 0,
-          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-          child: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: styles.insets.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Stack(
-                    children: [
-                      NotificationListener<MailDrawerOffsetNotification>(
-                        onNotification: (n) {
-                          _menuBtnOffsetsByType[n.pageType] = n.offset;
-                          return true;
-                        },
-                        child: Column(
-                          children: <Widget>[
-                            ...menu.map(
-                              (e) => MailDrawerItem(
-                                  title: e['title'] as String,
-                                  icon: e['icon'] as String,
-                                  isSelected: store.mailPage == e['type'] as MailPageEnum,
-                                  onTap: () => _handlePageSelected(e['type'] as MailPageEnum),
-                                  height: _btnHeight),
-                            ),
-                          ],
-                        ),
-                      ),
-                      MailDrawerItemIndicator(_indicatorY, height: _indicatorHeight),
-                    ],
+    if (page != _prevPage) _updatePosition(page);
+
+    _prevPage = page;
+
+    return FocusTraversalGroup(
+      child: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  border: Border(bottom: BorderSide(color: styles.theme.silver)),
+                  color: styles.theme.white,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 50),
+                child: CustomBackButton.close(onPressed: () => context.read<MailProvider>().toggleDrawer()),
+              ),
+            ],
+          ).height(_headerHeight),
+          Stack(
+            children: <Widget>[
+              Container(color: styles.theme.white),
+              Column(
+                children: <Widget>[
+                  NotificationListener<MailDrawerOffsetNotification>(
+                    onNotification: (n) {
+                      _offsets[n.type] = n.offset;
+                      return true;
+                    },
+                    child: Column(
+                      children: [
+                        MailDrawerItem(
+                            title: 'Inbox',
+                            icon: Assets.images.icons.inbox,
+                            isSelected: page == MailPageEnum.inbox,
+                            onTap: () => _onPageChanged(MailPageEnum.inbox),
+                            height: _btnHeight,
+                            getPosition: (o) => _updatePosition(MailPageEnum.inbox, offset: o),
+                            trailing: const CustomBadge('29')),
+                        MailDrawerItem(
+                            title: 'Sent',
+                            icon: Assets.images.icons.plane,
+                            isSelected: page == MailPageEnum.sent,
+                            onTap: () => _onPageChanged(MailPageEnum.sent),
+                            getPosition: (o) => _updatePosition(MailPageEnum.sent, offset: o),
+                            height: _btnHeight),
+                        MailDrawerItem(
+                            title: 'Starred',
+                            icon: Assets.images.icons.star,
+                            isSelected: page == MailPageEnum.stared,
+                            onTap: () => _onPageChanged(MailPageEnum.stared),
+                            getPosition: (o) => _updatePosition(MailPageEnum.stared, offset: o),
+                            height: _btnHeight),
+                        MailDrawerItem(
+                            title: 'Draft',
+                            icon: Assets.images.icons.file,
+                            isSelected: page == MailPageEnum.drafts,
+                            onTap: () => _onPageChanged(MailPageEnum.drafts),
+                            getPosition: (o) => _updatePosition(MailPageEnum.drafts, offset: o),
+                            height: _btnHeight),
+                        MailDrawerItem(
+                            title: 'Trash',
+                            icon: Assets.images.icons.trash,
+                            isSelected: page == MailPageEnum.trash,
+                            onTap: () => _onPageChanged(MailPageEnum.trash),
+                            getPosition: (o) => _updatePosition(MailPageEnum.trash, offset: o),
+                            height: _btnHeight),
+                      ],
+                    ),
                   ),
                   Divider(color: styles.theme.silver),
-                  const MailDrawerSection(title: 'CATEGORIES', children: [
-                    MailCategoryItem(title: 'Work', value: '2'),
-                    MailCategoryItem(title: 'Personal', value: '20'),
-                    MailCategoryItem(title: 'Vacation', value: '3'),
-                    MailCategoryItem(title: 'Promotion', value: '100'),
-                  ]),
-                  Divider(color: styles.theme.silver),
-                  const MailDrawerSection(title: 'RECENT CONVERSATION', children: []),
+                  MailDrawerSection(
+                    title: 'RECENT CONVERSATION',
+                    isExpanded: true,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: 28,
+                            width: 28,
+                            decoration: BoxDecoration(color: styles.theme.blue, borderRadius: styles.corners.br24),
+                            child: CustomSvg(Assets.images.icons.plus).svg(size: 24),
+                          ),
+                          const Gap(10),
+                          Text('New Chat', style: styles.text.b1.textColor(styles.theme.grey6)),
+                        ],
+                      ),
+                      ...participants(count: 2).map((e) => MailChatItem(e)),
+                    ],
+                  ),
                 ],
-              ),
-            ),
-          ),
-        );
-      },
+              ).padding(all: styles.insets.sm, bottom: styles.insets.sm).constrained(maxWidth: 280),
+              MailDrawerItemIndicator(_indicatorY, height: _indicatorHeight)
+            ],
+          ).flexible(),
+        ],
+      ),
     );
   }
 }

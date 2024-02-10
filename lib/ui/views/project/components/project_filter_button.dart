@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import '../../../widgets/buttons/custom_button_with_icon.dart';
 
-class ProjectFilterButton extends StatelessWidget {
+class ProjectFilterButton extends BaseStatelessWidget {
   const ProjectFilterButton({super.key});
 
   @override
@@ -16,11 +16,11 @@ class ProjectFilterButton extends StatelessWidget {
       icon: Assets.images.icons.alignCenter,
       text: 'Filter',
       onPressed: () {},
-      border: BorderSide(color: styles.theme.silver),
+      border: BorderSide(color: styles(context).theme.silver),
       shrinkWrap: true,
       btnColor: Colors.white,
-      iconColor: styles.theme.grey7,
-      txtColor: styles.theme.grey7,
+      iconColor: styles(context).theme.grey7,
+      txtColor: styles(context).theme.grey7,
     );
   }
 }

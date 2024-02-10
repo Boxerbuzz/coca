@@ -27,4 +27,16 @@ class MailProvider extends ChangeNotifier {
     _pageIndex = index;
     notifyListeners();
   }
+
+  MailDrawerState _drawerState = MailDrawerState.close;
+  MailDrawerState get drawerState => _drawerState;
+  set drawerState(MailDrawerState state) {
+    _drawerState = state;
+    notifyListeners();
+  }
+
+  void toggleDrawer() {
+    _drawerState = _drawerState == MailDrawerState.open ? MailDrawerState.close : MailDrawerState.open;
+    notifyListeners();
+  }
 }

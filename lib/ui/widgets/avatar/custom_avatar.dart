@@ -22,7 +22,7 @@ class CustomAvatar extends StatefulWidget {
   State<CustomAvatar> createState() => _CustomAvatarState();
 }
 
-class _CustomAvatarState extends State<CustomAvatar> {
+class _CustomAvatarState extends BaseStatefulWidget<CustomAvatar> {
   @override
   Widget build(BuildContext context) {
     return Container(

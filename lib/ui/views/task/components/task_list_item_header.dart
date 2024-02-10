@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import '../misc/my_task_model.dart';
 
-class TaskListItemHeader extends StatelessWidget {
+class TaskListItemHeader extends BaseStatelessWidget {
   const TaskListItemHeader({
     super.key,
     required this.data,
@@ -25,7 +25,7 @@ class TaskListItemHeader extends StatelessWidget {
     return SizedBox(
       height: 32,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: styles.insets.xxs),
+        padding: EdgeInsets.symmetric(vertical: styles(context).insets.xxs),
         child: Row(
           children: [
             RotatedBox(
@@ -35,16 +35,16 @@ class TaskListItemHeader extends StatelessWidget {
                   icon: Assets.images.icons.arrowDown,
                   size: 16,
                   iconSize: 20,
-                  color: styles.theme.grey4),
+                  color: styles(context).theme.grey4),
             ),
             const Gap(12),
-            Text(data.title, style: styles.text.t1),
-            Gap(styles.insets.xs),
+            Text(data.title, style: styles(context).text.t1),
+            Gap(styles(context).insets.xs),
             Container(
               height: 22,
               width: 28,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: styles.theme.grey2),
-              child: Center(child: Text(data.taskCount.toString(), style: styles.text.b1)),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: styles(context).theme.grey2),
+              child: Center(child: Text(data.taskCount.toString(), style: styles(context).text.b1)),
             ),
             Expanded(child: Container()),
             CustomIconButton(

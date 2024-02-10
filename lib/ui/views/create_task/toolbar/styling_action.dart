@@ -95,13 +95,13 @@ class _TextBlockSelector extends StatefulWidget {
   State<_TextBlockSelector> createState() => _TextBlockSelectorState();
 }
 
-class _TextBlockSelectorState extends State<_TextBlockSelector> {
+class _TextBlockSelectorState extends BaseStatefulWidget<_TextBlockSelector> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: styles.insets.sm),
+          padding: EdgeInsets.symmetric(horizontal: _styles.insets.sm),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -109,19 +109,19 @@ class _TextBlockSelectorState extends State<_TextBlockSelector> {
                 (e) => SizedBox(
                   height: 60,
                   child: CustomAppButton(
-                    bgColor: widget.isActive ? styles.theme.blue : Colors.transparent,
+                    bgColor: widget.isActive ? _styles.theme.blue : Colors.transparent,
                     onPressed: () {},
-                    padding: EdgeInsets.symmetric(vertical: styles.insets.xs, horizontal: styles.insets.md),
+                    padding: EdgeInsets.symmetric(vertical: _styles.insets.xs, horizontal: _styles.insets.md),
                     expand: true,
                     child: CustomSvg(e.icon)
-                        .svg(size: 30, color: widget.isActive ? styles.theme.white : styles.theme.grey7),
+                        .svg(size: 30, color: widget.isActive ? _styles.theme.white : _styles.theme.grey7),
                   ),
                 ),
               ),
             ],
           ),
         ),
-        Gap(styles.insets.md),
+        Gap(_styles.insets.md),
         Row(
           children: [
             Expanded(
@@ -129,19 +129,19 @@ class _TextBlockSelectorState extends State<_TextBlockSelector> {
               child: Container(
                 height: 60,
                 clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(borderRadius: styles.corners.br12),
-                margin: EdgeInsets.symmetric(horizontal: styles.insets.sm),
+                decoration: BoxDecoration(borderRadius: _styles.corners.br12),
+                margin: EdgeInsets.symmetric(horizontal: _styles.insets.sm),
                 child: Row(
                   children: [
                     ..._two.map((e) {
                       if (_two.indexOf(e).isOdd) {
-                        return VerticalDivider(color: styles.theme.grey6, width: 1, thickness: 1);
+                        return VerticalDivider(color: _styles.theme.grey6, width: 1, thickness: 1);
                       }
                       return Expanded(
                         child: Container(
                           height: 60,
-                          decoration: BoxDecoration(color: styles.theme.grey3),
-                          child: Center(child: CustomSvg(e.icon).svg(size: 24, color: styles.theme.grey7)),
+                          decoration: BoxDecoration(color: _styles.theme.grey3),
+                          child: Center(child: CustomSvg(e.icon).svg(size: 24, color: _styles.theme.grey7)),
                         ).clickable(() {}),
                       );
                     }),
@@ -153,33 +153,33 @@ class _TextBlockSelectorState extends State<_TextBlockSelector> {
               flex: 1,
               child: Container(
                 height: 60,
-                decoration: BoxDecoration(color: styles.theme.grey3, borderRadius: styles.corners.br12),
-                child: Center(child: CustomSvg(Assets.images.editor.palette).svg(size: 24, color: styles.theme.grey7)),
+                decoration: BoxDecoration(color: _styles.theme.grey3, borderRadius: _styles.corners.br12),
+                child: Center(child: CustomSvg(Assets.images.editor.palette).svg(size: 24, color: _styles.theme.grey7)),
               ).clickable(() {}),
             ),
-            Gap(styles.insets.sm),
+            Gap(_styles.insets.sm),
           ],
         ),
-        Gap(styles.insets.md),
+        Gap(_styles.insets.md),
         Container(
           height: 60,
           width: double.infinity,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(borderRadius: styles.corners.br12),
-          margin: EdgeInsets.symmetric(horizontal: styles.insets.sm),
+          decoration: BoxDecoration(borderRadius: _styles.corners.br12),
+          margin: EdgeInsets.symmetric(horizontal: _styles.insets.sm),
           child: Row(
             children: [
               ..._three.map(
                 (e) {
                   if (_three.indexOf(e).isOdd) {
-                    return VerticalDivider(color: styles.theme.grey6, width: 1, thickness: 1);
+                    return VerticalDivider(color: _styles.theme.grey6, width: 1, thickness: 1);
                   }
                   return Expanded(
                     child: Container(
                       height: 60,
                       width: 90,
-                      decoration: BoxDecoration(color: styles.theme.grey3),
-                      child: Center(child: CustomSvg(e.icon).svg(size: 24, color: styles.theme.grey7)),
+                      decoration: BoxDecoration(color: _styles.theme.grey3),
+                      child: Center(child: CustomSvg(e.icon).svg(size: 24, color: _styles.theme.grey7)),
                     ),
                   );
                 },
@@ -195,13 +195,13 @@ class _TextBlockSelectorState extends State<_TextBlockSelector> {
 //// data
 List<ToolbarModel> _textBlock = [
   ToolbarModel(
-      title: 'H1', icon: Assets.images.editor.h1, id: HeadingBlockKeys.type, level: 1, color: styles.theme.hGreen),
+      title: 'H1', icon: Assets.images.editor.h1, id: HeadingBlockKeys.type, level: 1, color: _styles.theme.hGreen),
   ToolbarModel(
-      title: 'H2', icon: Assets.images.editor.h2, id: HeadingBlockKeys.type, level: 2, color: styles.theme.hGreen),
+      title: 'H2', icon: Assets.images.editor.h2, id: HeadingBlockKeys.type, level: 2, color: _styles.theme.hGreen),
   ToolbarModel(
-      title: 'H3', icon: Assets.images.editor.h3, id: HeadingBlockKeys.type, level: 3, color: styles.theme.hGreen),
+      title: 'H3', icon: Assets.images.editor.h3, id: HeadingBlockKeys.type, level: 3, color: _styles.theme.hGreen),
   ToolbarModel(
-      title: 'Text', icon: Assets.images.editor.paragraph, id: ParagraphBlockKeys.type, color: styles.theme.hGreen),
+      title: 'Text', icon: Assets.images.editor.paragraph, id: ParagraphBlockKeys.type, color: _styles.theme.hGreen),
 ];
 
 List<ToolbarModel> _two = [
@@ -222,24 +222,26 @@ List<ToolbarModel> _two = [
 ];
 
 List<ToolbarModel> _three = [
-  ToolbarModel(title: 'Quote', icon: Assets.images.editor.quote, id: QuoteBlockKeys.type, color: styles.theme.hPurple),
+  ToolbarModel(title: 'Quote', icon: Assets.images.editor.quote, id: QuoteBlockKeys.type, color: _styles.theme.hPurple),
   const ToolbarModel(),
   ToolbarModel(
       title: 'Bulleted',
       icon: Assets.images.editor.bulletedList,
       id: BulletedListBlockKeys.type,
-      color: styles.theme.hYellow),
+      color: _styles.theme.hYellow),
   const ToolbarModel(),
   ToolbarModel(
       title: 'Numbered',
       icon: Assets.images.editor.numberdList,
       id: NumberedListBlockKeys.type,
-      color: styles.theme.hBlue),
+      color: _styles.theme.hBlue),
   const ToolbarModel(),
   ToolbarModel(
     title: 'Link',
     icon: Assets.images.editor.link,
     id: 'link',
-    color: styles.theme.hPurple,
+    color: _styles.theme.hPurple,
   ),
 ];
+
+CustomAppStyles _styles = CustomAppStyles();

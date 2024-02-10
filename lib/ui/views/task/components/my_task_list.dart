@@ -8,7 +8,7 @@ import '../../../../coca.dart';
 import '../misc/my_task_data.dart';
 import 'task_list_collapsible_item.dart';
 
-class MyTaskList extends StatelessWidget {
+class MyTaskList extends BaseStatelessWidget {
   const MyTaskList({super.key});
 
   @override

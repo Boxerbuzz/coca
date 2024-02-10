@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class LoginForgetPasswordButton extends StatelessWidget {
+class LoginForgetPasswordButton extends BaseStatelessWidget {
   const LoginForgetPasswordButton({super.key});
 
   @override
@@ -14,7 +14,7 @@ class LoginForgetPasswordButton extends StatelessWidget {
     return TextButton(
       onPressed: () => context.go(ForgotPasswordScreen.route),
       style: TextButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: styles.insets.xs),
+        padding: EdgeInsets.symmetric(horizontal: styles(context).insets.xs),
         minimumSize: Size.zero,
       ),
       child: Row(
@@ -22,7 +22,7 @@ class LoginForgetPasswordButton extends StatelessWidget {
         children: [
           Text(
             'Forgot Password?',
-            style: styles.text.b1.textColor(styles.theme.blue),
+            style: styles(context).text.b1.textColor(styles(context).theme.blue),
           ),
         ],
       ),

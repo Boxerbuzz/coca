@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class ProjectViewSwitcherItem extends StatelessWidget {
+class ProjectViewSwitcherItem extends BaseStatelessWidget {
   const ProjectViewSwitcherItem(
       {super.key, required this.icon, required this.label, this.onPressed, this.isSelected = false});
   final String icon;
@@ -17,19 +17,22 @@ class ProjectViewSwitcherItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(styles.insets.xs),
+      padding: EdgeInsets.all(styles(context).insets.xs),
       decoration: BoxDecoration(
-        color: styles.theme.grey2,
-        borderRadius: styles.corners.br8,
-        border: Border.all(color: isSelected ? styles.theme.blue : styles.theme.silver),
+        color: styles(context).theme.grey2,
+        borderRadius: styles(context).corners.br8,
+        border: Border.all(color: isSelected ? styles(context).theme.blue : styles(context).theme.silver),
       ),
       child: Row(
         children: [
-          CustomSvg(icon).svg(color: isSelected ? styles.theme.blue : styles.theme.grey4),
+          CustomSvg(icon).svg(color: isSelected ? styles(context).theme.blue : styles(context).theme.grey4),
           const SizedBox(width: 8),
           Text(
             label.capitalize(),
-            style: styles.text.b1.textColor(isSelected ? styles.theme.blue : styles.theme.grey4),
+            style: styles(context)
+                .text
+                .b1
+                .textColor(isSelected ? styles(context).theme.blue : styles(context).theme.grey4),
           ),
         ],
       ),

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'custom_app_button.dart';
 
-class CustomPrimaryButton extends StatelessWidget {
+class CustomPrimaryButton extends BaseStatelessWidget {
   const CustomPrimaryButton({super.key, required this.label, this.onTap});
   final String label;
   final VoidCallback? onTap;
@@ -19,7 +19,7 @@ class CustomPrimaryButton extends StatelessWidget {
       child: CustomAppButton(
         onPressed: onTap,
         child: Center(
-          child: Text(label, style: styles.text.b1.textColor(styles.theme.white)),
+          child: Text(label, style: styles(context).text.b1.textColor(styles(context).theme.white)),
         ),
       ),
     );

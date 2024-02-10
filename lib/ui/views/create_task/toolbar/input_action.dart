@@ -83,40 +83,42 @@ class _CustomInputBlockBottomSheetState extends State<CustomInputBlockBottomShee
 
 List<ToolbarModel> _options = [
   ToolbarModel(
-      title: 'H1', icon: Assets.images.editor.h1, id: HeadingBlockKeys.type, level: 1, color: styles.theme.hGreen),
+      title: 'H1', icon: Assets.images.editor.h1, id: HeadingBlockKeys.type, level: 1, color: _styles.theme.hGreen),
   ToolbarModel(
-      title: 'H2', icon: Assets.images.editor.h2, id: HeadingBlockKeys.type, level: 2, color: styles.theme.hGreen),
+      title: 'H2', icon: Assets.images.editor.h2, id: HeadingBlockKeys.type, level: 2, color: _styles.theme.hGreen),
   ToolbarModel(
-      title: 'H3', icon: Assets.images.editor.h3, id: HeadingBlockKeys.type, level: 3, color: styles.theme.hGreen),
+      title: 'H3', icon: Assets.images.editor.h3, id: HeadingBlockKeys.type, level: 3, color: _styles.theme.hGreen),
   ToolbarModel(
-      title: 'Text', icon: Assets.images.editor.paragraph, id: ParagraphBlockKeys.type, color: styles.theme.hGreen),
+      title: 'Text', icon: Assets.images.editor.paragraph, id: ParagraphBlockKeys.type, color: _styles.theme.hGreen),
   ToolbarModel(
       title: 'Checkbox',
       icon: Assets.images.icons.checkSquare,
       id: TodoListBlockKeys.type,
-      color: styles.theme.hPurple),
-  ToolbarModel(title: 'Quote', icon: Assets.images.editor.quote, id: QuoteBlockKeys.type, color: styles.theme.hPurple),
+      color: _styles.theme.hPurple),
+  ToolbarModel(title: 'Quote', icon: Assets.images.editor.quote, id: QuoteBlockKeys.type, color: _styles.theme.hPurple),
   ToolbarModel(
       title: 'Bulleted',
       icon: Assets.images.editor.bulletedList,
       id: BulletedListBlockKeys.type,
-      color: styles.theme.hYellow),
+      color: _styles.theme.hYellow),
   ToolbarModel(
       title: 'Numbered',
       icon: Assets.images.editor.numberdList,
       id: NumberedListBlockKeys.type,
-      color: styles.theme.hBlue),
-  ToolbarModel(title: 'Image', icon: Assets.images.icons.image, id: ImageBlockKeys.type, color: styles.theme.hBlue),
+      color: _styles.theme.hBlue),
+  ToolbarModel(title: 'Image', icon: Assets.images.icons.image, id: ImageBlockKeys.type, color: _styles.theme.hBlue),
   ToolbarModel(
-      title: 'Divider', icon: Assets.images.editor.divider, id: DividerBlockKeys.type, color: styles.theme.hGreen),
+      title: 'Divider', icon: Assets.images.editor.divider, id: DividerBlockKeys.type, color: _styles.theme.hGreen),
   ToolbarModel(
       title: 'Table',
       icon: Assets.images.editor.table,
       id: TableBlockKeys.type,
-      color: styles.theme.red.withOpacity(.4)),
+      color: _styles.theme.red.withOpacity(.4)),
   ToolbarModel(
       icon: Assets.images.editor.code,
       title: AppFlowyEditorL10n.current.embedCode,
       id: AppFlowyRichTextKeys.code,
-      color: styles.theme.red.withOpacity(.4)),
+      color: _styles.theme.red.withOpacity(.4)),
 ];
+
+CustomAppStyles _styles = CustomAppStyles();

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 
-class CustomBottomSheetLayout extends StatelessWidget {
+class CustomBottomSheetLayout extends BaseStatelessWidget {
   const CustomBottomSheetLayout({super.key, required this.child});
   final Widget child;
 
@@ -21,9 +21,13 @@ class CustomBottomSheetLayout extends StatelessWidget {
             const Gap(12),
             Center(
               child: Container(
-                  height: 6,
-                  width: 48,
-                  decoration: BoxDecoration(borderRadius: styles.corners.br8, color: styles.theme.silver)),
+                height: 6,
+                width: 48,
+                decoration: BoxDecoration(
+                  borderRadius: styles(context).corners.br8,
+                  color: styles(context).theme.silver,
+                ),
+              ),
             ),
             child,
           ],

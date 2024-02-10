@@ -17,14 +17,14 @@ class CustomGoogleButton extends BaseStatelessWidget {
       margin: EdgeInsets.symmetric(vertical: context.height * (0.01)),
       height: 48,
       padding: EdgeInsets.zero,
-      decoration: BoxDecoration(borderRadius: styles.corners.br8),
+      decoration: BoxDecoration(borderRadius: styles(context).corners.br8),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
-            borderRadius: styles.corners.br4,
-            side: BorderSide(color: styles.theme.grey3),
+            borderRadius: styles(context).corners.br4,
+            side: BorderSide(color: styles(context).theme.grey3),
           ),
         ),
         child: Row(
@@ -34,7 +34,7 @@ class CustomGoogleButton extends BaseStatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 child: CustomSvg(Assets.images.icons.googleLogo).svg()),
             const Gap(10),
-            Text(label, style: styles.text.b1.textColor(styles.theme.grey6)),
+            Text(label, style: styles(context).text.b1.textColor(styles(context).theme.grey6)),
           ],
         ),
       ),

@@ -16,7 +16,7 @@ class ProjectDetailTaskSubTask extends StatefulWidget {
   State<ProjectDetailTaskSubTask> createState() => _ProjectDetailTaskSubTaskState();
 }
 
-class _ProjectDetailTaskSubTaskState extends State<ProjectDetailTaskSubTask> {
+class _ProjectDetailTaskSubTaskState extends BaseStatefulWidget<ProjectDetailTaskSubTask> {
   late bool value;
 
   @override

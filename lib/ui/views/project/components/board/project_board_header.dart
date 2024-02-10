@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../coca.dart';
 
-class ProjectBoardHeader extends StatelessWidget {
+class ProjectBoardHeader extends BaseStatelessWidget {
   const ProjectBoardHeader(this.title, {super.key, this.onMorePressed});
   final String title;
   final VoidCallback? onMorePressed;
@@ -14,10 +14,10 @@ class ProjectBoardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(styles.insets.sm),
+      padding: EdgeInsets.all(styles(context).insets.sm),
       child: Row(
         children: [
-          Text(title, style: styles.text.t2.textColor(styles.theme.grey4)),
+          Text(title, style: styles(context).text.t2.textColor(styles(context).theme.grey4)),
           const Spacer(),
           CustomSvg(Assets.images.icons.dots).svg().clickable(onMorePressed),
         ],

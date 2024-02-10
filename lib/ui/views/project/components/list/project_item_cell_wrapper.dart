@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../coca.dart';
 
-class ProjectItemCellWrapper extends StatelessWidget {
+class ProjectItemCellWrapper extends BaseStatelessWidget {
   final Widget? child;
   final int flex;
   final bool isVisible;

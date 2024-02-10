@@ -8,7 +8,7 @@ import '../../../coca.dart';
 import 'custom_tab_indicator.dart';
 import 'custom_tab_label.dart';
 
-class CustomTabBar extends StatelessWidget {
+class CustomTabBar extends BaseStatelessWidget {
   final ValueChanged<int>? onChanged;
   final List<String> sections;
   final int index;
@@ -30,15 +30,15 @@ class CustomTabBar extends StatelessWidget {
     double targetAlignX = -1 + (index * 1 / (sections.length - 1)) * 2;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+      padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
       child: RepaintBoundary(
         child: Stack(
           children: <Widget>[
             /// Outline
-            CustomTabIndicator(color: styles.theme.grey3),
+            CustomTabIndicator(color: styles(context).theme.grey3),
 
             /// Animated bar
-            CustomTabIndicator(color: styles.theme.white)
+            CustomTabIndicator(color: styles(context).theme.white)
                 .fractionallySizedBox(wFactor: 1 / sections.length)
                 .alignment(Alignment(targetAlignX, 0), animate: true)
                 .padding(all: 4)

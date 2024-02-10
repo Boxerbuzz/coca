@@ -40,7 +40,7 @@ class CustomTextFieldWithTitle extends BaseStatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: context.textTheme.titleSmall?.copyWith(color: styles.theme.grey4)),
+        Text(title, style: context.textTheme.titleSmall?.copyWith(color: styles(context).theme.grey4)),
         const SizedBox(height: 10),
         CustomTextField(
           controller: controller,

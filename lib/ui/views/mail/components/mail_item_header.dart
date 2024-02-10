@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class MailItemHeader extends StatelessWidget {
+class MailItemHeader extends BaseStatelessWidget {
   const MailItemHeader({super.key, required this.email});
   final MailModel email;
 
@@ -21,10 +21,13 @@ class MailItemHeader extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('${email.sender} — ${email.time}', style: styles.text.caption.textColor(styles.theme.grey4)),
+              Text('${email.sender} — ${email.time}',
+                  style: styles(context).text.caption.textColor(styles(context).theme.grey4)),
               const Gap(2),
               Text(email.subject,
-                  style: email.containsPictures ? styles.text.t2 : styles.text.t2.textColor(styles.theme.grey7),
+                  style: email.containsPictures
+                      ? styles(context).text.t2
+                      : styles(context).text.t2.textColor(styles(context).theme.grey7),
                   overflow: TextOverflow.ellipsis),
             ],
           ),

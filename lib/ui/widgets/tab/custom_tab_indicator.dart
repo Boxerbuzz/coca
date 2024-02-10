@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 
-class CustomTabIndicator extends StatelessWidget {
+class CustomTabIndicator extends BaseStatelessWidget {
   const CustomTabIndicator({super.key, this.width, this.color});
   final double? width;
   final Color? color;
@@ -15,7 +15,7 @@ class CustomTabIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      decoration: BoxDecoration(color: color, borderRadius: styles.corners.br24),
+      decoration: BoxDecoration(color: color, borderRadius: styles(context).corners.br24),
     );
   }
 }

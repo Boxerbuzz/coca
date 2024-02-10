@@ -8,7 +8,7 @@ import '../../../../coca.dart';
 import '../misc/gallery_data.dart';
 import 'mail_gallery_image_tile.dart';
 
-class MailItemMiniGallery extends StatelessWidget {
+class MailItemMiniGallery extends BaseStatelessWidget {
   const MailItemMiniGallery({super.key});
 
   @override

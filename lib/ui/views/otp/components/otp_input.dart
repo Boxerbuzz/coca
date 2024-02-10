@@ -14,7 +14,7 @@ class OtpInput extends StatefulWidget {
   State<OtpInput> createState() => _OtpInputState();
 }
 
-class _OtpInputState extends State<OtpInput> {
+class _OtpInputState extends BaseStatefulWidget<OtpInput> {
   final pinController = TextEditingController();
 
   final focusNode = FocusNode();

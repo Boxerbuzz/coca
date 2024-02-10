@@ -9,14 +9,14 @@ import '../../../../../coca.dart';
 import 'project_list_item.dart';
 import 'project_list_item_header.dart';
 
-class ProjectListGroupItem extends StatelessWidget {
+class ProjectListGroupItem extends BaseStatelessWidget {
   const ProjectListGroupItem({super.key, required this.data});
   final AppFlowyGroupData data;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: styles.insets.sm),
+      padding: EdgeInsets.symmetric(horizontal: styles(context).insets.sm),
       child: Column(
         children: [
           ProjectListItemHeader(data: data),

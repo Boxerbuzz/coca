@@ -16,9 +16,9 @@ class MailDetailHeader extends BaseStatelessWidget implements PreferredSizeWidge
   @override
   Widget build(BuildContext context) => Container(
         height: preferredSize.height,
-        padding: EdgeInsets.symmetric(horizontal: styles.insets.sm),
+        padding: EdgeInsets.symmetric(horizontal: styles(context).insets.sm),
         margin: EdgeInsets.only(top: context.mq.padding.top),
-        decoration: BoxDecoration(color: styles.theme.white, boxShadow: styles.shadows.sm),
+        decoration: BoxDecoration(color: styles(context).theme.white, boxShadow: styles(context).shadows.sm),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import 'home_stat_item.dart';
 
-class HomeWorkspaceStats extends StatelessWidget {
+class HomeWorkspaceStats extends BaseStatelessWidget {
   const HomeWorkspaceStats({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+      padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
       child: StaggeredGrid.count(
         crossAxisCount: 4,
         mainAxisSpacing: 12,
@@ -32,7 +32,7 @@ class HomeWorkspaceStats extends StatelessWidget {
   }
 }
 
-class StatTile extends StatelessWidget {
+class StatTile extends BaseStatelessWidget {
   const StatTile({super.key, required this.index, this.extent, required this.data});
   final int index;
   final double? extent;

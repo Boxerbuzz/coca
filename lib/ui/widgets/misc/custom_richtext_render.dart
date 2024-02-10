@@ -16,7 +16,7 @@ final Map<String, _TextStyleBuilder> _styleBuildersByTagName = {
 
 final Set<String> _alreadyWarnedMissingStyleNames = {};
 
-class CustomRichTextRender extends StatelessWidget {
+class CustomRichTextRender extends BaseStatelessWidget {
   const CustomRichTextRender(this.text, {super.key, this.style});
 
   /// The text to parse.

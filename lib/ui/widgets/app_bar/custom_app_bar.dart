@@ -32,18 +32,18 @@ class CustomAppBar extends BaseStatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) => AppBar(
-        backgroundColor: transparent ? Colors.transparent : styles.theme.white,
+        backgroundColor: transparent ? Colors.transparent : styles(context).theme.white,
         leading: leading ??
             Padding(
-              padding: EdgeInsets.only(left: styles.insets.xs, top: styles.insets.xs),
+              padding: EdgeInsets.only(left: styles(context).insets.xs, top: styles(context).insets.xs),
               child: x ? CustomBackButton.close() : const CustomBackButton(),
             ),
-        title: Text(title, style: styles.text.t1.textColor(titleColor ?? styles.theme.grey7)),
+        title: Text(title, style: styles(context).text.t1.textColor(titleColor ?? styles(context).theme.grey7)),
         centerTitle: centerTitle ?? true,
         elevation: 0,
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0).add(EdgeInsets.only(right: styles.insets.md)),
+            padding: const EdgeInsets.symmetric(vertical: 8.0).add(EdgeInsets.only(right: styles(context).insets.md)),
             child: trailing ?? const SizedBox.shrink(),
           ),
         ],

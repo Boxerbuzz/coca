@@ -8,7 +8,7 @@ import '../../../../coca.dart';
 import 'my_task_list.dart';
 import 'task_calendar.dart';
 
-class TaskBody extends StatelessWidget {
+class TaskBody extends BaseStatelessWidget {
   const TaskBody({super.key});
 
   @override
@@ -17,7 +17,7 @@ class TaskBody extends StatelessWidget {
       builder: (context, store, child) {
         return Column(
           children: [
-            Gap(styles.insets.md),
+            Gap(styles(context).insets.md),
             CustomTabBar(
               index: store.page,
               sections: const ['My Work', 'Calendar'],
@@ -25,7 +25,7 @@ class TaskBody extends StatelessWidget {
                 store.page = value;
               },
             ),
-            Gap(styles.insets.sm),
+            Gap(styles(context).insets.sm),
             Expanded(
               child: CustomIndexedStack(
                 index: store.page,

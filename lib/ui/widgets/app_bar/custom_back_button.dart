@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 
-class CustomBackButton extends StatelessWidget {
+class CustomBackButton extends BaseStatelessWidget {
   const CustomBackButton({super.key, this.icon, this.onPressed, this.bgColor, this.iconColor});
 
   final Color? bgColor;
@@ -22,7 +22,7 @@ class CustomBackButton extends StatelessWidget {
     return CustomIconButton(
       icon: icon ?? Assets.images.icons.arrowLeft,
       bgColor: bgColor,
-      color: iconColor ?? styles.theme.grey7,
+      color: iconColor ?? styles(context).theme.grey7,
       onPressed: onPressed ?? () => context.pop(),
     );
   }

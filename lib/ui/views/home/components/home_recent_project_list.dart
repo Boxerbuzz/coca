@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import 'home_recent_project_item.dart';
 
-class HomeRecentProjectList extends StatelessWidget {
+class HomeRecentProjectList extends BaseStatelessWidget {
   const HomeRecentProjectList({super.key});
 
   @override
@@ -15,12 +15,12 @@ class HomeRecentProjectList extends StatelessWidget {
     return Column(
       children: [
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+            padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
             child: CustomSubHeader(title: 'Recent Projects', onPressed: () {})),
         CustomHorizontalScroll(
           child: Row(
             children: [
-              Gap(styles.insets.md),
+              Gap(styles(context).insets.md),
               ...projects.map((e) => HomeRecentProjectItem(data: e)),
             ],
           ),

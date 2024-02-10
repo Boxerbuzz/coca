@@ -19,9 +19,9 @@ Map<String, BlockComponentBuilder> blocks() {
     },
     textStyle: (node) {
       if (HeadingBlockKeys.type == node.type) {
-        return styles.text.t1.bold;
+        return _styles.text.t1.bold;
       }
-      return styles.text.t1;
+      return _styles.text.t1;
     },
     placeholderText: (node) {
       if (HeadingBlockKeys.type == node.type) {
@@ -83,16 +83,16 @@ Map<String, BlockComponentBuilder> blocks() {
 EditorStyle style() {
   return EditorStyle.mobile(
     padding: const EdgeInsets.symmetric(horizontal: 20),
-    cursorColor: styles.theme.grey7,
-    selectionColor: styles.theme.hBlue.withOpacity(0.3),
+    cursorColor: _styles.theme.grey7,
+    selectionColor: _styles.theme.hBlue.withOpacity(0.3),
     textStyleConfiguration: TextStyleConfiguration(
-      text: styles.text.t3.textColor(styles.theme.grey7),
-      bold: styles.text.t3.bold.textColor(styles.theme.grey7),
-      href: styles.text.t3.italic.underline.textColor(styles.theme.blue),
-      code: styles.text.p.italic.textColor(styles.theme.blue),
-      italic: styles.text.p.italic.textColor(styles.theme.grey7),
-      strikethrough: styles.text.p.lineThrough.textColor(styles.theme.grey7),
-      underline: styles.text.p.underline.textColor(styles.theme.grey7),
+      text: _styles.text.t3.textColor(_styles.theme.grey7),
+      bold: _styles.text.t3.bold.textColor(_styles.theme.grey7),
+      href: _styles.text.t3.italic.underline.textColor(_styles.theme.blue),
+      code: _styles.text.p.italic.textColor(_styles.theme.blue),
+      italic: _styles.text.p.italic.textColor(_styles.theme.grey7),
+      strikethrough: _styles.text.p.lineThrough.textColor(_styles.theme.grey7),
+      underline: _styles.text.p.underline.textColor(_styles.theme.grey7),
     ),
     textSpanDecorator: (_, node, index, text, textSpan, textSpan1) {
       final attributes = text.attributes;
@@ -232,3 +232,5 @@ Map<String, BlockComponentBuilder> customBuilder() {
     ),
   };
 }
+
+CustomAppStyles get _styles => CustomAppStyles();

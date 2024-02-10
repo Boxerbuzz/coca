@@ -21,6 +21,7 @@ export 'data/task_data.dart';
 export 'data/user_data.dart';
 export 'data/workspace_data.dart';
 export 'enums/file_extension_enum.dart';
+export 'enums/mail_drawer_state.dart';
 export 'enums/mail_pages_enum.dart';
 
 /// enum

@@ -53,9 +53,9 @@ class CustomTextFieldWithIcon extends BaseStatelessWidget {
         suffixIcon: suffixIcon,
         contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         labelText: labelText,
-        labelStyle: styles.text.p.textColor(styles.theme.grey4),
+        labelStyle: styles(context).text.p.textColor(styles(context).theme.grey4),
       ),
-      style: styles.text.b1,
+      style: styles(context).text.b1,
       validator: validator ??
           (val) {
             if (val!.isEmpty) return 'Field can\'t be empty';

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class HomeStatIcon extends StatelessWidget {
+class HomeStatIcon extends BaseStatelessWidget {
   const HomeStatIcon({super.key, this.color, required this.icon});
   final Color? color;
   final String icon;

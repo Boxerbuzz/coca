@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'components/login_body.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends BaseStatelessWidget {
   const LoginScreen({super.key});
 
   static String route = '/login';
@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+        padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

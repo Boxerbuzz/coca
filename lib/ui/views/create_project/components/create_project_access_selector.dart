@@ -13,7 +13,7 @@ class CreateProjectAccessSelector extends StatefulWidget {
   State<CreateProjectAccessSelector> createState() => _CreateProjectAccessSelectorState();
 }
 
-class _CreateProjectAccessSelectorState extends State<CreateProjectAccessSelector> {
+class _CreateProjectAccessSelectorState extends BaseStatefulWidget<CreateProjectAccessSelector> {
   @override
   Widget build(BuildContext context) {
     return Column(

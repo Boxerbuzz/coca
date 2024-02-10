@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class HomeStatLabel extends StatelessWidget {
+class HomeStatLabel extends BaseStatelessWidget {
   const HomeStatLabel({super.key, required this.label, required this.stats});
   final String stats;
   final String label;
@@ -16,9 +16,9 @@ class HomeStatLabel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(stats, style: styles.text.h2),
+        Text(stats, style: styles(context).text.h2),
         const Gap(2),
-        Text(label, style: styles.text.t2.regular),
+        Text(label, style: styles(context).text.t2.regular),
       ],
     );
   }

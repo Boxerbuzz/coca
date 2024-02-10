@@ -18,7 +18,7 @@ class CreateProjectLayoutSelector extends StatefulWidget {
   State<CreateProjectLayoutSelector> createState() => _CreateProjectLayoutSelectorState();
 }
 
-class _CreateProjectLayoutSelectorState extends State<CreateProjectLayoutSelector> {
+class _CreateProjectLayoutSelectorState extends BaseStatefulWidget<CreateProjectLayoutSelector> {
   ProjectLayoutModel? _selectedLayout;
 
   @override

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class HomeAppBar extends StatelessWidget {
+class HomeAppBar extends BaseStatelessWidget {
   final AnimationController controller;
   final Animation<double> animation;
   final double opacity;
@@ -28,10 +28,10 @@ class HomeAppBar extends StatelessWidget {
             transform: Matrix4.translationValues(0.0, 40 * (1.0 - animation.value), 0.0),
             child: Container(
               height: barHeight + 30,
-              padding: EdgeInsets.symmetric(horizontal: styles.insets.md).add(EdgeInsets.only(top: statusBar)),
+              padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md).add(EdgeInsets.only(top: statusBar)),
               decoration: BoxDecoration(
-                boxShadow: opacity > 0 ? styles.shadows.custom(styles.theme.shadow, .07) : null,
-                color: styles.theme.white.withOpacity(opacity),
+                boxShadow: opacity > 0 ? styles(context).shadows.custom(styles(context).theme.shadow, .07) : null,
+                color: styles(context).theme.white.withOpacity(opacity),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +42,7 @@ class HomeAppBar extends StatelessWidget {
                   IconButton(
                       icon: CustomSvg(Assets.images.icons.bell).svg(height: 24, width: 24),
                       onPressed: () => context.push(NotificationScreen.route)),
-                  CustomAvatar(user: user, size: 35, bg: styles.theme.grey3),
+                  CustomAvatar(user: user, size: 35, bg: styles(context).theme.grey3),
                 ],
               ),
             ),

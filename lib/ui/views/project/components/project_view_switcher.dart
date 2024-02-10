@@ -8,7 +8,7 @@ import '../../../../coca.dart';
 import '../misc/project_switcher_model.dart';
 import 'project_view_switcher_item.dart';
 
-class ProjectViewSwitcher extends StatelessWidget {
+class ProjectViewSwitcher extends BaseStatelessWidget {
   const ProjectViewSwitcher({super.key});
 
   @override
@@ -30,8 +30,8 @@ class ProjectViewSwitcher extends StatelessWidget {
                 isOpen: __,
               ),
               bIsScrollable: false,
-              padding: EdgeInsets.all(styles.insets.xs),
-              separator: Gap(styles.insets.xs),
+              padding: EdgeInsets.all(styles(context).insets.xs),
+              separator: Gap(styles(context).insets.xs),
               children: [
                 ...displays.map(
                   (e) {

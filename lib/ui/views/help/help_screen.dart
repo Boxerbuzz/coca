@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'components/help_body.dart';
 
-class HelpScreen extends StatelessWidget {
+class HelpScreen extends BaseStatelessWidget {
   const HelpScreen({super.key});
 
   static String route = '/help';
@@ -19,7 +19,7 @@ class HelpScreen extends StatelessWidget {
         title: 'Help Center',
         trailing: CustomIconButton(
           icon: Assets.images.icons.search,
-          color: styles.theme.grey7,
+          color: styles(context).theme.grey7,
           onPressed: () {},
         ),
       ),

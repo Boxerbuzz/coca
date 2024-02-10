@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class NotificationCategoryItem extends StatelessWidget {
+class NotificationCategoryItem extends BaseStatelessWidget {
   const NotificationCategoryItem({super.key, required this.index, required this.title, this.icon});
   final int index;
   final String? icon;
@@ -19,14 +19,13 @@ class NotificationCategoryItem extends StatelessWidget {
         return GestureDetector(
           onTap: () => store.index = index,
           child: AnimatedContainer(
-            height: 32,
             duration: 100.milliseconds,
             decoration: BoxDecoration(
-              borderRadius: styles.corners.br24,
-              color: store.index == index ? styles.theme.blue : styles.theme.grey0,
+              borderRadius: styles(context).corners.br24,
+              color: store.index == index ? styles(context).theme.blue : styles(context).theme.grey0,
             ),
-            padding: EdgeInsets.all(styles.insets.xs),
-            margin: EdgeInsets.only(right: styles.insets.xs),
+            padding: EdgeInsets.all(styles(context).insets.xs),
+            margin: EdgeInsets.only(right: styles(context).insets.xs),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -37,8 +36,8 @@ class NotificationCategoryItem extends StatelessWidget {
                   child: Text(
                     title,
                     style: store.index == index
-                        ? styles.text.b1.textColor(styles.theme.white)
-                        : styles.text.p.textColor(styles.theme.grey7),
+                        ? styles(context).text.b1.textColor(styles(context).theme.white)
+                        : styles(context).text.p.textColor(styles(context).theme.grey7),
                   ),
                 ),
               ],

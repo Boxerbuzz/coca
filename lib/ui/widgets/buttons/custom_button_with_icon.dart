@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'custom_app_button.dart';
 
-class CustomButtonWithIcon extends StatelessWidget {
+class CustomButtonWithIcon extends BaseStatelessWidget {
   const CustomButtonWithIcon({
     super.key,
     this.text = '',
@@ -30,7 +30,7 @@ class CustomButtonWithIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget content = CustomAppButton(
-      bgColor: btnColor ?? styles.theme.blue,
+      bgColor: btnColor ?? styles(context).theme.blue,
       border: border,
       expand: shrinkWrap ? false : true,
       onPressed: onPressed,
@@ -38,9 +38,9 @@ class CustomButtonWithIcon extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CustomSvg(icon).svg(height: 20, width: 20, color: iconColor ?? styles.theme.white),
+          CustomSvg(icon).svg(height: 20, width: 20, color: iconColor ?? styles(context).theme.white),
           const Gap(12),
-          Text(text, style: styles.text.b1.textColor(txtColor ?? styles.theme.white)),
+          Text(text, style: styles(context).text.b1.textColor(txtColor ?? styles(context).theme.white)),
         ],
       ),
     );

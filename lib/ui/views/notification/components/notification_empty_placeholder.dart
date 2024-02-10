@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class NotificationEmptyPlaceholder extends StatelessWidget {
+class NotificationEmptyPlaceholder extends BaseStatelessWidget {
   const NotificationEmptyPlaceholder({super.key, this.height = 200});
   final double height;
 

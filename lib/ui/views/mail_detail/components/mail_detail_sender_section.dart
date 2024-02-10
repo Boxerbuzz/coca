@@ -7,15 +7,15 @@ import 'package:intl/intl.dart';
 
 import '../../../../coca.dart';
 
-class MailDetailSenderSection extends StatelessWidget {
+class MailDetailSenderSection extends BaseStatelessWidget {
   const MailDetailSenderSection({super.key, required this.mail});
   final MailModel mail;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: styles.theme.silver, width: 1))),
-      padding: EdgeInsets.all(styles.insets.sm),
+      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: styles(context).theme.silver, width: 1))),
+      padding: EdgeInsets.all(styles(context).insets.sm),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
@@ -24,14 +24,14 @@ class MailDetailSenderSection extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('John Doe', style: styles.text.t2),
-              Text('aza@gmail.com', style: styles.text.t3.textColor(styles.theme.grey4)),
+              Text('John Doe', style: styles(context).text.t2),
+              Text('aza@gmail.com', style: styles(context).text.t3.textColor(styles(context).theme.grey4)),
             ],
           ),
           const Spacer(),
           Text("Today, ${DateFormat('h:mm a').format(DateTime.now())}",
-              style: styles.text.t3.textColor(styles.theme.grey4)),
-          CustomIconButton(icon: Assets.images.icons.star, onPressed: () {}, color: styles.theme.grey4),
+              style: styles(context).text.t3.textColor(styles(context).theme.grey4)),
+          CustomIconButton(icon: Assets.images.icons.star, onPressed: () {}, color: styles(context).theme.grey4),
         ],
       ),
     );

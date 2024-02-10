@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../coca.dart';
 
-class ProjectBoardFooter extends StatelessWidget {
+class ProjectBoardFooter extends BaseStatelessWidget {
   const ProjectBoardFooter({super.key});
 
   @override
@@ -14,10 +14,10 @@ class ProjectBoardFooter extends StatelessWidget {
     return Container(
       height: 40,
       decoration: BoxDecoration(
-        color: styles.theme.grey2,
-        border: Border(top: BorderSide(color: styles.theme.silver)),
+        color: styles(context).theme.grey2,
+        border: Border(top: BorderSide(color: styles(context).theme.silver)),
       ),
-      padding: EdgeInsets.symmetric(horizontal: styles.insets.sm, vertical: styles.insets.xs),
+      padding: EdgeInsets.symmetric(horizontal: styles(context).insets.sm, vertical: styles(context).insets.xs),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -25,7 +25,7 @@ class ProjectBoardFooter extends StatelessWidget {
             icon: Assets.images.icons.plus,
             onPressed: () {},
             bgColor: Colors.transparent,
-            color: styles.theme.grey4,
+            color: styles(context).theme.grey4,
             iconSize: 12,
             size: 18,
           ),

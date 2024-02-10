@@ -9,7 +9,7 @@ import 'notification_category_list.dart';
 import 'notification_empty_placeholder.dart';
 import 'notification_item.dart';
 
-class NotificationBody extends StatelessWidget {
+class NotificationBody extends BaseStatelessWidget {
   const NotificationBody({super.key});
 
   @override
@@ -23,7 +23,7 @@ class NotificationBody extends StatelessWidget {
               delegate: CustomSliverAppBarDelegate(
                   minHeight: 50.0,
                   maxHeight: 50.0,
-                  child: Container(color: styles.theme.grey3, child: const NotificationCategoryList())),
+                  child: Container(color: styles(context).theme.grey3, child: const NotificationCategoryList())),
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(

@@ -5,7 +5,7 @@
 import 'package:coca/coca.dart';
 import 'package:flutter/material.dart';
 
-class MailDetailReplySection extends StatelessWidget {
+class MailDetailReplySection extends BaseStatelessWidget {
   const MailDetailReplySection({super.key});
 
   @override
@@ -14,19 +14,19 @@ class MailDetailReplySection extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            border: Border.symmetric(horizontal: BorderSide(color: styles.theme.silver, width: 1)),
+            border: Border.symmetric(horizontal: BorderSide(color: styles(context).theme.silver, width: 1)),
           ),
-          padding: EdgeInsets.all(styles.insets.sm),
+          padding: EdgeInsets.all(styles(context).insets.sm),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              CustomIconButton(icon: Assets.images.editor.undo, onPressed: () {}),
+              CustomIconButton(icon: Assets.images.editor.undo, color: styles(context).theme.grey7, onPressed: () {}),
               const SizedBox(width: 12),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Azalea Nirmala', style: styles.text.t2),
-                  Text('aza@gmail.com', style: styles.text.t3.textColor(styles.theme.grey4)),
+                  Text('Azalea Nirmala', style: styles(context).text.t2),
+                  Text('aza@gmail.com', style: styles(context).text.t3.textColor(styles(context).theme.grey4)),
                 ],
               ),
               const Spacer(),
@@ -37,26 +37,26 @@ class MailDetailReplySection extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: styles.insets.sm),
+          padding: EdgeInsets.symmetric(vertical: styles(context).insets.sm),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hi sis,', style: styles.text.caption.textColor(styles.theme.grey7)),
-              Gap(styles.insets.md),
+              Text('Hi sis,', style: styles(context).text.caption.textColor(styles(context).theme.grey7)),
+              Gap(styles(context).insets.md),
               Text(
                 "Thanks for your quick response. Keep up the great work. 👍",
-                style: styles.text.caption.textColor(styles.theme.grey7),
+                style: styles(context).text.caption.textColor(styles(context).theme.grey7),
               ),
-              Gap(styles.insets.sm),
-              Text("Regards", style: styles.text.caption.textColor(styles.theme.grey7)),
+              Gap(styles(context).insets.sm),
+              Text("Regards", style: styles(context).text.caption.textColor(styles(context).theme.grey7)),
             ],
           ),
         ),
         Container(
           decoration: BoxDecoration(
-            border: Border.symmetric(horizontal: BorderSide(color: styles.theme.silver, width: 1)),
+            border: Border.symmetric(horizontal: BorderSide(color: styles(context).theme.silver, width: 1)),
           ),
-          padding: EdgeInsets.all(styles.insets.md),
+          padding: EdgeInsets.all(styles(context).insets.md),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[

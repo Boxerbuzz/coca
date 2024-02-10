@@ -7,27 +7,27 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import '../../../widgets/buttons/custom_button_with_icon.dart';
 
-class TaskCalendarHeader extends StatelessWidget {
+class TaskCalendarHeader extends BaseStatelessWidget {
   const TaskCalendarHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: styles.insets.md, vertical: styles.insets.sm),
+      padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md, vertical: styles(context).insets.sm),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Jan, 2024', style: styles.text.t1),
+          Text('Jan, 2024', style: styles(context).text.t1),
           const Spacer(),
           CustomButtonWithIcon(
             icon: Assets.images.icons.alignCenter,
             text: 'Filter',
             onPressed: () {},
-            border: BorderSide(color: styles.theme.silver),
+            border: BorderSide(color: styles(context).theme.silver),
             shrinkWrap: true,
             btnColor: Colors.white,
-            iconColor: styles.theme.grey4,
-            txtColor: styles.theme.grey7,
+            iconColor: styles(context).theme.grey4,
+            txtColor: styles(context).theme.grey7,
           ),
         ],
       ),

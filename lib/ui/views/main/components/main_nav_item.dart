@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class MainNavItem extends StatelessWidget {
+class MainNavItem extends BaseStatelessWidget {
   final int index;
   final String icon;
   final bool isFab;
@@ -21,7 +21,7 @@ class MainNavItem extends StatelessWidget {
         return isFab
             ? FloatingActionButton(
                 onPressed: onPressed,
-                backgroundColor: styles.theme.black,
+                backgroundColor: styles(context).theme.black,
                 shape: const CircleBorder(),
                 heroTag: AppConstants.createProjectFabHeroTag,
                 child: SvgPicture.asset(icon))
@@ -37,7 +37,7 @@ class MainNavItem extends StatelessWidget {
                     SvgPicture.asset(
                       icon,
                       colorFilter: ColorFilter.mode(
-                        store.index == index ? styles.theme.blue : styles.theme.grey4,
+                        store.index == index ? styles(context).theme.blue : styles(context).theme.grey4,
                         BlendMode.srcIn,
                       ),
                     ),

@@ -7,18 +7,19 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import 'premium_card_item.dart';
 
-class PremiumCard extends StatelessWidget {
+class PremiumCard extends BaseStatelessWidget {
   const PremiumCard({super.key, required this.data});
   final PremiumModel data;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: styles.insets.sm, top: styles.insets.md, bottom: styles.insets.md),
+      margin: EdgeInsets.only(
+          right: styles(context).insets.sm, top: styles(context).insets.md, bottom: styles(context).insets.md),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: styles.corners.br16,
-        border: Border.all(color: styles.theme.blue, width: 2),
+        borderRadius: styles(context).corners.br16,
+        border: Border.all(color: styles(context).theme.blue, width: 2),
       ),
       clipBehavior: Clip.hardEdge,
       child: Column(
@@ -27,31 +28,32 @@ class PremiumCard extends StatelessWidget {
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: styles.theme.blue,
+              color: styles(context).theme.blue,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(styles.corners.sm),
-                topRight: Radius.circular(styles.corners.sm),
+                topLeft: Radius.circular(styles(context).corners.sm),
+                topRight: Radius.circular(styles(context).corners.sm),
               ),
             ),
-            padding: EdgeInsets.all(styles.insets.md),
+            padding: EdgeInsets.all(styles(context).insets.md),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('\$', style: styles.text.p.textColor(styles.theme.white)),
-                    Text('${data.price}', style: styles.text.h1.textColor(styles.theme.white)),
-                    Gap(styles.insets.xxs),
-                    Text('/Monthly', style: styles.text.p.textColor(styles.theme.white)),
+                    Text('\$', style: styles(context).text.p.textColor(styles(context).theme.white)),
+                    Text('${data.price}', style: styles(context).text.h1.textColor(styles(context).theme.white)),
+                    Gap(styles(context).insets.xxs),
+                    Text('/Monthly', style: styles(context).text.p.textColor(styles(context).theme.white)),
                   ],
                 ),
-                Gap(styles.insets.xs),
-                Text('Billed monthly without trail', style: styles.text.t2.textColor(styles.theme.white).regular),
+                Gap(styles(context).insets.xs),
+                Text('Billed monthly without trail',
+                    style: styles(context).text.t2.textColor(styles(context).theme.white).regular),
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(styles.insets.md),
+            padding: EdgeInsets.all(styles(context).insets.md),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -71,10 +73,10 @@ class PremiumCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+            padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
             child: CustomPrimaryButton(label: 'Start your 14-days trial', onTap: () {}),
           ),
-          Gap(styles.insets.md),
+          Gap(styles(context).insets.md),
         ],
       ),
     );

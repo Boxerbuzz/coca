@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class OnboardingBody extends StatelessWidget {
+class OnboardingBody extends BaseStatelessWidget {
   const OnboardingBody({super.key});
 
   @override
@@ -19,15 +19,15 @@ class OnboardingBody extends StatelessWidget {
           child: Container(
             width: context.width,
             height: context.heightPct(.35),
-            decoration: BoxDecoration(boxShadow: styles.shadows.sm, color: styles.theme.white),
-            padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+            decoration: BoxDecoration(boxShadow: styles(context).shadows.sm, color: styles(context).theme.white),
+            padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Plan Your Task Easily and Task Your Plan Instantly', style: styles.text.h1),
-                Gap(styles.insets.md),
+                Text('Plan Your Task Easily and Task Your Plan Instantly', style: styles(context).text.h1),
+                Gap(styles(context).insets.md),
                 CustomPrimaryButton(label: 'Get Started', onTap: () => context.go(LoginScreen.route)),
-                Gap(styles.insets.md),
+                Gap(styles(context).insets.md),
                 OneLineClickableText(actionText: 'Login', mainText: 'Have an account?', onTap: () {}),
                 const Gap(56),
               ],

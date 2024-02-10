@@ -12,7 +12,7 @@ import 'project_detail_description.dart';
 import 'project_detail_info.dart';
 import 'project_detail_tasks.dart';
 
-class ProjectDetailBody extends StatelessWidget {
+class ProjectDetailBody extends BaseStatelessWidget {
   const ProjectDetailBody({super.key});
 
   @override
@@ -20,13 +20,13 @@ class ProjectDetailBody extends StatelessWidget {
     return Column(
       children: [
         const ProjectDetailInfo(),
-        Container(height: 12, color: styles.theme.grey2),
+        Container(height: 12, color: styles(context).theme.grey2),
         const ProjectDetailDescription(),
-        Container(height: 12, color: styles.theme.grey2),
+        Container(height: 12, color: styles(context).theme.grey2),
         const ProjectDetailAttachment(),
-        Container(height: 12, color: styles.theme.grey2),
+        Container(height: 12, color: styles(context).theme.grey2),
         const ProjectDetailTasks(),
-        Container(height: 12, color: styles.theme.grey2),
+        Container(height: 12, color: styles(context).theme.grey2),
         const ProjectDetailComments(),
         const ProjectDetailCommentBlock(),
       ],

@@ -15,10 +15,8 @@ class MailBody extends StatefulWidget {
   State<MailBody> createState() => _MailBodyState();
 }
 
-class _MailBodyState extends State<MailBody> {
+class _MailBodyState extends BaseStatefulWidget<MailBody> {
   final ScrollController _controller = ScrollController();
-
-  bool isEmptyList = false;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +34,7 @@ class _MailBodyState extends State<MailBody> {
           delegate: SliverChildBuilderDelegate(
             childCount: 1,
             (_, int index) {
-              return isEmptyList
+              return mails.isEmpty
                   ? CustomEmptyPlaceHolder(
                       title: 'You haven’t any message',
                       subtitle: 'Let us notify you and show the messages\n here for better communication.',
@@ -48,7 +46,13 @@ class _MailBodyState extends State<MailBody> {
                       padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
                       child: Column(
                         children: [
-                          ...mails.map((e) => MailItem(id: index, email: e, onDeleted: () => {})),
+                          ...mails.map(
+                            (e) => MailItem(
+                              id: index,
+                              email: e,
+                              onDeleted: () => setState(() => mails.remove(e)),
+                            ),
+                          ),
                         ],
                       ),
                     );

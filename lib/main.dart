@@ -25,7 +25,7 @@ void main() async {
   FlutterNativeSplash.remove();
 }
 
-class CocaApp extends StatelessWidget {
+class CocaApp extends BaseStatelessWidget {
   const CocaApp({super.key});
 
   @override
@@ -35,10 +35,8 @@ class CocaApp extends StatelessWidget {
       routeInformationParser: routes.routeInformationParser,
       debugShowCheckedModeBanner: false,
       routerDelegate: routes.routerDelegate,
-      theme: ThemeData(fontFamily: styles.text.urbanist.fontFamily, useMaterial3: true),
+      theme: ThemeData(fontFamily: styles(context).text.urbanist.fontFamily, useMaterial3: true),
       localizationsDelegates: const [AppFlowyEditorLocalizations.delegate],
     );
   }
 }
-
-CustomAppStyles styles = CustomAppStyles();

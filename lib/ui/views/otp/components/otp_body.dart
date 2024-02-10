@@ -9,7 +9,7 @@ import 'otp_input.dart';
 import 'otp_resend_code.dart';
 import 'otp_success_modal.dart';
 
-class OtpBody extends StatelessWidget {
+class OtpBody extends BaseStatelessWidget {
   const OtpBody({super.key});
 
   @override
@@ -17,9 +17,9 @@ class OtpBody extends StatelessWidget {
     return Column(
       children: [
         const OtpInput(),
-        Gap(styles.insets.md),
+        Gap(styles(context).insets.md),
         const OtpResendCode(),
-        Gap(styles.insets.xxl),
+        Gap(styles(context).insets.xxl),
         CustomPrimaryButton(label: 'Continue', onTap: () => context.go(OtpSuccessModal.route)),
       ],
     );

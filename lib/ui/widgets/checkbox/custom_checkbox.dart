@@ -50,15 +50,16 @@ class CustomCheckbox extends BaseStatelessWidget {
           width: size,
           height: size,
           decoration: BoxDecoration(
-            color: !value ? Colors.transparent : color ?? styles.theme.blue,
-            borderRadius: BorderRadius.circular(styles.corners.check),
-            border: Border.all(color: !value ? styles.theme.grey4 : color ?? styles.theme.blue, width: 1.5),
+            color: !value ? Colors.transparent : color ?? styles(context).theme.blue,
+            borderRadius: BorderRadius.circular(styles(context).corners.check),
+            border: Border.all(
+                color: !value ? styles(context).theme.grey4 : color ?? styles(context).theme.blue, width: 1.5),
           ),
           child: _wrapGestures(_icon()),
         ),
         if (label != null) ...[
-          Gap(styles.insets.sm),
-          Text(label!, style: styles.text.p),
+          Gap(styles(context).insets.sm),
+          Text(label!, style: styles(context).text.p),
         ],
       ],
     );

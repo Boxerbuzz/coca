@@ -11,13 +11,13 @@ class MailDrawerItemIndicator extends StatefulWidget {
   final double width;
   final double height;
 
-  const MailDrawerItemIndicator(this.indicatorY, {super.key, this.width = 6, this.height = 24});
+  const MailDrawerItemIndicator(this.indicatorY, {super.key, this.width = 3, this.height = 24});
 
   @override
   State<MailDrawerItemIndicator> createState() => _MailDrawerItemIndicatorState();
 }
 
-class _MailDrawerItemIndicatorState extends State<MailDrawerItemIndicator> {
+class _MailDrawerItemIndicatorState extends BaseStatefulWidget<MailDrawerItemIndicator> {
   final double _duration = .5;
 
   @override
@@ -28,9 +28,9 @@ class _MailDrawerItemIndicatorState extends State<MailDrawerItemIndicator> {
       width: widget.width,
       height: widget.height,
       margin: EdgeInsets.only(top: widget.indicatorY),
-      child: Container(
-        height: widget.height,
-        decoration: BoxDecoration(color: styles.theme.blue, borderRadius: styles.corners.br4),
+      decoration: BoxDecoration(
+        color: styles.theme.blue,
+        borderRadius: const BorderRadius.only(topRight: Radius.circular(4), bottomRight: Radius.circular(4)),
       ),
     );
   }

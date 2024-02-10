@@ -8,7 +8,7 @@ import '../../../../coca.dart';
 import 'home_stat_icon.dart';
 import 'home_stat_label.dart';
 
-class HomeStatItem extends StatelessWidget {
+class HomeStatItem extends BaseStatelessWidget {
   const HomeStatItem({super.key, this.color, this.title = '', required this.icon, this.stats = '', this.isMini = true});
   final Color? color;
   final String title;
@@ -19,11 +19,11 @@ class HomeStatItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: styles.corners.br12,
-        color: styles.theme.white,
-        border: Border.all(color: styles.theme.silver),
+        borderRadius: styles(context).corners.br12,
+        color: styles(context).theme.white,
+        border: Border.all(color: styles(context).theme.silver),
       ),
-      padding: EdgeInsets.all(styles.insets.sm),
+      padding: EdgeInsets.all(styles(context).insets.sm),
       child: isMini
           ? Row(
               crossAxisAlignment: CrossAxisAlignment.center,
