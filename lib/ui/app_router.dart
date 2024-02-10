@@ -27,6 +27,13 @@ final routes = GoRouter(
         AppRouter(ForgotPasswordScreen.route, (s) => const ForgotPasswordScreen()),
         AppRouter(HelpScreen.route, (s) => const HelpScreen()),
         AppRouter(PolicyScreen.route, (s) => const PolicyScreen()),
+        AppRouter(TaskScreen.route, (s) => const TaskScreen()),
+        AppRouter(TaskDetailScreen.route, (s) => const TaskDetailScreen()),
+        AppRouter(ProjectDetailScreen.route, (s) => const ProjectDetailScreen()),
+        AppRouter(CreateTaskScreen.route, (s) => const CreateTaskScreen()),
+        AppRouter(CreateMailScreen.route, (s) => const CreateMailScreen()),
+        AppRouter(MailScreen.route, (s) => const MailScreen()),
+        AppRouter(MailDetailScreen.route, (s) => const MailDetailScreen()),
       ],
     ),
   ],
@@ -61,3 +68,5 @@ class AppRouter extends GoRoute {
           },
         );
 }
+
+GlobalKey<NavigatorState> rootKey = routes.routerDelegate.navigatorKey;

@@ -8,7 +8,7 @@ import '../../../coca.dart';
 import 'custom_button_effect.dart';
 import 'custom_button_focus_builder.dart';
 
-class CustomAppButton extends StatelessWidget {
+class CustomAppButton extends BaseStatelessWidget {
   const CustomAppButton({
     super.key,
     required this.onPressed,
@@ -23,6 +23,7 @@ class CustomAppButton extends StatelessWidget {
     this.minimumSize,
     this.bgColor,
     this.border,
+    this.radius,
   }) : _builder = null;
 
   // interaction:
@@ -45,11 +46,12 @@ class CustomAppButton extends StatelessWidget {
   final BorderSide? border;
   final Color? bgColor;
   final bool pressEffect;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
-    Color defaultColor = isSecondary ? styles.theme.white : styles.theme.blue;
-    Color textColor = isSecondary ? styles.theme.blue : styles.theme.white;
+    Color defaultColor = isSecondary ? styles(context).theme.white : styles(context).theme.blue;
+    Color textColor = isSecondary ? styles(context).theme.blue : styles(context).theme.white;
     BorderSide side = border ?? BorderSide.none;
 
     Widget content = _builder?.call(context) ?? child ?? const SizedBox.shrink();
@@ -57,7 +59,7 @@ class CustomAppButton extends StatelessWidget {
 
     OutlinedBorder shape = circular
         ? CircleBorder(side: side)
-        : RoundedRectangleBorder(side: side, borderRadius: BorderRadius.circular(styles.corners.sm));
+        : RoundedRectangleBorder(side: side, borderRadius: BorderRadius.circular(radius ?? styles(context).corners.sm));
 
     ButtonStyle style = ButtonStyle(
       minimumSize: ButtonStyleButton.allOrNull<Size>(minimumSize ?? Size.zero),
@@ -77,15 +79,15 @@ class CustomAppButton extends StatelessWidget {
             onPressed: onPressed,
             style: style,
             focusNode: focus,
-            child: DefaultTextStyle(style: styles.text.b1.textColor(textColor), child: content),
+            child: DefaultTextStyle(style: styles(context).text.b1.textColor(textColor), child: content),
           ),
           if (focus.hasFocus)
             Positioned.fill(
               child: IgnorePointer(
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(styles.corners.md),
-                    border: Border.all(color: styles.theme.blue, width: 3),
+                    borderRadius: BorderRadius.circular(styles(context).corners.md),
+                    border: Border.all(color: styles(context).theme.blue, width: 3),
                   ),
                 ),
               ),

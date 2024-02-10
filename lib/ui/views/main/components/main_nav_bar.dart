@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import 'main_nav_item.dart';
 
-class MainNavBar extends StatelessWidget {
+class MainNavBar extends BaseStatelessWidget {
   const MainNavBar({super.key});
 
   @override
@@ -15,8 +15,8 @@ class MainNavBar extends StatelessWidget {
     return Container(
       height: 85,
       decoration: BoxDecoration(
-        color: styles.theme.white,
-        boxShadow: styles.shadows.custom(const Color(0xff9EA0A9), .07),
+        color: styles(context).theme.white,
+        boxShadow: styles(context).shadows.custom(const Color(0xff9EA0A9), .07),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

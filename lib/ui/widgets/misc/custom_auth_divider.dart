@@ -13,11 +13,11 @@ class CustomAuthDivider extends BaseStatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: Divider(color: styles.theme.grey3)),
-        Gap(styles.insets.md),
-        Text('OR', style: styles.text.t1.textColor(styles.theme.grey4)),
-        Gap(styles.insets.md),
-        Expanded(child: Divider(color: styles.theme.grey3)),
+        Expanded(child: Divider(color: styles(context).theme.grey3)),
+        Gap(styles(context).insets.md),
+        Text('OR', style: styles(context).text.t1.textColor(styles(context).theme.grey4)),
+        Gap(styles(context).insets.md),
+        Expanded(child: Divider(color: styles(context).theme.grey3)),
       ],
     );
   }

@@ -1,4 +1,4 @@
-# coca
+### Coca
 
 A new Flutter project.
 
@@ -14,3 +14,23 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+by []()
+design on dribble.
+
+### Screenshots 🌈
+
+<p>
+    <img src="/preview/" width="200px" hspace="10" alt=""/>
+    <img src="/preview/" width="200px" hspace="10" alt=""/>
+    <img src="/preview/" width="200px" hspace="10" alt=""/>
+</p>
+<p>
+    <img src="/preview/" width="200px" hspace="10" alt=""/>
+    <img src="/preview/" width="200px" hspace="10" alt=""/>
+    <img src="/preview/" width="200px" hspace="10" alt=""/>
+</p>
+
+### Download 📱
+
+- [APK](https://github.com/)

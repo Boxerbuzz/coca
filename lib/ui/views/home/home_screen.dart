@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+class _HomeScreenState extends BaseStatefulWidget<HomeScreen> with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
   final ScrollController _ctrl = ScrollController();
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               padding: EdgeInsets.only(top: AppBar().preferredSize.height + 60),
               child: Column(
                 children: [
-                  HomeWorkspaceSwitcher(workspace: store.workspace ?? workspaces.first),
+                  HomeWorkspaceSwitcher(workspace: store.workspace ?? workspacesData.first),
                   Gap(styles.insets.md),
                   const HomeWorkspaceStats(),
                   Gap(styles.insets.md),

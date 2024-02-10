@@ -20,7 +20,7 @@ class MainProvider with ChangeNotifier {
     const HomeScreen(),
     const ProjectScreen(),
     Container(),
-    const MessageScreen(),
+    const MailScreen(),
     const ProfileScreen()
   ];
   List<Widget> get screens => _screens;
@@ -33,14 +33,26 @@ class MainProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  List<WorkspaceModel> _workspaces = [];
+  List<WorkspaceModel> _workspaces = workspacesData;
   List<WorkspaceModel> get workspaces => _workspaces;
   set workspaces(List<WorkspaceModel> value) {
     _workspaces = value;
     notifyListeners();
   }
 
-  UserModel? _user = userData;
+  UserModel? _user = UserModel.fromJson(const {
+    "gender": "male",
+    "firstName": "Oscar",
+    "lastName": "Andersen",
+    "email": "oscar.andersen@example.com",
+    "username": "brown-dog398",
+    "dob": "1981-02-18T20:53:47.767Z",
+    "createdAt": "2010-07-02T06:04:54.995Z",
+    "phone": "67240172",
+    "id": "b0147e45-1853-4f1f-9b32-5a60ab3701b4",
+    "image": "https://randomuser.me/api/portraits/men/1.jpg",
+    "nat": "DK"
+  });
   UserModel? get user => _user;
   set user(UserModel? value) {
     _user = value;

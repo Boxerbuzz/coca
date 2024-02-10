@@ -4,8 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../coca.dart';
 import 'components/policy_body.dart';
+import 'components/policy_header.dart';
 
 class PolicyScreen extends StatelessWidget {
   const PolicyScreen({super.key});
@@ -14,10 +14,9 @@ class PolicyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(
-          title: 'Privacy Policy', trailing: CustomIconButton(icon: Assets.images.icons.share.path, onPressed: () {})),
-      body: const PolicyBody(),
+    return const Scaffold(
+      appBar: PolicyHeader(),
+      body: PolicyBody(),
     );
   }
 }

@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import 'home_task_item.dart';
 
-class HomeTaskList extends StatelessWidget {
+class HomeTaskList extends BaseStatelessWidget {
   const HomeTaskList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+      padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
       child: Column(
         children: [
-          CustomSubHeader(title: "Today's Task", onPressed: () {}),
+          CustomSubHeader(title: "Today's Task", onPressed: () => context.push(TaskScreen.route)),
           const Gap(12),
           ...tasks.map((e) => HomeTaskItem(data: e))
         ],

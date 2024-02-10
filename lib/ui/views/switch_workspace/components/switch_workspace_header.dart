@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class SwitchWorkspaceHeader extends StatelessWidget {
+class SwitchWorkspaceHeader extends BaseStatelessWidget {
   const SwitchWorkspaceHeader({super.key});
 
   @override
@@ -14,8 +14,8 @@ class SwitchWorkspaceHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Choose Workspace', style: styles.text.t1),
-        Text('You can switch between workspaces', style: styles.text.p.textColor(styles.theme.grey4)),
+        Text('Choose Workspace', style: styles(context).text.t1),
+        Text('You can switch between workspaces', style: styles(context).text.p.textColor(styles(context).theme.grey4)),
       ],
     );
   }

@@ -8,22 +8,22 @@ import '../../../../coca.dart';
 import 'signup_agreement.dart';
 import 'signup_form.dart';
 
-class SignupBody extends StatelessWidget {
+class SignupBody extends BaseStatelessWidget {
   const SignupBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Gap(styles.insets.sm),
+        Gap(styles(context).insets.sm),
         const CustomAuthDivider(),
-        Gap(styles.insets.md),
+        Gap(styles(context).insets.md),
         const SignupForm(),
         const Gap(16),
         const SignupAgreement(),
-        Gap(styles.insets.xl),
+        Gap(styles(context).insets.xl),
         CustomPrimaryButton(label: 'Sign Up', onTap: () => context.push(OtpScreen.route)),
-        Gap(styles.insets.md),
+        Gap(styles(context).insets.md),
         OneLineClickableText(
           actionText: 'Sign In',
           mainText: "Have an account?",

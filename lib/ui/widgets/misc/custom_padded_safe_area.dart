@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 
-class CustomPaddedSafeArea extends StatelessWidget {
+class CustomPaddedSafeArea extends BaseStatelessWidget {
   const CustomPaddedSafeArea({super.key, required this.child});
 
   final Widget child;
@@ -15,7 +15,7 @@ class CustomPaddedSafeArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       bottom: false,
-      child: Padding(padding: EdgeInsets.all(styles.insets.sm), child: child),
+      child: Padding(padding: EdgeInsets.all(styles(context).insets.sm), child: child),
     );
   }
 }

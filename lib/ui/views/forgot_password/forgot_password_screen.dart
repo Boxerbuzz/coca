@@ -3,8 +3,9 @@
  */
 
 import 'package:flutter/material.dart';
+import '../../../coca.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
+class ForgotPasswordScreen extends BaseStatelessWidget {
   const ForgotPasswordScreen({super.key});
 
   static const String route = '/forgot-password';

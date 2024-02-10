@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 
-class CustomBackButton extends StatelessWidget {
+class CustomBackButton extends BaseStatelessWidget {
   const CustomBackButton({super.key, this.icon, this.onPressed, this.bgColor, this.iconColor});
 
   final Color? bgColor;
@@ -15,14 +15,14 @@ class CustomBackButton extends StatelessWidget {
   final VoidCallback? onPressed;
 
   CustomBackButton.close({Key? key, VoidCallback? onPressed, Color? bgColor, Color? iconColor})
-      : this(key: key, icon: Assets.images.icons.x.path, onPressed: onPressed, bgColor: bgColor, iconColor: iconColor);
+      : this(key: key, icon: Assets.images.icons.x, onPressed: onPressed, bgColor: bgColor, iconColor: iconColor);
 
   @override
   Widget build(BuildContext context) {
     return CustomIconButton(
-      icon: icon ?? Assets.images.icons.arrowLeft.path,
+      icon: icon ?? Assets.images.icons.arrowLeft,
       bgColor: bgColor,
-      color: iconColor,
+      color: iconColor ?? styles(context).theme.grey7,
       onPressed: onPressed ?? () => context.pop(),
     );
   }

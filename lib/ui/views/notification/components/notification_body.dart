@@ -5,27 +5,37 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../../../coca.dart';
+import 'notification_category_list.dart';
 import 'notification_empty_placeholder.dart';
 import 'notification_item.dart';
 
-class NotificationBody extends StatelessWidget {
+class NotificationBody extends BaseStatelessWidget {
   const NotificationBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Consumer<NotificationProvider>(
-      builder: (context, store, child) {
-        return Expanded(
-          child: store.empty
-              ? const NotificationEmptyPlaceholder()
-              : SingleChildScrollView(
-                  controller: store.controller,
-                  child: Column(
-                    children: [
-                      ...notifications.map((e) => NotificationItem(data: e)),
-                    ],
-                  ),
-                ),
+      builder: (_, store, __) {
+        return CustomScrollView(
+          slivers: <Widget>[
+            SliverPersistentHeader(
+              floating: true,
+              delegate: CustomSliverAppBarDelegate(
+                  minHeight: 50.0,
+                  maxHeight: 50.0,
+                  child: Container(color: styles(context).theme.grey3, child: const NotificationCategoryList())),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                childCount: 1,
+                (_, int index) {
+                  return store.empty
+                      ? NotificationEmptyPlaceholder(height: context.heightPct(.7))
+                      : Column(children: [...notifications.map((e) => NotificationItem(data: e))]);
+                },
+              ),
+            ),
+          ],
         );
       },
     );

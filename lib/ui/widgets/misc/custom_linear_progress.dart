@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../coca.dart';
 
-class CustomLinearProgress extends StatelessWidget {
+class CustomLinearProgress extends BaseStatelessWidget {
   const CustomLinearProgress({super.key, this.percentage = 0, this.width});
   final double percentage;
   final double? width;
@@ -18,8 +18,9 @@ class CustomLinearProgress extends StatelessWidget {
         Container(
           height: 5,
           width: double.infinity,
+          clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
-            color: styles.theme.silver,
+            color: styles(context).theme.silver,
             borderRadius: BorderRadius.circular(5),
           ),
         ),
@@ -31,7 +32,8 @@ class CustomLinearProgress extends StatelessWidget {
               widthFactor: value,
               child: Container(
                 height: 5,
-                decoration: BoxDecoration(color: styles.theme.green, borderRadius: BorderRadius.circular(5)),
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(color: styles(context).theme.green, borderRadius: BorderRadius.circular(5)),
               ),
             );
           },

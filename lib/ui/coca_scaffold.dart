@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../coca.dart';
 
-class CocaScaffold extends StatelessWidget {
+class CocaScaffold extends BaseStatelessWidget {
   const CocaScaffold({super.key, required this.child});
   final Widget child;
   static CustomAppStyles get style => _style;

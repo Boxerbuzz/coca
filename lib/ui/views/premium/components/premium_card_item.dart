@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class PremiumCardItem extends StatelessWidget {
+class PremiumCardItem extends BaseStatelessWidget {
   const PremiumCardItem({super.key, required this.text, required this.icon, required this.subTittle});
   final String text;
   final String icon;
@@ -15,21 +15,21 @@ class PremiumCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: styles.insets.sm),
+      padding: EdgeInsets.symmetric(vertical: styles(context).insets.sm),
       child: Row(
         children: [
           Container(
             height: 40,
             width: 40,
-            decoration: BoxDecoration(borderRadius: styles.corners.br24, color: styles.theme.grey2),
-            child: SvgGenImage(icon).svg(width: 24, height: 24, color: styles.theme.blue),
+            decoration: BoxDecoration(borderRadius: styles(context).corners.br24, color: styles(context).theme.grey2),
+            child: CustomSvg(icon).svg(width: 24, height: 24, color: styles(context).theme.blue),
           ),
-          Gap(styles.insets.btn),
+          Gap(styles(context).insets.btn),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(text, style: styles.text.t2.thick),
-              Text(subTittle, style: styles.text.p.textColor(styles.theme.grey4)),
+              Text(text, style: styles(context).text.t2.thick),
+              Text(subTittle, style: styles(context).text.p.textColor(styles(context).theme.grey4)),
             ],
           )
         ],

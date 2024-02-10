@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../coca.dart';
 import 'components/signup_body.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends BaseStatelessWidget {
   const SignupScreen({super.key});
 
   static String route = '/signup';
@@ -17,7 +17,7 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(title: ''),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+        padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

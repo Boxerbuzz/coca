@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class NotificationItem extends StatelessWidget {
+class NotificationItem extends BaseStatelessWidget {
   const NotificationItem({super.key, required this.data});
   final NotificationModel data;
 
@@ -14,15 +14,15 @@ class NotificationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-      decoration: BoxDecoration(border: Border(top: BorderSide(color: styles.theme.silver))),
+      decoration: BoxDecoration(border: Border(top: BorderSide(color: styles(context).theme.silver))),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           if (data.avatar.isEmpty) ...{
             CustomIconButton(
-              icon: Assets.images.icons.bell.path,
-              bgColor: styles.theme.grey2,
+              icon: Assets.images.icons.bell,
+              bgColor: styles(context).theme.grey2,
               size: 48,
               onPressed: () {},
             ),
@@ -30,7 +30,7 @@ class NotificationItem extends StatelessWidget {
           if (data.avatar.isNotEmpty) ...{
             Hero(tag: data.id, child: CustomAvatar(user: UserModel(image: data.avatar, firstName: data.subject))),
           },
-          Gap(styles.insets.btn),
+          Gap(styles(context).insets.btn),
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -38,28 +38,28 @@ class NotificationItem extends StatelessWidget {
               children: <Widget>[
                 LinkifyText(data.subject,
                     linkTypes: const [LinkType.userTag],
-                    linkStyle: styles.text.t2.bold.textColor(styles.theme.blue),
-                    textStyle: styles.text.t2.bold.textColor(styles.theme.grey8)),
+                    linkStyle: styles(context).text.t2.bold.textColor(styles(context).theme.blue),
+                    textStyle: styles(context).text.t2.bold.textColor(styles(context).theme.grey8)),
                 if (data.content.isNotEmpty) ...{
-                  Gap(styles.insets.xxs),
+                  Gap(styles(context).insets.xxs),
                   LinkifyText(data.content,
                       linkTypes: const [LinkType.userTag],
-                      linkStyle: styles.text.caption.regular.textColor(styles.theme.blue),
-                      textStyle: styles.text.caption.textColor(styles.theme.grey5)),
+                      linkStyle: styles(context).text.caption.regular.textColor(styles(context).theme.blue),
+                      textStyle: styles(context).text.caption.textColor(styles(context).theme.grey5)),
                 },
-                Gap(styles.insets.xs),
+                Gap(styles(context).insets.xs),
                 if (data.containsPictures) ...{
                   Container(
                     height: 100,
                     decoration: BoxDecoration(
                       image: DecorationImage(image: Assets.images.puzzle.provider(), fit: BoxFit.cover),
-                      borderRadius: styles.corners.br12,
-                      boxShadow: styles.shadows.custom(styles.theme.silver, .4),
+                      borderRadius: styles(context).corners.br12,
+                      boxShadow: styles(context).shadows.custom(styles(context).theme.silver, .4),
                     ),
                   ),
-                  Gap(styles.insets.btn),
+                  Gap(styles(context).insets.btn),
                 },
-                Text(data.time, style: styles.text.b2.textColor(styles.theme.grey4)),
+                Text(data.time, style: styles(context).text.b2.textColor(styles(context).theme.grey4)),
               ],
             ),
           ),

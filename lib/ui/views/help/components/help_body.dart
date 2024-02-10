@@ -4,11 +4,12 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../../coca.dart';
 import 'help_chat.dart';
 import 'help_item.dart';
 import 'help_more_question.dart';
 
-class HelpBody extends StatelessWidget {
+class HelpBody extends BaseStatelessWidget {
   const HelpBody({super.key});
 
   @override

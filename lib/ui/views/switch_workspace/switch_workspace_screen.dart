@@ -9,7 +9,7 @@ import 'components/switch_workspace_add_button.dart';
 import 'components/switch_workspace_header.dart';
 import 'components/switch_workspace_selector.dart';
 
-class SwitchWorkspaceScreen extends StatelessWidget {
+class SwitchWorkspaceScreen extends BaseStatelessWidget {
   const SwitchWorkspaceScreen({super.key});
 
   @override
@@ -18,17 +18,17 @@ class SwitchWorkspaceScreen extends StatelessWidget {
       builder: (context, store, child) {
         return CustomBottomSheetLayout(
           child: Padding(
-            padding: EdgeInsets.all(styles.insets.md),
+            padding: EdgeInsets.all(styles(context).insets.md),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SwitchWorkspaceHeader(),
                 const Gap(16),
                 SwitchWorkspaceAddButton(onPressed: () {}),
-                Gap(styles.insets.md),
+                Gap(styles(context).insets.md),
                 SwitchWorkspaceSelector(
-                  workspaces: workspaces,
-                  selectedWorkspace: store.workspace ?? workspaces.first,
+                  workspaces: store.workspaces,
+                  selectedWorkspace: store.workspace ?? store.workspaces.first,
                   onChanged: (value) => store.workspace = value,
                 ),
               ],

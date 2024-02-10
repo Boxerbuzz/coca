@@ -17,10 +17,10 @@ class CustomAuthHeader extends BaseStatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(headerText, style: styles.text.h3.textColor(styles.theme.grey8)),
-        Gap(styles.insets.xs),
-        Text(subHeaderText, style: styles.text.caption.textColor(styles.theme.grey5)),
-        Gap(styles.insets.md),
+        Text(headerText, style: styles(context).text.h3.textColor(styles(context).theme.grey8)),
+        Gap(styles(context).insets.xs),
+        Text(subHeaderText, style: styles(context).text.caption.textColor(styles(context).theme.grey5)),
+        Gap(styles(context).insets.md),
       ],
     );
   }

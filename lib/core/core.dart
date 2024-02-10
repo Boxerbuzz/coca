@@ -7,6 +7,8 @@ library;
 
 /// constants
 export 'const/app_constants.dart';
+export 'data/file_data.dart';
+export 'data/mail_data.dart';
 
 /// data
 export 'data/nav_data.dart';
@@ -18,10 +20,17 @@ export 'data/stat_data.dart';
 export 'data/task_data.dart';
 export 'data/user_data.dart';
 export 'data/workspace_data.dart';
+export 'enums/file_extension_enum.dart';
+export 'enums/mail_drawer_state.dart';
+export 'enums/mail_pages_enum.dart';
 
 /// enum
 export 'enums/notification_type_enum.dart';
 export 'enums/policy_text_enum.dart';
+export 'enums/project_display_enum.dart';
+export 'enums/task_state_enum.dart';
+export 'models/asset_model.dart';
+export 'models/mail_model.dart';
 
 /// models
 export 'models/nav_model.dart';
@@ -36,6 +45,7 @@ export 'models/workspace_model.dart';
 
 /// providers
 export 'providers/auth/auth_provider.dart';
+export 'providers/mail/mail_provider.dart';
 export 'providers/main/main_provider.dart';
 export 'providers/notification/notification_provider.dart';
 export 'providers/project/project_provider.dart';
@@ -51,7 +61,9 @@ export 'utils/base/base_stateful_widget.dart';
 export 'utils/base/base_stateless_widget.dart';
 export 'utils/custom_scroll_behaviour.dart';
 export 'utils/extensions/context.dart';
+export 'utils/extensions/string.dart';
 export 'utils/extensions/text_style.dart';
 export 'utils/extensions/time.dart';
+export 'utils/extensions/widget.dart';
 export 'utils/haptics.dart';
 export 'utils/helpers.dart';

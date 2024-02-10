@@ -13,7 +13,7 @@ class CreateProjectAccessSelector extends StatefulWidget {
   State<CreateProjectAccessSelector> createState() => _CreateProjectAccessSelectorState();
 }
 
-class _CreateProjectAccessSelectorState extends State<CreateProjectAccessSelector> {
+class _CreateProjectAccessSelectorState extends BaseStatefulWidget<CreateProjectAccessSelector> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,14 +27,14 @@ class _CreateProjectAccessSelectorState extends State<CreateProjectAccessSelecto
           padding: EdgeInsets.symmetric(horizontal: styles.insets.btn),
           child: Row(
             children: [
-              Assets.images.icons.users.svg(height: 24, width: 24),
+              CustomSvg(Assets.images.icons.users).svg(height: 24, width: 24),
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Text('Public', style: styles.text.b1),
                 ),
               ),
-              Assets.images.icons.arrowDown.svg(height: 24, width: 24, color: styles.theme.grey6),
+              CustomSvg(Assets.images.icons.arrowDown).svg(height: 24, width: 24, color: styles.theme.grey6),
             ],
           ),
         ),

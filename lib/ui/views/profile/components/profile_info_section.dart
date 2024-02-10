@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
 
-class ProfileInfoSection extends StatelessWidget {
+class ProfileInfoSection extends BaseStatelessWidget {
   const ProfileInfoSection({super.key});
 
   @override
@@ -14,27 +14,28 @@ class ProfileInfoSection extends StatelessWidget {
     return Consumer<MainProvider>(
       builder: (context, store, child) {
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: styles.insets.md),
+          padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Gap(styles.insets.md),
-              CustomAvatar(user: store.user, size: 120, bg: styles.theme.grey3),
-              Text('${store.user?.firstName} ${store.user?.lastName}', style: styles.text.h1),
+              Gap(styles(context).insets.md),
+              CustomAvatar(user: store.user, size: 120, bg: styles(context).theme.grey3),
+              Text('${store.user?.firstName} ${store.user?.lastName}', style: styles(context).text.h1),
               Row(
                 children: [
                   Expanded(
                     child: Text('${store.user?.email}',
-                        style: styles.text.caption.textColor(styles.theme.grey4), overflow: TextOverflow.ellipsis),
+                        style: styles(context).text.caption.textColor(styles(context).theme.grey4),
+                        overflow: TextOverflow.ellipsis),
                   ),
                   CustomIconButton(
-                      icon: Assets.images.icons.bell.path,
+                      icon: Assets.images.icons.bell,
                       onPressed: () => context.push(NotificationScreen.route),
-                      bgColor: styles.theme.grey2,
+                      bgColor: styles(context).theme.grey2,
                       size: 48),
-                  Gap(styles.insets.sm),
+                  Gap(styles(context).insets.sm),
                   CustomIconButton(
-                      icon: Assets.images.icons.edit.path, onPressed: () {}, bgColor: styles.theme.grey2, size: 48),
+                      icon: Assets.images.icons.edit, onPressed: () {}, bgColor: styles(context).theme.grey2, size: 48),
                 ],
               ),
             ],
