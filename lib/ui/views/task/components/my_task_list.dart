@@ -17,7 +17,7 @@ class MyTaskList extends BaseStatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          ...data.map((e) => TaskListCollapsibleItem(data: e)),
+          ...data.map((e) => TaskListCollapsibleItem(data: e, isExpanded: true)),
         ],
       ),
     );

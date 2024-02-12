@@ -56,6 +56,6 @@ class TaskListItemHeader extends BaseStatelessWidget {
           ],
         ),
       ),
-    );
+    ).clickable(toggleReveal);
   }
 }

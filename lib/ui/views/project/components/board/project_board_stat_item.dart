@@ -16,7 +16,7 @@ class ProjectBoardStatItem extends BaseStatelessWidget {
     return Row(
       children: [
         CustomSvg(icon).svg(),
-        Gap(styles(context).insets.xs),
+        Gap(styles(context).insets.xxs),
         Text(value, style: styles(context).text.p),
       ],
     );

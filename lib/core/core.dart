@@ -31,6 +31,7 @@ export 'enums/project_display_enum.dart';
 export 'enums/task_state_enum.dart';
 export 'models/asset_model.dart';
 export 'models/mail_model.dart';
+export 'models/mail_page_model.dart';
 
 /// models
 export 'models/nav_model.dart';

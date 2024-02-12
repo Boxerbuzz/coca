@@ -25,8 +25,10 @@ class ProjectBoardCard extends BaseStatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ProjectBoardStatItem(icon: Assets.images.icons.attachment, value: '0'),
-              Gap(styles(context).insets.md),
+              Gap(styles(context).insets.sm),
               ProjectBoardStatItem(icon: Assets.images.icons.checkSquare, value: '0/${data.tasks.length}'),
+              Gap(styles(context).insets.sm),
+              ProjectBoardStatItem(icon: Assets.images.icons.message, value: '0'),
               const Spacer(),
               Text('3 days left', style: styles(context).text.b2.textColor(styles(context).theme.red))
             ],

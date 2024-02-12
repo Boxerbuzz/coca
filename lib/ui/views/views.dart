@@ -2,6 +2,7 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
+export 'chat/chat_screen.dart';
 export 'create_mail/create_mail_screen.dart';
 export 'create_project/create_project_screen.dart';
 export 'create_task/create_task_screen.dart';

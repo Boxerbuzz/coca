@@ -2,11 +2,12 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
+import 'package:coca/coca.dart';
 import 'package:flutter/material.dart';
 
 import 'task_calendar_header.dart';
 
-class TaskCalendar extends StatelessWidget {
+class TaskCalendar extends BaseStatelessWidget {
   const TaskCalendar({super.key});
 
   @override
@@ -15,9 +16,7 @@ class TaskCalendar extends StatelessWidget {
       children: [
         const TaskCalendarHeader(),
         Expanded(
-          child: Container(
-            color: Colors.red,
-          ),
+          child: Center(child: Text('Coming soon....', style: styles(context).text.caption)),
         ),
       ],
     );

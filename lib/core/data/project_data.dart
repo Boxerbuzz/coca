@@ -418,3 +418,18 @@ final completed =
 final canceled =
     AppFlowyGroupData(id: "canceled", name: "⛔️ Canceled", items: List<AppFlowyGroupItem>.from(_projects(2)));
 final backlog = AppFlowyGroupData(id: "backlog", name: "🗒 Backlog", items: List<AppFlowyGroupItem>.from(_projects(3)));
+
+class ListDisplayModel {
+  final String name;
+  final List<ProjectModel> projects;
+
+  ListDisplayModel({this.name = '', this.projects = const []});
+}
+
+final List<ListDisplayModel> listDisplayData = [
+  ListDisplayModel(name: '🗂 To Do', projects: _projects(2)),
+  ListDisplayModel(name: '🚧 In Progress', projects: _projects(1)),
+  ListDisplayModel(name: '✅ Completed', projects: _projects(4)),
+  ListDisplayModel(name: '⛔️ Canceled', projects: _projects(2)),
+  ListDisplayModel(name: '🗒 Backlog', projects: _projects(3)),
+];
