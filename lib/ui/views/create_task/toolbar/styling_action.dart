@@ -35,52 +35,17 @@ class CustomStyleBlockBottomSheet extends StatefulWidget {
 }
 
 class _CustomStyleBlockBottomSheetState extends State<CustomStyleBlockBottomSheet> {
-  final textDecorations = [];
-
   @override
   Widget build(BuildContext context) {
-    final style = MobileToolbarTheme.of(context);
+    //final style = MobileToolbarTheme.of(context);
 
-    final bius = textDecorations.map((currentDecoration) {
-      // Check current decoration is active or not
-      final selection = widget.selection;
-      final nodes = widget.editorState.getNodesInSelection(selection);
-      final bool isSelected;
-      if (selection.isCollapsed) {
-        isSelected = widget.editorState.toggledStyle.containsKey(
-          currentDecoration.name,
-        );
-      } else {
-        isSelected = nodes.allSatisfyInSelection(selection, (delta) {
-          return delta.everyAttributes(
-            (attributes) => attributes[currentDecoration.name] == true,
-          );
-        });
-      }
-
-      return MobileToolbarItemMenuBtn(
-        icon: AFMobileIcon(
-          afMobileIcons: currentDecoration.icon,
-          color: MobileToolbarTheme.of(context).iconColor,
-        ),
-        label: Text(currentDecoration.label),
-        isSelected: isSelected,
-        onPressed: () {
-          setState(() {
-            widget.editorState.toggleAttribute(
-              currentDecoration.name,
-              selectionExtraInfo: {
-                selectionExtraInfoDoNotAttachTextService: true,
-              },
-            );
-          });
-        },
-      );
-    }).toList();
-
-    return const Column(
+    return Column(
       children: [
-        _TextBlockSelector(true, key: ValueKey('text_block_selector')),
+        _TextBlockSelector(
+          key: const ValueKey('text_block_selector'),
+          editorState: widget.editorState,
+          selection: widget.selection,
+        ),
       ],
     );
   }
@@ -88,14 +53,32 @@ class _CustomStyleBlockBottomSheetState extends State<CustomStyleBlockBottomShee
 
 //// upper block
 class _TextBlockSelector extends StatefulWidget {
-  const _TextBlockSelector(this.isActive, {super.key});
-  final bool isActive;
+  const _TextBlockSelector({super.key, required this.editorState, required this.selection});
+
+  final EditorState editorState;
+  final Selection selection;
 
   @override
   State<_TextBlockSelector> createState() => _TextBlockSelectorState();
 }
 
 class _TextBlockSelectorState extends BaseStatefulWidget<_TextBlockSelector> {
+  bool isSelected(ToolbarModel style) {
+    final selection = widget.selection;
+    final nodes = widget.editorState.getNodesInSelection(selection);
+    final bool isSelected;
+
+    if (selection.isCollapsed) {
+      isSelected = widget.editorState.toggledStyle.containsKey(style.title);
+    } else {
+      isSelected = nodes.allSatisfyInSelection(selection, (delta) {
+        return delta.everyAttributes((attributes) => attributes[style.title] == true);
+      });
+    }
+
+    return isSelected;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -109,12 +92,14 @@ class _TextBlockSelectorState extends BaseStatefulWidget<_TextBlockSelector> {
                 (e) => SizedBox(
                   height: 60,
                   child: CustomAppButton(
-                    bgColor: widget.isActive ? _styles.theme.blue : Colors.transparent,
-                    onPressed: () {},
+                    bgColor: isSelected(e) ? _styles.theme.blue : Colors.transparent,
+                    onPressed: () => onPressed(e),
                     padding: EdgeInsets.symmetric(vertical: _styles.insets.xs, horizontal: _styles.insets.md),
                     expand: true,
-                    child: CustomSvg(e.icon)
-                        .svg(size: 30, color: widget.isActive ? _styles.theme.white : _styles.theme.grey7),
+                    child: CustomSvg(e.icon).svg(
+                      size: 30,
+                      color: isSelected(e) ? _styles.theme.white : _styles.theme.grey7,
+                    ),
                   ),
                 ),
               ),
@@ -140,9 +125,14 @@ class _TextBlockSelectorState extends BaseStatefulWidget<_TextBlockSelector> {
                       return Expanded(
                         child: Container(
                           height: 60,
-                          decoration: BoxDecoration(color: _styles.theme.grey3),
-                          child: Center(child: CustomSvg(e.icon).svg(size: 24, color: _styles.theme.grey7)),
-                        ).clickable(() {}),
+                          decoration: BoxDecoration(color: isSelected(e) ? _styles.theme.blue : _styles.theme.grey3),
+                          child: Center(
+                            child: CustomSvg(e.icon).svg(
+                              size: 24,
+                              color: isSelected(e) ? _styles.theme.white : _styles.theme.grey7,
+                            ),
+                          ),
+                        ).clickable(() => onPressed(e)),
                       );
                     }),
                   ],
@@ -178,9 +168,14 @@ class _TextBlockSelectorState extends BaseStatefulWidget<_TextBlockSelector> {
                     child: Container(
                       height: 60,
                       width: 90,
-                      decoration: BoxDecoration(color: _styles.theme.grey3),
-                      child: Center(child: CustomSvg(e.icon).svg(size: 24, color: _styles.theme.grey7)),
-                    ),
+                      decoration: BoxDecoration(color: isSelected(e) ? _styles.theme.blue : _styles.theme.grey3),
+                      child: Center(
+                        child: CustomSvg(e.icon).svg(
+                          size: 24,
+                          color: isSelected(e) ? _styles.theme.white : _styles.theme.grey7,
+                        ),
+                      ),
+                    ).clickable(() => onPressed(e)),
                   );
                 },
               ),
@@ -189,6 +184,15 @@ class _TextBlockSelectorState extends BaseStatefulWidget<_TextBlockSelector> {
         ),
       ],
     );
+  }
+
+  void onPressed(ToolbarModel style) {
+    setState(() {
+      widget.editorState.toggleAttribute(
+        style.title,
+        selectionExtraInfo: {selectionExtraInfoDoNotAttachTextService: true},
+      );
+    });
   }
 }
 

@@ -10,8 +10,9 @@ import 'task_list_item.dart';
 import 'task_list_item_header.dart';
 
 class TaskListCollapsibleItem extends StatefulWidget {
-  const TaskListCollapsibleItem({super.key, required this.data});
+  const TaskListCollapsibleItem({super.key, required this.data, this.isExpanded = true});
   final MyTaskModel data;
+  final bool isExpanded;
 
   @override
   State<TaskListCollapsibleItem> createState() => _TaskListCollapsibleItemState();
@@ -20,6 +21,12 @@ class TaskListCollapsibleItem extends StatefulWidget {
 class _TaskListCollapsibleItemState extends BaseStatefulWidget<TaskListCollapsibleItem> {
   bool _isExpanded = false;
   MyTaskModel get data => widget.data;
+
+  @override
+  void initState() {
+    _isExpanded = widget.isExpanded;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

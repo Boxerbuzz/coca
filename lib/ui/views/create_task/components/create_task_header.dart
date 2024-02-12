@@ -23,7 +23,9 @@ class CreateTaskHeader extends BaseStatelessWidget implements PreferredSizeWidge
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomBackButton.close(),
-            Expanded(child: Center(child: Text('Create New Task', style: styles(context).text.t1))),
+            const Spacer(),
+            Text('Create New Task', style: styles(context).text.t1),
+            const Spacer(),
             CustomIconButton(icon: Assets.images.icons.alt, onPressed: () {}),
           ],
         ),

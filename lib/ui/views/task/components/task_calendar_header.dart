@@ -12,8 +12,12 @@ class TaskCalendarHeader extends BaseStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md, vertical: styles(context).insets.sm),
+      decoration: BoxDecoration(
+        color: styles(context).theme.white,
+        border: Border.symmetric(horizontal: BorderSide(color: styles(context).theme.silver)),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

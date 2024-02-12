@@ -16,17 +16,18 @@ class MailDetailHeader extends BaseStatelessWidget implements PreferredSizeWidge
   @override
   Widget build(BuildContext context) => Container(
         height: preferredSize.height,
-        padding: EdgeInsets.symmetric(horizontal: styles(context).insets.sm),
         margin: EdgeInsets.only(top: context.mq.padding.top),
         decoration: BoxDecoration(color: styles(context).theme.white, boxShadow: styles(context).shadows.sm),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Gap(styles(context).insets.xxs),
             const CustomBackButton(),
             Expanded(child: Container()),
             CustomIconButton(icon: Assets.images.editor.undo, onPressed: () {}),
             CustomIconButton(icon: Assets.images.icons.trash, onPressed: () {}),
             CustomIconButton(icon: Assets.images.icons.dots, onPressed: () {}),
+            Gap(styles(context).insets.sm),
           ],
         ),
       );

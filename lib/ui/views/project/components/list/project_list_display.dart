@@ -18,10 +18,7 @@ class ProjectListDisplay extends BaseStatelessWidget {
         Expanded(
           child: CustomScrollViewWithFade(
             child: Column(
-              children: [
-                ...[todo, backlog, progress, completed, canceled]
-                    .map((e) => ProjectListGroupItem(key: ValueKey(e), data: e))
-              ],
+              children: [...listDisplayData.map((e) => ProjectListGroupItem(key: ValueKey(e), data: e))],
             ),
           ),
         ),

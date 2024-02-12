@@ -7,11 +7,11 @@ import 'package:flutter/material.dart';
 import '../../../../coca.dart';
 import '../../../widgets/app_bar/custom_back_button.dart';
 
-class TaskHeader extends BaseStatelessWidget implements PreferredSizeWidget {
+class ChatHeader extends BaseStatelessWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
 
-  const TaskHeader({super.key}) : preferredSize = const Size.fromHeight(kToolbarHeight);
+  const ChatHeader({super.key}) : preferredSize = const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) => Container(
@@ -20,12 +20,12 @@ class TaskHeader extends BaseStatelessWidget implements PreferredSizeWidget {
         decoration: BoxDecoration(color: styles(context).theme.white, boxShadow: styles(context).shadows.sm),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const CustomBackButton().padding(left: 10),
-            Expanded(child: Container()),
-            Text('My Task', style: styles(context).text.t1.textColor(styles(context).theme.grey7)),
-            Expanded(child: Container()),
-            CustomSvg(Assets.images.icons.search).svg(height: 20, width: 20).padding(right: styles(context).insets.md),
+            const CustomBackButton().padding(left: styles(context).insets.xxs),
+            Text('New Chat', style: styles(context).text.t1),
+            CustomIconButton(icon: Assets.images.icons.search, onPressed: () {})
+                .padding(right: styles(context).insets.sm),
           ],
         ),
       );

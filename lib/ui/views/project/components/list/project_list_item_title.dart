@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import '../../../../../coca.dart';
 
 class ProjectListItemTitle extends BaseStatelessWidget {
-  final TaskModel task;
+  final ProjectModel data;
 
-  const ProjectListItemTitle(this.task, {super.key});
+  const ProjectListItemTitle(this.data, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ProjectListItemTitle extends BaseStatelessWidget {
                 decoration: BoxDecoration(color: styles(context).theme.silver, borderRadius: BorderRadius.circular(2)))
             .gestures(onTapUp: (d) => {}, behavior: HitTestBehavior.opaque),
         Gap(styles(context).insets.xs),
-        Text(task.title,
+        Text(data.name,
                 style: styles(context).text.b1.textColor(styles(context).theme.grey7),
                 maxLines: 1,
                 softWrap: false,

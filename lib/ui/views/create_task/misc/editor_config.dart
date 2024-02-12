@@ -36,7 +36,7 @@ Map<String, BlockComponentBuilder> blocks() {
       configuration: configuration,
       iconBuilder: (context, node) {
         final checked = node.attributes[TodoListBlockKeys.checked] as bool;
-        return CustomSvg(checked ? Assets.images.editor.todo : Assets.images.editor.checked).svg(size: 10);
+        return CustomSvg(checked ? Assets.images.editor.checked : Assets.images.editor.todo).svg(size: 20);
       },
     ),
     BulletedListBlockKeys.type: BulletedListBlockComponentBuilder(

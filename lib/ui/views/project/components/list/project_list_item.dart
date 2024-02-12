@@ -11,14 +11,14 @@ import 'project_item_cell_wrapper.dart';
 import 'project_list_item_title.dart';
 
 class ProjectListItem extends BaseStatelessWidget {
-  final TaskModel? task;
+  final ProjectModel? data;
   final double? parentWidth;
   final bool isSelected;
   final bool showDividers;
 
-  const ProjectListItem(this.task, {super.key, this.parentWidth, this.isSelected = false, this.showDividers = true});
+  const ProjectListItem(this.data, {super.key, this.parentWidth, this.isSelected = false, this.showDividers = true});
 
-  bool get headerMode => task == null;
+  bool get headerMode => data == null;
 
   @override
   Widget build(BuildContext context) {
@@ -46,22 +46,23 @@ class ProjectListItem extends BaseStatelessWidget {
       padding: EdgeInsets.zero,
       child: Stack(
         children: <Widget>[
-          /// DIVIDER - Bottom
+          /// DIVIDER - Upper & Bottom
+
           if (!headerMode && showDividers) ...{
-            Align(alignment: Alignment.bottomLeft, child: Container(height: 1, color: styles(context).theme.silver)),
+            Align(alignment: Alignment.topLeft, child: Container(height: 1, color: styles(context).theme.silver)),
           },
 
           Row(
             children: <Widget>[
-              (headerMode ? row("Task Name") : ProjectListItemTitle(task!))
+              (headerMode ? row("Task Name") : ProjectListItemTitle(data!))
                   .constrained(minWidth: 300)
                   .expanded(flex: 48 * 100),
               ProjectItemCellWrapper(
                   isVisible: colCount > 1,
                   flex: 10,
-                  child: headerMode ? row("Assigned to") : CustomAvatarPile(users: task?.assignee ?? [], size: 24)),
+                  child: headerMode ? row("Assigned to") : CustomAvatarPile(users: data?.participants ?? [], size: 24)),
               ProjectItemCellWrapper(
-                  flex: 11, isVisible: colCount > 2, child: row(headerMode ? "Due date" : task!.date)),
+                  flex: 11, isVisible: colCount > 2, child: row(headerMode ? "Due date" : data?.access ?? '')),
             ],
           ).padding(vertical: styles(context).insets.sm, horizontal: styles(context).insets.sm),
         ],

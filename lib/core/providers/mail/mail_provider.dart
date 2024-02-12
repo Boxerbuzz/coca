@@ -14,17 +14,10 @@ class MailProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  MailPageEnum _mailPage = MailPageEnum.inbox;
-  MailPageEnum get mailPage => _mailPage;
-  set mailPage(MailPageEnum page) {
+  MailPageModel _mailPage = const MailPageModel('Inbox', Offset.zero, MailPageEnum.inbox);
+  MailPageModel get mailPage => _mailPage;
+  set mailPage(MailPageModel page) {
     _mailPage = page;
-    notifyListeners();
-  }
-
-  int _pageIndex = 0;
-  int get pageIndex => _pageIndex;
-  set pageIndex(int index) {
-    _pageIndex = index;
     notifyListeners();
   }
 

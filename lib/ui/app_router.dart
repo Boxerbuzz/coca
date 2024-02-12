@@ -34,6 +34,7 @@ final routes = GoRouter(
         AppRouter(CreateMailScreen.route, (s) => const CreateMailScreen()),
         AppRouter(MailScreen.route, (s) => const MailScreen()),
         AppRouter(MailDetailScreen.route, (s) => const MailDetailScreen()),
+        AppRouter(ChatScreen.route, (s) => const ChatScreen()),
       ],
     ),
   ],
