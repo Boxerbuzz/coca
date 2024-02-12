@@ -26,7 +26,7 @@
         <entry key="appflowy_editor">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/appflowy_editor-2.3.1/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/appflowy_editor-2.3.2/lib" />
             </list>
           </value>
         </entry>
@@ -370,7 +370,7 @@
         <entry key="go_router">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/go_router-13.1.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/go_router-13.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -630,7 +630,7 @@
         <entry key="pinput">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/pinput-3.0.1/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/pinput-4.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -763,7 +763,7 @@
         <entry key="smart_auth">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/smart_auth-1.1.1/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/smart_auth-2.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -1032,7 +1032,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-64.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/analyzer-6.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/ansicolor-2.0.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/appflowy_editor-2.3.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/appflowy_editor-2.3.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/archive-3.4.10/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/args-2.4.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/async-2.11.0/lib" />
@@ -1078,7 +1078,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/gap-3.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/glob-2.1.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/go_router-13.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/go_router-13.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/google_fonts-6.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/graphs-2.3.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/html-0.15.4/lib" />
@@ -1116,7 +1116,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/percent_indicator-4.2.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/petitparser-6.0.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pinput-3.0.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pinput-4.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/platform-3.1.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/pointycastle-3.7.4/lib" />
@@ -1134,7 +1134,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/rich_clipboard_windows-1.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shelf-1.4.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shelf_web_socket-1.0.4/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/smart_auth-1.1.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/smart_auth-2.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stream_channel-2.1.2/lib" />

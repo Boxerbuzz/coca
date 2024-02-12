@@ -29,7 +29,6 @@ class OnboardingBody extends BaseStatelessWidget {
                 CustomPrimaryButton(label: 'Get Started', onTap: () => context.go(LoginScreen.route)),
                 Gap(styles(context).insets.md),
                 OneLineClickableText(actionText: 'Login', mainText: 'Have an account?', onTap: () {}),
-                const Gap(56),
               ],
             ),
           ),

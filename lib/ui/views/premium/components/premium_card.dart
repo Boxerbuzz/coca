@@ -76,7 +76,6 @@ class PremiumCard extends BaseStatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
             child: CustomPrimaryButton(label: 'Start your 14-days trial', onTap: () {}),
           ),
-          Gap(styles(context).insets.md),
         ],
       ),
     );

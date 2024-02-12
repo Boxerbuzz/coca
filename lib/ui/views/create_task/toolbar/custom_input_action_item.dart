@@ -20,9 +20,9 @@ class CustomInputActionItem extends BaseStatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            height: 90,
-            width: 90,
-            decoration: BoxDecoration(color: color, borderRadius: styles(context).corners.br32),
+            height: 70,
+            width: 70,
+            decoration: BoxDecoration(color: color, borderRadius: styles(context).corners.br24),
             padding: EdgeInsets.all(styles(context).insets.xs),
             child: CustomSvg(icon).svg(size: 28, color: styles(context).theme.grey7),
           ),
