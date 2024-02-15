@@ -34,20 +34,21 @@ Original design by [Sans Design](https://ui8.net/sans-design/products/coca-proje
 ### Screenshots 🌈
 
 <p>
-    <img src="/preview/flutter_01.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
-    <img src="/preview/flutter_02.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
-    <img src="/preview/flutter_05.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_01.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt="" 
+height="2280"/>
+    <img src="/preview/flutter_02.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_05.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
 </p>
 <p>
-    <img src="/preview/flutter_06.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
-    <img src="/preview/flutter_07.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
-    <img src="/preview/flutter_08.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_06.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_07.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_08.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
 </p>
 
 <p>
-    <img src="/preview/flutter_09.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
-    <img src="/preview/flutter_10.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
-    <img src="/preview/flutter_11.png" width="1080" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_09.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_10.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
+    <img src="/preview/flutter_11.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
 </p>
 
 ### Download 📱
