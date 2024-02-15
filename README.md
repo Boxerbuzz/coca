@@ -34,8 +34,7 @@ Original design by [Sans Design](https://ui8.net/sans-design/products/coca-proje
 ### Screenshots 🌈
 
 <p>
-    <img src="/preview/flutter_01.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt="" 
-height="2280"/>
+    <img src="/preview/flutter_01.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
     <img src="/preview/flutter_02.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
     <img src="/preview/flutter_05.png" width="200px" style="margin-left: 10px; margin-right: 10px;" alt=""/>
 </p>
