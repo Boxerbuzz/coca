@@ -22,7 +22,7 @@ Original design by [Sans Design](https://ui8.net/sans-design/products/coca-proje
 # Feature To-Do List
 
 | Screens                                         | Status        | Notes |
-|-------------------------------------------------|---------------|-------|
+|:------------------------------------------------|---------------|-------|
 | Login, Signup, Otp Verification                 | [x] Completed |       |
 | Home, Notification, Workspace Modal             | [x] Completed |       |
 | Projects, Project Details, Tasks, Create Task   | [x] Completed |       |
