@@ -21,14 +21,14 @@ Original design by [Sans Design](https://ui8.net/sans-design/products/coca-proje
 
 # Feature To-Do List
 
-| Screens                                         | Status        | Notes |
-|:------------------------------------------------|---------------|-------|
-| Login, Signup, Otp Verification                 | [x] Completed |       |
-| Home, Notification, Workspace Modal             | [x] Completed |       |
-| Projects, Project Details, Tasks, Create Task   | [x] Completed |       |
-| Create Project, Mail, Create Mail, Mail Details | [x] Completed |       |
-| Profile, Premium, Support, Privacy              | [x] Completed |       |
-| Forgot password, task details, calendar view    | [ ] Todo      |       |
+| Screens                                            | Status        | Notes |
+|:---------------------------------------------------|---------------|-------|
+| Login, Signup, Otp Verification                    | [x] Completed |       |
+| Home, Notification, Workspace Modal                | [x] Completed |       |
+| Projects, Project Details, Tasks, Create Task      | [x] Completed |       |
+| Create Project, Mail, Create Mail, Mail Details    | [x] Completed |       |
+| Profile, Premium, Support, Privacy                 | [x] Completed |       |
+| Forgot password, task details, calendar view, Chat | [ ] Todo      |       |
 
 
 ### Screenshots 🌈
