@@ -2,6 +2,7 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
@@ -16,7 +17,7 @@ class LoginBody extends BaseStatelessWidget {
     return Column(
       children: [
         Gap(styles(context).insets.sm),
-        const CustomAuthDivider(),
+        FadeInUp(child: const CustomAuthDivider()),
         Gap(styles(context).insets.md),
         const LoginForm(),
         const Align(alignment: Alignment.centerRight, child: LoginForgetPasswordButton()),

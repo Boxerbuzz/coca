@@ -93,6 +93,8 @@ extension WidgetExtension on Widget {
           child: this,
         );
 
+  Widget parent(Widget Function({required Widget child}) parent) => parent(child: this);
+
   Widget padding(
           {double? all,
           double? horizontal,
@@ -125,6 +127,22 @@ extension WidgetExtension on Widget {
                   right: right ?? horizontal ?? all ?? 0.0),
               child: this,
             );
+
+  Widget backgroundColor(Color color, {bool animate = false}) => animate
+      ? _StyledAnimatedBuilder(
+          builder: (animation) {
+            return _AnimatedDecorationBox(
+              key: key,
+              decoration: BoxDecoration(color: color),
+              duration: animation.duration,
+              position: DecorationPosition.background,
+              curve: animation.curve,
+              onEnd: () {},
+              child: this,
+            );
+          },
+        )
+      : DecoratedBox(decoration: BoxDecoration(color: color), child: this);
 
   Widget ripple(
           {Color? focusColor,
@@ -379,6 +397,74 @@ class _AnimatedConstrainedBoxState extends AnimatedWidgetBaseState<_AnimatedCons
     super.debugFillProperties(description);
     description.add(
         DiagnosticsProperty<BoxConstraintsTween>('constraints', _constraints, showName: false, defaultValue: null));
+  }
+}
+
+class _AnimatedDecorationBox extends ImplicitlyAnimatedWidget {
+  /// The [curve] and [duration] arguments must not be null.
+  _AnimatedDecorationBox({
+    super.key,
+    this.decoration,
+    this.position = DecorationPosition.background,
+    this.child,
+    super.curve,
+    required super.duration,
+    super.onEnd,
+  }) : assert(decoration == null || decoration.debugAssertIsValid());
+
+  /// The [child] contained by the container.
+  ///
+  /// If null, and if the [constraints] are unbounded or also null, the
+  /// container will expand to fill all available space in its parent, unless
+  /// the parent provides unbounded constraints, in which case the container
+  /// will attempt to be as small as possible.
+  ///
+  /// {@macro flutter.widgets.child}
+  final Widget? child;
+
+  /// The decoration to paint behind the [child].
+  ///
+  /// A shorthand for specifying just a solid color is available in the
+  /// constructor: set the `color` argument instead of the `decoration`
+  /// argument.
+  final Decoration? decoration;
+
+  final DecorationPosition? position;
+
+  @override
+  _AnimatedDecorationBoxState createState() => _AnimatedDecorationBoxState();
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<Decoration>('bg', decoration, defaultValue: null));
+    // TODO: debug [position]?
+  }
+}
+
+class _AnimatedDecorationBoxState extends AnimatedWidgetBaseState<_AnimatedDecorationBox> {
+  DecorationTween? _decoration;
+
+  @override
+  void forEachTween(TweenVisitor<dynamic> visitor) {
+    _decoration =
+        visitor(_decoration, widget.decoration, (dynamic value) => DecorationTween(begin: value as Decoration))
+            as DecorationTween;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: _decoration?.evaluate(animation) ?? const BoxDecoration(),
+      position: widget.position ?? DecorationPosition.background,
+      child: widget.child,
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder description) {
+    super.debugFillProperties(description);
+    description.add(DiagnosticsProperty<DecorationTween>('bg', _decoration, defaultValue: null));
   }
 }
 
