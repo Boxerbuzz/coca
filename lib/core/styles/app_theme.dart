@@ -56,11 +56,9 @@ class AppTheme {
         onPrimary: white,
         onSecondary: white,
         onError: white,
-        onBackground: grey6,
         onSurface: white,
         onErrorContainer: white,
         error: red,
-        background: white,
         surface: white);
 
     /// input border definition
@@ -77,8 +75,8 @@ class AppTheme {
           focusedBorder: inputBorder.copyWith(borderSide: BorderSide(color: blue)),
           errorBorder: inputBorder.copyWith(borderSide: BorderSide(color: red)),
           focusedErrorBorder: inputBorder.copyWith(borderSide: BorderSide(color: red)),
-          fillColor: colorScheme.background,
-          hoverColor: colorScheme.background,
+          fillColor: colorScheme.surface,
+          hoverColor: colorScheme.surface,
           contentPadding: const EdgeInsets.symmetric(horizontal: 12),
         ));
 

@@ -19,8 +19,10 @@ class HomeWorkspaceSwitcher extends BaseStatelessWidget {
         onTap: () => showMaterialModalBottomSheet(context: context, builder: (_) => const SwitchWorkspaceScreen()),
         child: Container(
           width: double.infinity,
-          decoration:
-              BoxDecoration(borderRadius: styles(context).corners.br16, gradient: styles(context).gradients.primary),
+          decoration: BoxDecoration(
+            borderRadius: styles(context).corners.br16,
+            gradient: styles(context).gradients.primary,
+          ),
           padding: EdgeInsets.all(styles(context).insets.xs),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

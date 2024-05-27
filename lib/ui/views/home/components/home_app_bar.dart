@@ -2,6 +2,8 @@
  * Copyright (c) boxerbuzz devs 2024. All Rights Reserved.
  */
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../../../coca.dart';
@@ -14,7 +16,7 @@ class HomeAppBar extends BaseStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double barHeight = AppBar().preferredSize.height;
+    final double barHeight = AppBar().preferredSize.height + (Platform.isAndroid ? 30 : 50);
     final double statusBar = context.mq.padding.top;
 
     UserModel user = context.watch<MainProvider>().user ?? const UserModel();
@@ -27,7 +29,7 @@ class HomeAppBar extends BaseStatelessWidget {
           child: Transform(
             transform: Matrix4.translationValues(0.0, 40 * (1.0 - animation.value), 0.0),
             child: Container(
-              height: barHeight + 30,
+              height: barHeight,
               padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md).add(EdgeInsets.only(top: statusBar)),
               decoration: BoxDecoration(
                 boxShadow: opacity > 0 ? styles(context).shadows.custom(styles(context).theme.shadow, .07) : null,

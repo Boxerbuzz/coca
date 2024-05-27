@@ -15,13 +15,17 @@ class PremiumCard extends BaseStatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          right: styles(context).insets.sm, top: styles(context).insets.md, bottom: styles(context).insets.md),
+        right: styles(context).insets.sm,
+        top: styles(context).insets.md,
+        bottom: styles(context).insets.md,
+      ),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: styles(context).corners.br16,
         border: Border.all(color: styles(context).theme.blue, width: 2),
       ),
       clipBehavior: Clip.hardEdge,
+      padding: EdgeInsets.only(bottom: styles(context).insets.sm),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -72,6 +76,7 @@ class PremiumCard extends BaseStatelessWidget {
               ],
             ),
           ),
+          const Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: styles(context).insets.md),
             child: CustomPrimaryButton(label: 'Start your 14-days trial', onTap: () {}),
