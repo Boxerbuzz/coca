@@ -15,7 +15,9 @@ class LoginForm extends BaseStatelessWidget {
       child: Column(
         children: [
           CustomTextFieldWithIcon(
-              labelText: 'Type your email', hintText: 'Email', prefixIcon: CustomSvg(Assets.images.icons.mail).svg()),
+              labelText: 'Type your email',
+              hintText: 'Email',
+              prefixIcon: CustomSvg(Assets.images.icons.mail).svg()),
           const Gap(16),
           CustomTextFieldWithIcon(
               labelText: 'Type your password',

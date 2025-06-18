@@ -1,0 +1,2 @@
+/Users/tim/Documents/GitHub/coca/android/app/.cxx/Debug/6j2w2b6y/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/tim/Documents/GitHub/coca/android/app/.cxx/Debug/6j2w2b6y/armeabi-v7a/CMakeFiles/rebuild_cache.dir

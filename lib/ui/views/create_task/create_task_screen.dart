@@ -65,7 +65,13 @@ class _CreateTaskScreenState extends State<CreateTaskScreen> {
       body: MobileToolbarV2(
         toolbarHeight: 60.0,
         buttonHeight: 40,
-        toolbarItems: [redoAction, undoAction, styleBlockAction, inputBlockAction, boldAction],
+        toolbarItems: [
+          redoAction,
+          undoAction,
+          styleBlockAction,
+          inputBlockAction,
+          boldAction
+        ],
         editorState: editorState,
         child: Column(
           children: [
@@ -90,6 +96,7 @@ class _CreateTaskScreenState extends State<CreateTaskScreen> {
                     anchors: TextSelectionToolbarAnchors(primaryAnchor: anchor),
                   );
                 },
+                floatingToolbarHeight: 50,
                 child: editor,
               ),
             ),

@@ -54,8 +54,6 @@ class _OtpInputState extends BaseStatefulWidget<OtpInput> {
         child: Pinput(
           controller: pinController,
           focusNode: focusNode,
-          androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsUserConsentApi,
-          listenForMultipleSmsOnAndroid: true,
           defaultPinTheme: defaultPinTheme,
           separatorBuilder: (index) => const SizedBox(width: 8),
           validator: (value) {
@@ -75,7 +73,11 @@ class _OtpInputState extends BaseStatefulWidget<OtpInput> {
           cursor: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(margin: const EdgeInsets.only(bottom: 9), width: 22, height: 1, color: styles.theme.blue),
+              Container(
+                  margin: const EdgeInsets.only(bottom: 9),
+                  width: 22,
+                  height: 1,
+                  color: styles.theme.blue),
             ],
           ),
           focusedPinTheme: defaultPinTheme.copyWith(
@@ -85,7 +87,8 @@ class _OtpInputState extends BaseStatefulWidget<OtpInput> {
             ),
           ),
           submittedPinTheme: defaultPinTheme,
-          errorPinTheme: defaultPinTheme.copyBorderWith(border: Border.all(color: Colors.redAccent)),
+          errorPinTheme: defaultPinTheme.copyBorderWith(
+              border: Border.all(color: Colors.redAccent)),
         ),
       ),
     );

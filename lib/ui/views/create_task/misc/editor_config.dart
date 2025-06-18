@@ -3,6 +3,7 @@
  */
 
 import 'package:appflowy_editor/appflowy_editor.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +18,7 @@ Map<String, BlockComponentBuilder> blocks() {
       }
       return const EdgeInsets.symmetric(vertical: 10);
     },
-    textStyle: (node) {
+    textStyle: (node, {textSpan}) {
       if (HeadingBlockKeys.type == node.type) {
         return _styles.text.t1.bold;
       }
@@ -34,9 +35,12 @@ Map<String, BlockComponentBuilder> blocks() {
     ...standardBlockComponentBuilderMap,
     TodoListBlockKeys.type: TodoListBlockComponentBuilder(
       configuration: configuration,
-      iconBuilder: (context, node) {
+      iconBuilder: (context, node, fun) {
         final checked = node.attributes[TodoListBlockKeys.checked] as bool;
-        return CustomSvg(checked ? Assets.images.editor.checked : Assets.images.editor.todo).svg(size: 20);
+        return CustomSvg(checked
+                ? Assets.images.editor.checked
+                : Assets.images.editor.todo)
+            .svg(size: 20);
       },
     ),
     BulletedListBlockKeys.type: BulletedListBlockComponentBuilder(
@@ -58,10 +62,12 @@ Map<String, BlockComponentBuilder> blocks() {
       },
     ),
     PageBlockKeys.type: PageBlockComponentBuilder(),
-    DividerBlockKeys.type: DividerBlockComponentBuilder(configuration: configuration),
+    DividerBlockKeys.type:
+        DividerBlockComponentBuilder(configuration: configuration),
     ParagraphBlockKeys.type: ParagraphBlockComponentBuilder(
       configuration: standardBlockComponentConfiguration.copyWith(
-        placeholderText: (_) => PlatformExtension.isDesktopOrWeb ? AppFlowyEditorL10n.current.slashPlaceHolder : ' ',
+        placeholderText: (_) =>
+            kIsWeb ? AppFlowyEditorL10n.current.slashPlaceHolder : ' ',
       ),
     ),
     NumberedListBlockKeys.type: NumberedListBlockComponentBuilder(
@@ -71,7 +77,8 @@ Map<String, BlockComponentBuilder> blocks() {
     ),
     HeadingBlockKeys.type: HeadingBlockComponentBuilder(
       configuration: standardBlockComponentConfiguration.copyWith(
-        placeholderText: (node) => 'Heading ${node.attributes[HeadingBlockKeys.level]}',
+        placeholderText: (node) =>
+            'Heading ${node.attributes[HeadingBlockKeys.level]}',
       ),
     ),
     ImageBlockKeys.type: ImageBlockComponentBuilder(showMenu: true),
@@ -129,7 +136,7 @@ TextStyle baseTextStyle(String fontFamily, {FontWeight? fontWeight}) {
 
 EditorStyle customizeEditorStyle() {
   return EditorStyle(
-    padding: PlatformExtension.isDesktopOrWeb
+    padding: kIsWeb
         ? const EdgeInsets.only(left: 100, right: 100, top: 20)
         : const EdgeInsets.symmetric(horizontal: 20),
     cursorColor: Colors.green,
@@ -185,21 +192,22 @@ Map<String, BlockComponentBuilder> customBuilder() {
       }
       return const EdgeInsets.symmetric(vertical: 10);
     },
-    textStyle: (node) {
+    textStyle: (node, {textSpan}) {
       if (HeadingBlockKeys.type == node.type) {
-        return const TextStyle(color: Colors.yellow);
+        return _styles.text.t1.bold;
       }
-      return const TextStyle();
+      return _styles.text.t1;
     },
   );
 
   // customize heading block style
   return {
     ...standardBlockComponentBuilderMap,
-    HeadingBlockKeys.type: HeadingBlockComponentBuilder(configuration: configuration),
+    HeadingBlockKeys.type:
+        HeadingBlockComponentBuilder(configuration: configuration),
     TodoListBlockKeys.type: TodoListBlockComponentBuilder(
       configuration: configuration,
-      iconBuilder: (context, node) {
+      iconBuilder: (context, node, fun) {
         final checked = node.attributes[TodoListBlockKeys.checked] as bool;
         return Icon(
           checked ? Icons.check_box : Icons.check_box_outline_blank,

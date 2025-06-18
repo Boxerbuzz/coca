@@ -3,9 +3,9 @@
  */
 
 import 'package:animate_do/animate_do.dart';
+import 'package:coca/coca.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../coca.dart';
 import 'login_forgot_password_btn.dart';
 import 'login_form.dart';
 
@@ -20,9 +20,12 @@ class LoginBody extends BaseStatelessWidget {
         FadeInUp(child: const CustomAuthDivider()),
         Gap(styles(context).insets.md),
         const LoginForm(),
-        const Align(alignment: Alignment.centerRight, child: LoginForgetPasswordButton()),
+        const Align(
+            alignment: Alignment.centerRight,
+            child: LoginForgetPasswordButton()),
         Gap(styles(context).insets.xl),
-        CustomPrimaryButton(label: 'Sign In', onTap: () => context.go(MainScreen.route)),
+        CustomPrimaryButton(
+            label: 'Sign In', onTap: () => context.go(MainScreen.route)),
         Gap(styles(context).insets.md),
         OneLineClickableText(
           actionText: 'Sign Up',

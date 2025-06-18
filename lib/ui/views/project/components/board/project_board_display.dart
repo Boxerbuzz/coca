@@ -17,7 +17,8 @@ class ProjectBoardDisplay extends StatefulWidget {
   State<ProjectBoardDisplay> createState() => _ProjectBoardDisplayState();
 }
 
-class _ProjectBoardDisplayState extends BaseStatefulWidget<ProjectBoardDisplay> {
+class _ProjectBoardDisplayState
+    extends BaseStatefulWidget<ProjectBoardDisplay> {
   final AppFlowyBoardController _controller = AppFlowyBoardController(
     onMoveGroup: (fromGroupId, fromIndex, toGroupId, toIndex) {},
     onMoveGroupItem: (groupId, fromIndex, toIndex) {},
@@ -50,8 +51,6 @@ class _ProjectBoardDisplayState extends BaseStatefulWidget<ProjectBoardDisplay> 
       groupBodyPadding: EdgeInsets.all(styles.insets.xxs),
       groupMargin: EdgeInsets.symmetric(horizontal: styles.insets.xxs),
       groupCornerRadius: 23,
-      boardMargin: EdgeInsets.symmetric(horizontal: styles.insets.md),
-      showScrollBars: false,
     );
 
     return ScrollConfiguration(
@@ -62,7 +61,8 @@ class _ProjectBoardDisplayState extends BaseStatefulWidget<ProjectBoardDisplay> 
         controller: _controller,
         cardBuilder: (_, __, item) => AppFlowyGroupCard(
           key: ValueKey(item.id),
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(20)),
           boxConstraints: const BoxConstraints.tightFor(width: 260),
           child: _buildCard(item),
         ),
@@ -76,7 +76,8 @@ class _ProjectBoardDisplayState extends BaseStatefulWidget<ProjectBoardDisplay> 
 
   Widget _buildCard(AppFlowyGroupItem item) {
     if (item is ProjectModel) {
-      return ProjectBoardCard(data: item).clickable(() => context.push(ProjectDetailScreen.route));
+      return ProjectBoardCard(data: item)
+          .clickable(() => context.push(ProjectDetailScreen.route));
     }
     throw UnimplementedError();
   }
